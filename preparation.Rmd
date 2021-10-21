@@ -1,0 +1,51 @@
+---
+title: "Preparatory homework for our R-Workshop on mixed models"
+author: "Felix . Golcher @hu-berlin.de"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M')`"
+header-includes: |
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{english}
+  \setsansfont{Latin Modern Sans}
+  \setmainfont{Latin Modern Sans}
+urlcolor: blue
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 6
+    number_sections: true
+    fig_caption: yes
+    table_caption: yes
+    df_print: "paged"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE,
+                      autodep = TRUE,
+                      message = FALSE)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+```
+
+This preparatory homework is only for testing your existing knowledge and experience. Please do not invest time in reading and learning the skills needed for completing all the tasks. Just answer from what you already know.
+
+Please answer the following questions. The preferred result would be an Rmarkdown document that you would send [back to me](mailto:felix.golcher@hu-berlin.de). If you do not know what that is, reply with an R-Script. If that is not easily possible for you, reply in any other way. If a question does not mean anything to you, just state that fact. If none of the questions mean anything to you, I would be interested in this fact as well.
+
+The better I know what you already know the better I can adapt the workshop to your needs.
+
+1) set up an R-Markdown document.
+1) read in the file `RDaten.csv`.
+2) use tidyverse functions to keep only the data where `Sprache` has the value "Mon".
+3) use tidyverse functions to count the number of different values for each column. Do that for all columns with one command.
+3) Make descriptive plots for the data, especially one showing the dependency of `PronNP` on `Age` and `Function`. The plot should show the variance at least between subjects, if not even within subjects.
+4) Explain the mathematical foundations of linear mixed models in a few sentences.
+5) Explain the mathematical foundations of generalized linear mixed models in a few sentences.
+6) Set up a binomial mixed model with the main aim to check the dependency of `PronNP` from the `Age` group.
+7) What is overdispersion? Do we have to check for overdispersion? How would you check for it? How would you act if there is significant overdispersion?
