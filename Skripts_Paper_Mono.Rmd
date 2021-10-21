@@ -1,0 +1,202 @@
+---
+title: "Analyses Paper Discours 2"
+author: "Ina & Josefin"
+date: '2021-04-04'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = T,
+                      autodep = T)
+```
+
+```{r, include=FALSE, echo=FALSE}
+library(tidyverse)
+library(lme4)
+```
+
+```{r, include=FALSE, echo=FALSE}
+#Data preparation 1
+read_csv2('data/RDaten.csv',T)->RDaten
+# View(RDaten)
+
+table(RDaten$Sprache)
+```
+
+```{r}
+RDaten %>% 
+  filter(Sprache == "Mon") %>% 
+  select(-Sprache) -> RDaten2
+# RDaten2<-subset(RDaten, Sprache=="Mon")
+# View(RDaten2)
+```
+
+```{r}
+RDaten %>% 
+  summarise(across(everything(),
+                   ~ length(unique(.))))
+```
+
+# Descriptives types of referring expressions
+
+```{r}
+addmargins(table(RDaten2$Type, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$Type, RDaten2$Age),2))
+#per discourse function
+addmargins(table(RDaten2$Type, RDaten2$Function, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$Type, RDaten2$Function, RDaten2$Age),c(3,2)),1)
+#per character: main vs. side
+addmargins(table(RDaten2$Type, RDaten2$Character, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$Type, RDaten2$Character, RDaten2$Age),c(3,2)),1)
+#per discourse funtion + character
+addmargins(table(RDaten2$Type, RDaten2$Character, RDaten2$Function, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$Type, RDaten2$Character, RDaten2$Function, RDaten2$Age),c(4,3,2)),1)
+```
+
+# Descriptives noun and pronoun
+
+```{r}
+addmargins(table(RDaten2$PronNP, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$PronNP, RDaten2$Age),2))
+#per discourse function
+addmargins(table(RDaten2$PronNP, RDaten2$Function, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$PronNP, RDaten2$Function, RDaten2$Age),c(3,2)),1)
+#per character: main vs. side
+addmargins(table(RDaten2$PronNP, RDaten2$Character, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$PronNP, RDaten2$Character, RDaten2$Age),c(3,2)),1)
+#per discourse funtion + character
+addmargins(table(RDaten2$PronNP, RDaten2$Character, RDaten2$Function, RDaten2$Age))
+addmargins(prop.table(table(RDaten2$PronNP, RDaten2$Character, RDaten2$Function, RDaten2$Age),c(4,3,2)),1)
+```
+
+# Plot referring expression use per discourse function
+
+```{r, echo=FALSE}
+ggplot(RDaten2, aes(x=Function, fill=PronNP)) +
+  theme_classic() + 
+  scale_y_continuous(expand = c(0,0), labels=scales::percent) + 
+  theme(plot.title = element_text(hjust = 0.5),
+        text = element_text(size=16),
+        axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, color = "black"),
+        axis.text.y = element_text(color = "black"), 
+        legend.title=element_blank(), 
+        strip.background.x=element_rect(color=NA)) +
+  geom_bar(position="fill") + 
+  xlab("") + 
+  ylab("") + 
+  scale_x_discrete("") + 
+  scale_fill_grey() + 
+  facet_grid(~Age)
+
+# ggsave("Expression_type_Mon.png", plot = last_plot(), scale = 1, width = 20, height = 8, units = c("cm"), dpi = 1000)
+```
+
+```{r, fig.cap="Children have more variance?"}
+RDaten2 %>% 
+  arrange(Age) %>% 
+  ggplot(aes(Function, PronNP == "Pron", 
+             col=Age,
+             group = Proband))+
+  stat_summary(fun.data = mean_cl_boot,
+               position = position_dodge(width = .5))
+```
+
+
+```{r, echo=FALSE}
+ggplot(RDaten2, aes(x=Character, fill=PronNP)) + theme_classic() + scale_y_continuous(expand = c(0,0), labels=scales::percent) + 
+  theme(panel.spacing.x=unit(0.5, "lines"),panel.spacing.y=unit(1, "lines"), plot.title = element_text(hjust = 0.5), text = element_text(size=16), axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, color = "black"), axis.text.y = element_text(color = "black"), legend.title=element_blank(), strip.background.x=element_rect(color=NA), strip.background.y=element_rect(color=NA)) +
+geom_bar(position="fill") + xlab("") + ylab("") + scale_x_discrete("") + scale_fill_grey("", limits=c("Pron", "NP"), labels=c("Pron"=" Pronoun", "NP" = " Lexical NP")) + facet_grid(vars(Age), vars(Function))
+
+# ggsave("Expression_type2_Mon.png", plot = last_plot(), scale = 1, width = 20, height = 12, units = c("cm"), dpi = 1000)
+```
+
+```{r, echo=FALSE}
+ggplot(RDaten2, aes(x=Character, fill=PronNP)) + theme_classic() + scale_y_continuous(expand = c(0,0), labels=scales::percent) + 
+  theme(panel.spacing.x=unit(0.5, "lines"),panel.spacing.y=unit(1, "lines"), plot.title = element_text(hjust = 0.5), text = element_text(size=16), axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, color = "black"), axis.text.y = element_text(color = "black"), legend.title=element_blank(), strip.background.x=element_rect(color=NA), strip.background.y=element_rect(color=NA)) +
+geom_bar(position="fill") + xlab("") + ylab("") + scale_x_discrete("") + scale_fill_grey("", limits=c("Pron", "NP"), labels=c("Pron"=" Pronoun", "NP" = " Lexical NP")) + facet_grid(vars(Function), vars(Age))
+
+# ggsave("Expression_type3_Mon.png", plot = last_plot(), scale = 1, width = 20, height = 12, units = c("cm"), dpi = 1000)
+```
+
+# Statistical analyses
+
+## Data preparation for analyses
+
+```{r}
+#recoding of dependent variable PronNP to 0 and 1
+RDaten2$PronNP2<-ifelse(RDaten2$PronNP=="Pron",1,0)
+#recoding of independent variable Function to 0 and 1
+RDaten2$Function2<-ifelse(RDaten2$Function=="Maintenance", 1,0)
+#recoding of independent variable Character to 0 and 1
+RDaten2$Character2<-ifelse(RDaten2$Character=="Main",1,0)
+```
+
+```{r}
+#Subsets
+Children<-subset(RDaten2,Age=="Children")
+Adults<-subset(RDaten2,Age=="Adults")
+# View(Children)
+# View(Adults)
+```
+
+### Comparison between children and adults
+
+```{r}
+#centering of binary predictors
+## full dataset
+RDaten2$Function2<-RDaten2$Function2-mean(RDaten2$Function2,na.rm=T)
+RDaten2$Character2<-RDaten2$Character2-mean(RDaten2$Character2,na.rm=T)
+RDaten2$Group2<-RDaten2$Group-mean(RDaten2$Group,na.rm=T)
+```
+
+```{r, eval=FALSE}
+#intercept-only model (=only model which does not have singular fit) 
+Pron.alle0 <- glmer(PronNP ~ Group2*Function2+Group2*Character2+(1|Proband), 
+                    family=binomial, 
+                    data=RDaten2, 
+                    glmerControl(optimizer="bobyqa", 
+                                 optCtrl = list(maxfun = 100000)))
+summary(Pron.alle0)
+```
+
+```{r}
+#intercept-only model: not-centered 
+Pron.alle0nc<-glmer(as.factor(PronNP)~Group*Function+Group*Character+(1|Proband), family=binomial, data=RDaten2, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.alle0nc)
+```
+```{r}
+#maximum model => singular fit
+Pron.alle1<-glmer(PronNP2~Group2*Function2+Group2*Character2+(1+Function2+Character2|Proband), family=binomial, data=RDaten2, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.alle1)
+```
+```{r}
+#removing correlations between random slopes
+Pron.alle2<-glmer(PronNP2~Group2*Function2+Group2*Character2+(1+Function2+Character2||Proband), family=binomial, data=RDaten2, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.alle2)
+```
+```{r}
+#removing slope with lowest variance (Character2) -> singular fit
+Pron.alle3<-glmer(PronNP2~Group2*Function2+Group2*Character2+(1+Function2||Proband), family=binomial, data=RDaten2, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.alle3)
+#intercept-only is final model
+```
+```{r}
+#centering of binary predictors
+## Children-subset
+Children$Function2<-Children$Function2-mean(Children$Function2,na.rm=T)
+Children$Character2<-Children$Character2-mean(Children$Character2,na.rm=T)
+##Adults-subset
+Adults$Function2<-Adults$Function2-mean(Adults$Function2,na.rm=T)
+Adults$Character2<-Adults$Character2-mean(Adults$Character2,na.rm=T)
+```
+```{r}
+#Posthoc: Model for child data
+Pron.Child<-glmer(PronNP2~Function2+Character2+(1|Proband), family=binomial, data=Children, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.Child)
+```
+## Pronuns Adults
+```{r}
+#Post-hoc: Model for adult data
+Pron.Adults<-glmer(PronNP2~Function2+Character2+(1|Proband), family=binomial, data=Adults, glmerControl(optimizer="bobyqa", optCtrl = list(maxfun = 100000)))
+summary(Pron.Adults)
+```

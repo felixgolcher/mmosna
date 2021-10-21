@@ -1,0 +1,1898 @@
+N;N-Inaorig;Proband;Age;Sprache;Expression;Group;TypeDet;Type;PronNP;Character;Function
+LL01;NIO1;3;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL02;NIO2;3;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL03;NIO3;3;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL04;NIO4;3;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL05;NIO5;3;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL06;NIO6;3;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL07;NIO7;3;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL08;NIO8;3;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL09;NIO9;3;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL10;NIO10;3;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL11;NIO12;3;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL12;NIO13;3;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL13;NIO14;3;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL14;NIO15;3;Adults;Mon;[von] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL15;NIO16;3;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL16;NIO17;7;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL17;NIO18;7;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL18;NIO19;7;Adults;Mon;Max;1;EN   ;Name;NP;Main;Reintroduction
+LL19;NIO20;7;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL20;;7;Adults;Mon;[vor] ihnen;1;Pron;Pron;Pron;Main;Reintroduction
+LL21;NIO21;7;Adults;Mon;Tim ;1;EN;Name;NP;Main;Reintroduction
+LL22;NIO22;7;Adults;Mon;[Auf dem Berg vor] ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL23;NIO23;7;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL24;NIO24;7;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL25;NIO25;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL26;NIO26;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL27;NIO27;7;Adults;Mon;Die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL28;NIO28;7;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL29;NIO29;7;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL30;NIO30;7;Adults;Mon;den beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL31;NIO31;7;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL32;NIO32;7;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL33;NIO34;7;Adults;Mon;Die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL34;NIO35;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL35;NIO37;7;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL36;NIO38;7;Adults;Mon;Tim und Max;1;EN | EN  ;Name;NP;Main;Maintenance
+LL37;NIO39;7;Adults;Mon;Bello;1;EN ;Name;NP;Main;Reintroduction
+LL38;NIO40;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL39;NIO41;7;Adults;Mon;der kleinere Schatten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL40;NIO43;7;Adults;Mon;Der Kobold;1;defNP;defNP;NP;Secondary;Maintenance
+LL41;NIO44;7;Adults;Mon;[wie] der große Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL42;NIO45;7;Adults;Mon;er;1;PP;Pron;Pron;Secondary;Maintenance
+LL43;NIO46;7;Adults;Mon;[zu] den Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL44;NIO47;7;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL45;GL1;7;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL46;NIO48;7;Adults;Mon;der Kobold ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL47;NIO49;7;Adults;Mon;beide;1;IP;Pron;Pron;Main;Reintroduction
+LL48;NIO50;7;Adults;Mon;er und der Troll;1;PP | def NP;defNP;NP;Secondary;Reintroduction
+LL49;NIO51;7;Adults;Mon;der;1;RP;Pron;Pron;Secondary;Reintroduction
+LL50;NIO52;7;Adults;Mon;[auf] die Jungs und den Hund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL51;NIO53;7;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL52;NIO54;7;Adults;Mon;er und seine Freunde;1;PP | def NP;defNP;NP;Main;Reintroduction
+LL53;NIO55;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL54;NIO56;7;Adults;Mon;Die Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL55;NIO57;7;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL56;NIO58;7;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL57;NIO59;7;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL58;NIO60;16;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL59;NIO61;16;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL60;NIO62;16;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL61;NIO63;16;Adults;Mon;den Wachhund;1;defNP;defNP;NP;Main;Reintroduction
+LL62;NIO64;16;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL63;NIO65;16;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL64;NIO66;16;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL65;NIO67;16;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL66;NIO68;16;Adults;Mon;Sie ;1;PP;Pron;Pron;Main;Reintroduction
+LL67;NIO69;16;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL68;NIO70;16;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL69;NIO71;16;Adults;Mon;Max, Tim und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL70;NIO72;16;Adults;Mon;Die große Gestallt;1;defNP;defNP;NP;Secondary;Reintroduction
+LL71;NIO73;16;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL72;NIO74;16;Adults;Mon;Die zwei gruseligen Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL73;NIO75;16;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL74;NIO76;16;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL75;NIO77;16;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL76;NIO78;16;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL77;NIO79;16;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL78;NIO80;16;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL79;;16;Adults;Mon;die Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL80;NIO81;16;Adults;Mon;Max und Tim ;1;EN | EN;Name;NP;Main;Reintroduction
+LL81;NIO82;16;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL82;NIO83;16;Adults;Mon;die Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL83;NIO84;16;Adults;Mon;[mit] Bello ;1;EN;Name;NP;Main;Reintroduction
+LL84;NIO85;21;Adults;Mon;die beiden Freunde und der Hund Bello;1;defNP | defNP+EN;defNP;NP;Main;Maintenance
+LL85;NIO86;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL86;NIO87;21;Adults;Mon;Die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL87;NIO88;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL88;NIO90;21;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL89;NIO91;21;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL90;NIO92;21;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL91;NIO93;21;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL92;NIO94;21;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL93;NIO95;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL94;NIO96;21;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL95;NIO97;21;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL96;NIO98;21;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL97;NIO99;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL98;NIO100;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL99;NIO101;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL100;NIO102;21;Adults;Mon;Er;1;PP;Pron;Pron;Secondary;Reintroduction
+LL101;NIO103;21;Adults;Mon;die beiden Freunde u;1;defNP;defNP;NP;Main;Reintroduction
+LL102;NIO104;21;Adults;Mon;die zwei Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL103;NIO105;21;Adults;Mon;[auf] die beiden Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL104;NIO106;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL105;NIO107;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL106;NIO108;21;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL107;NIO109;21;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL108;NIO110;21;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL109;NIO111;21;Adults;Mon;Die zwei Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL110;NIO112;21;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL111;NIO113;21;Adults;Mon;Die zwei Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL112;NIO114;21;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL113;;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL114;NIO115;21;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL115;NIO116;21;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL116;NIO117;21;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL117;NIO118;21;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL118;NIO119;21;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL119;NIO120;31;Adults;Mon;Tim, Max und ihr Vierbeiner Bello;1;EN | EN | defNP+EN;Name;NP;Main;Maintenance
+LL120;NIO121;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL121;NIO122;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL122;NIO123;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL123;NIO124;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL124;NIO125;31;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL125;NIO126;31;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL126;NIO127;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL127;NIO128;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL128;NIO129;31;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL129;NIO130;31;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL130;NIO131;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL131;NIO132;31;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL132;NIO133;31;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL133;NIO134;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL134;NIO135;31;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL135;NIO136;31;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL136;NIO137;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL137;NIO138;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL138;NIO139;31;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL139;NIO140;31;Adults;Mon;[zu] Bello;1;EN;Name;NP;Main;Maintenance
+LL140;NIO141;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL141;NIO142;31;Adults;Mon;die Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL142;NIO143;31;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL143;NIO144;31;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL144;NIO145;31;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL145;NIO146;31;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL146;NIO147;31;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL147;NIO148;31;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL148;NIO149;31;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL149;NIO150;31;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL150;NIO151;31;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL151;NIO152;31;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL152;NIO153;31;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL153;NIO154;31;Adults;Mon;Die beiden Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL154;NIO155;31;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL155;NIO156;31;Adults;Mon;Der grüne Shrek;1;defNP;defNP;NP;Secondary;Reintroduction
+LL156;NIO157;31;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL157;NIO158;31;Adults;Mon;ihm;1;PP;Pron;Pron;Secondary;Reintroduction
+LL158;NIO159;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL159;NIO160;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL160;NIO161;38;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL161;NIO162;38;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL162;NIO163;38;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL163;GL2;38;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL164;GL3;38;Adults;Mon;Max ;1;EN;Name;NP;Main;Reintroduction
+LL165;NIO164;38;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL166;NIO165;38;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL167;NIO166;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL168;NIO167;38;Adults;Mon;Max und Tim ;1;EN | EN ;Name;NP;Main;Maintenance
+LL169;NIO168;38;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL170;NIO169;38;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL171;NIO170;38;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL172;NIO171;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL173;NIO172;38;Adults;Mon;diese Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL174;NIO173;38;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL175;NIO174;38;Adults;Mon;Max und Tim;1;EN | EN ;Name;NP;Main;Reintroduction
+LL176;NIO175;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL177;NIO176;38;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL178;NIO177;38;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL179;NIO178;38;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL180;NIO179;38;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL181;NIO180;38;Adults;Mon;die Unbekannten Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL182;GL4;38;Adults;Mon;Max und Tim ;1;EN | EN;Name;NP;Main;Reintroduction
+LL183;NIO181;38;Adults;Mon;die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL184;NIO182;38;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL185;NIO183;41;Adults;Mon;Die beiden Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL186;NIO184;41;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Maintenance
+LL187;NIO185;41;Adults;Mon;diese  ;1;DP;Pron;Pron;Secondary;Maintenance
+LL188;NIO186;41;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL189;NIO187;41;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL190;NIO188;41;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL191;NIO189;41;Adults;Mon;die Fremdlinge ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL192;NIO190;41;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL193;NIO191;41;Adults;Mon;der Hund Bello;1;defNP+EN;Name;NP;Main;Reintroduction
+LL194;NIO192;41;Adults;Mon;den Troll und den Elfen;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL195;NIO193;41;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL196;NIO194;41;Adults;Mon;diese;1;DP;Pron;Pron;Secondary;Maintenance
+LL197;NIO195;41;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL198;NIO196;41;Adults;Mon;[zu] den beiden Jungen;1;defNP;defNP;NP;Main;Reintroduction
+LL199;NIO197;41;Adults;Mon;Diese;1;DP;Pron;Pron;Main;Maintenance
+LL200;NIO198;41;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL201;NIO199;41;Adults;Mon;Der Elf und der Troll;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL202;NIO200;44;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL203;NIO201;44;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL204;NIO202;44;Adults;Mon;Tims Hund Bello;1;defNP+EN;Name;NP;Main;Reintroduction
+LL205;NIO203;44;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL206;NIO204;44;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL207;NIO205;44;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL208;NIO206;44;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL209;NIO207;44;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL210;NIO208;44;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL211;NIO209;44;Adults;Mon;[auf] sie;1;PP;Pron;Pron;Main;Maintenance
+LL212;NIO210;44;Adults;Mon;Er;1;PP;Pron;Pron;Secondary;Maintenance
+LL213;NIO211;44;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL214;NIO212;44;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL215;NIO213;44;Adults;Mon;die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL216;NIO214;44;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL217;NIO215;44;Adults;Mon;[wie] Bello;1;EN;Name;NP;Main;Reintroduction
+LL218;NIO216;44;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL219;NIO217;44;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL220;NIO218;44;Adults;Mon;sein Herrchen;1;defNP;defNP;NP;Main;Reintroduction
+LL221;NIO219;44;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL222;NIO220;44;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL223;NIO221;44;Adults;Mon;die zwei fremden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL224;NIO222;44;Adults;Mon;Tim und Max ;1;EN | EN ;Name;NP;Main;Reintroduction
+LL225;NIO223;44;Adults;Mon;[für] Bello;1;EN;Name;NP;Main;Maintenance
+LL226;NIO224;47;Adults;Mon;Die beiden Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL227;NIO225;47;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL228;NIO226;47;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL229;NIO227;47;Adults;Mon;[von] Hund Bello;1;defNP+EN;Name;NP;Main;Reintroduction
+LL230;NIO228;47;Adults;Mon;der;1;RP;Pron;Pron;Main;Maintenance
+LL231;NIO229;47;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL232;NIO230;47;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL233;NIO231;47;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL234;NIO232;47;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL235;NIO233;47;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL236;NIO234;47;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL237;NIO235;47;Adults;Mon;May;1;EN;Name;NP;Main;Reintroduction
+LL238;NIO236;47;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL239;NIO237;47;Adults;Mon;Die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL240;NIO238;47;Adults;Mon;[hinter] Bello;1;EN;Name;NP;Main;Reintroduction
+LL241;NIO239;47;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL242;NIO240;47;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL243;NIO241;47;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL244;NIO242;47;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL245;NIO243;47;Adults;Mon;Olaf;1;EN;Name;NP;Secondary;Reintroduction
+LL246;NIO244;47;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL247;NIO245;47;Adults;Mon;er;1;PP;Pron;Pron;Secondary;Maintenance
+LL248;NIO246;47;Adults;Mon;Sein Freund Gerd;1;defNP+EN;Name;NP;Secondary;Reintroduction
+LL249;NIO247;47;Adults;Mon;Die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL250;NIO248;47;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL251;NIO249;47;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL252;NIO250;47;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL253;NIO251;47;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL254;NIO252;47;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL255;;47;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL256;NIO253;49;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL257;NIO254;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL258;NIO255;49;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL259;NIO256;49;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL260;NIO257;49;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL261;NIO258;49;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL262;NIO259;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL263;NIO260;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL264;NIO261;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL265;NIO262;49;Adults;Mon;[vor] Tim und seinen Begleitern;1;EN | defNP;Name;NP;Main;Reintroduction
+LL266;GL5;49;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL267;NIO263;49;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL268;NIO264;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL269;NIO265;49;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL270;NIO266;49;Adults;Mon;Den beiden Freunden;1;defNP;defNP;NP;Main;Reintroduction
+LL271;NIO267;49;Adults;Mon;dem Hund;1;defNP;defNP;NP;Main;Reintroduction
+LL272;NIO268;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL273;NIO269;49;Adults;Mon;ihn ;1;PP;Pron;Pron;Main;Maintenance
+LL274;NIO270;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL275;NIO271;49;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL276;NIO272;49;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL277;GL6;49;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL278;NIO273;49;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL279;NIO274;49;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL280;NIO275;49;Adults;Mon;Er;1;PP;Pron;Pron;Main;Reintroduction
+LL281;NIO276;49;Adults;Mon;Max und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL282;NIO277;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL283;NIO278;49;Adults;Mon;[Vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL284;NIO280;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL285;NIO281;49;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL286;NIO283;49;Adults;Mon;[neben] ihm;1;PP;Pron;Pron;Secondary;Maintenance
+LL287;NIO285;49;Adults;Mon;Max und Tim ;1;EN | EN ;Name;NP;Main;Reintroduction
+LL288;NIO286;49;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL289;NIO287;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL290;NIO288;49;Adults;Mon;Die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL291;NIO289;49;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL292;NIO290;49;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL293;NIO291;49;Adults;Mon;ihre Besucher;1;defNP;defNP;NP;Main;Maintenance
+LL294;NIO292;49;Adults;Mon;die Jungs und der Hund;1;defNP | defNP;defNP;NP;Main;Maintenance
+LL295;NIO293;49;Adults;Mon;der grüne Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL296;NIO294;49;Adults;Mon;Das Männchen mit den Fledermausohren ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL297;NIO295;B8;Adults;Mon;die beiden Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL298;NIO296;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL299;NIO297;B8;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL300;NIO298;B8;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL301;NIO299;B8;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL302;NIO300;B8;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL303;NIO301;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL304;NIO302;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL305;NIO303;B8;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL306;NIO304;B8;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL307;NIO305;B8;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL308;NIO306;B8;Adults;Mon;Max, Tim und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL309;NIO307;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL310;NIO308;B8;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL311;NIO310;B8;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL312;NIO311;B8;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL313;NIO312;B8;Adults;Mon;das kleine Wesen;1;defNP;defNP;NP;Secondary;Maintenance
+LL314;NIO313;B8;Adults;Mon;den dreien;1;defNP;defNP;NP;Main;Reintroduction
+LL315;NIO314;B8;Adults;Mon;[Hinter] dem Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL316;NIO316;B8;Adults;Mon;Die grüne Figur;1;defNP;defNP;NP;Secondary;Maintenance
+LL317;NIO317;B8;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL318;NIO318;B8;Adults;Mon;Es;1;PP;Pron;Pron;Secondary;Maintenance
+LL319;NIO319;B8;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL320;NIO320;B8;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL321;NIO321;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL322;NIO322;B8;Adults;Mon;Beide;1;IP;Pron;Pron;Main;Maintenance
+LL323;NIO323;B8;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL324;NIO324;B8;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL325;NIO325;B8;Adults;Mon;der;1;DP;Pron;Pron;Main;Maintenance
+LL326;NIO326;B8;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL327;NIO327;B8;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL328;NIO328;B8;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL329;NIO329;B8;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL330;NIO330;B17;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL331;NIO331;B17;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL332;NIO332;B17;Adults;Mon;[mit] seinem Freund Max;1;defNP;defNP;NP;Main;Reintroduction
+LL333;NIO333;B17;Adults;Mon;Tim und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL334;NIO334;B17;Adults;Mon;[auf] Max;1;EN;Name;NP;Main;Maintenance
+LL335;NIO335;B17;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL336;NIO336;B17;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL337;NIO337;B17;Adults;Mon;der;1;RP;Pron;Pron;Main;Maintenance
+LL338;NIO338;B17;Adults;Mon;[neben] ihm;1;PP;Pron;Pron;Main;Maintenance
+LL339;NIO339;B17;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL340;NIO340;B17;Adults;Mon;Max;1;EN;Name;NP;Main;Maintenance
+LL341;NIO341;B17;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL342;NIO342;B17;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL343;NIO343;B17;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL344;NIO344;B17;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL345;NIO345;B17;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL346;NIO346;B17;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL347;NIO347;B17;Adults;Mon;Tim und Max;1;EN | EN ;Name;NP;Main;Reintroduction
+LL348;NIO348;B17;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL349;NIO349;B17;Adults;Mon;Die beiden Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL350;NIO350;B17;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL351;NIO351;B17;Adults;Mon;Max und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL352;NIO352;B17;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL353;NIO353;B17;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL354;NIO354;B17;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL355;NIO355;B17;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL356;NIO357;B17;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL357;NIO359;B17;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL358;NIO360;B17;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL359;NIO361;B17;Adults;Mon;Bello, Tim und Max;1;EN | EN | EN ;Name;NP;Main;Reintroduction
+LL360;NIO362;B17;Adults;Mon;die beiden Geschöpfe;1;defNP;defNP;NP;Secondary;Reintroduction
+LL361;NIO363;B17;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL362;NIO364;B17;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL363;NIO365;B17;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL364;NIO366;B17;Adults;Mon;Die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL365;NIO367;B17;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL366;NIO368;B17;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL367;NIO370;B22;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL368;NIO371;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL369;NIO372;B22;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL370;NIO373;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL371;NIO374;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL372;NIO375;B22;Adults;Mon;Die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL373;NIO376;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL374;NIO377;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL375;NIO378;B22;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL376;NIO379;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL377;NIO380;B22;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL378;NIO381;B22;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL379;NIO382;B22;Adults;Mon;der;1;RP;Pron;Pron;Main;Maintenance
+LL380;NIO383;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL381;NIO384;B22;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL382;NIO385;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL383;NIO386;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL384;NIO387;B22;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL385;NIO388;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL386;NIO389;B22;Adults;Mon;Die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL387;NIO390;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL388;NIO391;B22;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL389;NIO392;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL390;NIO393;B22;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL391;NIO394;B22;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL392;NIO395;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL393;GL7;B22;Adults;Mon;[hinter] ihnen;1;Pron;Pron;Pron;Main;Reintroduction
+LL394;NIO397;B22;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN ;Name;NP;Main;Maintenance
+LL395;NIO398;B22;Adults;Mon;der Oger;1;defNP;defNP;NP;Secondary;Reintroduction
+LL396;NIO399;B22;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL397;NIO400;B22;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL398;NIO401;B22;Adults;Mon;der Ober;1;defNP;defNP;NP;Secondary;Reintroduction
+LL399;NIO402;B22;Adults;Mon;er;1;PP;Pron;Pron;Main;Reintroduction
+LL400;NIO403;B22;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL401;NIO404;B22;Adults;Mon;Max;1;EN;Name;NP;Main;Maintenance
+LL402;NIO405;B23;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL403;NIO406;B23;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL404;NIO407;B23;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL405;NIO408;B23;Adults;Mon;Die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL406;NIO409;B23;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL407;NIO410;B23;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL408;NIO411;B23;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL409;NIO412;B23;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL410;GL8;B23;Adults;Mon;Die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL411;NIO413;B23;Adults;Mon;[neben] ihm;1;PP;Pron;Pron;Secondary;Maintenance
+LL412;NIO414;B23;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL413;GL9;B23;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL414;GL10;B23;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL415;NIO415;B27;Adults;Mon ;Tim;1;EN;Name;NP;Main;Maintenance
+LL416;NIO416;B27;Adults;Mon ;Ø;1;NSA;null;Pron;Main;Maintenance
+LL417;NIO417;B27;Adults;Mon;Die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL418;NIO418;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL419;NIO419;B27;Adults;Mon;Tim und Max ;1;EN | EN;Name;NP;Main;Reintroduction
+LL420;NIO420;B27;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Maintenance
+LL421;NIO421;B27;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL422;NIO422;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL423;NIO423;B27;Adults;Mon;Die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL424;NIO424;B27;Adults;Mon;die  beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL425;NIO425;B27;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL426;NIO426;B27;Adults;Mon;seinen Freund Tim ;1;defNP;defNP;NP;Main;Reintroduction
+LL427;NIO427;B27;Adults;Mon;Die beiden;1;defNP;defNP;NP;Main;Maintenance
+LL428;NIO428;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL429;NIO429;B27;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL430;GL11;B27;Adults;Mon;seinem Hund;1;defNP;defNP;NP;Main;Reintroduction
+LL431;NIO430;B27;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL432;NIO431;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL433;NIO432;B27;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL434;NIO433;B27;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL435;NIO434;B27;Adults;Mon;Der eine;1;defNP;defNP;NP;Secondary;Reintroduction
+LL436;NIO435;B27;Adults;Mon;er;1;PP;Pron;Pron;Secondary;Maintenance
+LL437;NIO436;B27;Adults;Mon;Beide;1;IP;Pron;Pron;Secondary;Reintroduction
+LL438;NIO437;B27;Adults;Mon;Max und Tim ;1;EN | EN;Name;NP;Main;Reintroduction
+LL439;NIO438;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL440;NIO439;B27;Adults;Mon;Bello  ;1;EN;Name;NP;Main;Reintroduction
+LL441;NIO440;B27;Adults;Mon;[hinter]Tim;1;EN;Name;NP;Main;Reintroduction
+LL442;NIO441;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL443;NIO442;B27;Adults;Mon;[auf] die beiden unbekannten Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL444;NIO443;B27;Adults;Mon;Die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL445;NIO444;B27;Adults;Mon;Tim ;1;EN;Name;NP;Main;Reintroduction
+LL446;NIO445;B27;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL447;NIO446;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL448;NIO447;B27;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL449;NIO448;B27;Adults;Mon;Die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL450;NIO449;B27;Adults;Mon;Der Grüne der beiden Unbekannten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL451;NIO450;B27;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Reintroduction
+LL452;NIO451;B27;Adults;Mon;[von] seinem Weggefährten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL453;GL12;B27;Adults;Mon;Hugo;1;EN;Name;NP;Secondary;Reintroduction
+LL454;GL13;B27;Adults;Mon;Die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL455;NIO452;B27;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL456;NIO453;B30;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL457;NIO454;B30;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL458;NIO455;B30;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL459;NIO457;B30;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL460;NIO458;B30;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL461;NIO459;B30;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL462;NIO460;B30;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL463;NIO461;B30;Adults;Mon;den beiden Ungeheuern;1;defNP;defNP;NP;Secondary;Reintroduction
+LL464;NIO462;B30;Adults;Mon;Diese;1;DP;Pron;Pron;Secondary;Maintenance
+LL465;NIO463;B30;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL466;NIO464;B30;Adults;Mon;Tim und Max ;1;EN | EN;Name;NP;Main;Reintroduction
+LL467;NIO465;B30;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL468;NIO466;B30;Adults;Mon;[hinter] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL469;NIO467;B30;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL470;NIO468;B30;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL471;NIO469;B30;Adults;Mon;die Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL472;NIO470;B30;Adults;Mon;der Gnom;1;defNP;defNP;NP;Secondary;Reintroduction
+LL473;NIO471;B30;Adults;Mon;Das Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL474;NIO472;B30;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL475;GL14;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL476;GL15;B30;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL477;NIO473;B30;Adults;Mon;der Gnom;1;defNP;defNP;NP;Secondary;Reintroduction
+LL478;GL16;B30;Adults;Mon;Tim ;1;EN;Name;NP;Main;Reintroduction
+LL479;NIO474;B30;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL480;GL17;B30;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL481;NIO475;B30;Adults;Mon;der Org;1;defNP;defNP;NP;Secondary;Reintroduction
+LL482;GL18;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL483;NIO476;B30;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL484;NIO477;B30;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL485;GL19;B30;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL486;NIO478;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL487;NIO479;B30;Adults;Mon;[von] ihm;1;PP;Pron;Pron;Main;Maintenance
+LL488;NIO480;B30;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL489;NIO481;B30;Adults;Mon;der Gnom;1;defNP;defNP;NP;Secondary;Reintroduction
+LL490;NIO482;B30;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL491;NIO483;B30;Adults;Mon;beide Ungeheuer;1;defNP;defNP;NP;Secondary;Reintroduction
+LL492;GL20;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL493;GL21;B30;Adults;Mon;der Gnom;1;defNP;defNP;NP;Secondary;Reintroduction
+LL494;GL22;B30;Adults;Mon;Tim ;1;EN;Name;NP;Main;Reintroduction
+LL495;NIO484;B30;Adults;Mon;die Ungeheuer;1;defNP;defNP;NP;Secondary;Reintroduction
+LL496;NIO485;B30;Adults;Mon;sie beide;1;PP | IP;Pron;Pron;Secondary;Maintenance
+LL497;NIO486;B30;Adults;Mon;die Ungeheuer;1;defNP;defNP;NP;Secondary;Reintroduction
+LL498;NIO487;B30;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL499;NIO488;B30;Adults;Mon;den Kindern;1;defNP;defNP;NP;Main;Reintroduction
+LL500;NIO489;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL501;NIO490;B30;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL502;NIO491;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL503;NIO492;B30;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL504;GL23;B30;Adults;Mon;der Org;1;defNP;defNP;NP;Secondary;Reintroduction
+LL505;NIO493;B30;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL506;NIO494;B30;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL507;NIO495;B36;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Maintenance
+LL508;NIO496;B36;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL509;NIO497;B36;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Maintenance
+LL510;NIO498;B36;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL511;NIO499;B36;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL512;NIO500;B36;Adults;Mon;Max und [natürlich auch]Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL513;NIO501;B36;Adults;Mon;welcher;1;RP;Pron;Pron;Main;Maintenance
+LL514;NIO502;B36;Adults;Mon;den beiden ;1;defNP;defNP;NP;Main;Maintenance
+LL515;NIO503;B36;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL516;NIO504;B36;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL517;NIO505;B36;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL518;NIO506;B36;Adults;Mon;Die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL519;NIO507;B36;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL520;NIO508;B36;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL521;NIO509;B36;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL522;NIO510;B36;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL523;NIO511;B36;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL524;NIO512;B36;Adults;Mon;welcher;1;RP;Pron;Pron;Main;Maintenance
+LL525;NIO513;B36;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL526;NIO514;B36;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL527;NIO515;B36;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL528;NIO516;B36;Adults;Mon;die beiden gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL529;NIO517;B36;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL530;NIO518;B36;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL531;NIO519;B36;Adults;Mon;er ;1;PP;Pron;Pron;Main;Maintenance
+LL532;NIO520;B36;Adults;Mon;die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL533;NIO521;B36;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL534;NIO522;B36;Adults;Mon;Max und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL535;NIO523;B36;Adults;Mon;Der Troll und der Elf;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL536;NIO524;B36;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL537;NIO525;B36;Adults;Mon;ihnen;1;PP;Pron;Pron;Secondary;Maintenance
+LL538;NIO526;B36;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL539;NIO527;B36;Adults;Mon;den beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL540;NIO528;B36;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL541;NIO529;B36;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL542;NIO530;B36;Adults;Mon;ihnen;1;PP;Pron;Pron;Secondary;Reintroduction
+LL543;NIO531;B36;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL544;NIO532;B36;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL545;NIO533;B36;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL546;NIO534;B36;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Reintroduction
+LL547;NIO535;B36;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL548;NIO536;B42;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL549;NIO537;B42;Adults;Mon;mit Max und Bello  ;1;EN | EN;Name;NP;Main;Maintenance
+LL550;NIO538;B42;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL551;NIO539;B42;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL552;NIO540;B42;Adults;Mon;mit Max;1;EN;Name;NP;Main;Reintroduction
+LL553;NIO541;B42;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL554;NIO542;B42;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL555;NIO543;B42;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL556;NIO544;B42;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL557;NIO545;B42;Adults;Mon;den Beiden;1;defNP;defNP;NP;Main;Maintenance
+LL558;NIO546;B42;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL559;NIO547;B42;Adults;Mon;die beiden Kinder Tim und Max;1;defNP+EN+EN;Name;NP;Main;Reintroduction
+LL560;NIO548;B42;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL561;NIO549;B42;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL562;NIO550;B42;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL563;NIO551;B42;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL564;NIO552;B42;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL565;NIO553;B45;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL566;NIO554;B45;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL567;NIO555;B45;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL568;NIO556;B45;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL569;NIO557;B45;Adults;Mon;Die eine Gestalt;1;defNP;defNP;NP;Secondary;Reintroduction
+LL570;NIO558;B45;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL571;NIO559;B45;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL572;NIO560;B45;Adults;Mon;Die andere Gestalt;1;defNP;defNP;NP;Secondary;Reintroduction
+LL573;NIO561;B45;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL574;NIO562;B45;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL575;NIO563;B45;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL576;NIO564;B45;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL577;NIO565;B45;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL578;NIO566;B45;Adults;Mon;Bello;1;EN ;Name;NP;Main;Reintroduction
+LL579;NIO567;B45;Adults;Mon;die beiden seltsamen Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL580;NIO568;B45;Adults;Mon;die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Maintenance
+LL581;NIO569;B45;Adults;Mon;ihnen ;1;PP;Pron;Pron;Main;Reintroduction
+LL582;NIO570;B50;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL583;NIO571;B50;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL584;NIO572;B50;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL585;NIO573;B50;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL586;NIO574;B50;Adults;Mon;die Gestalten;1;defNP;defNP;NP;Secondary;Maintenance
+LL587;NIO575;B50;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL588;NIO576;B50;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL589;NIO577;B50;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL590;NIO578;B50;Adults;Mon;der;1;RP;Pron;Pron;Main;Maintenance
+LL591;NIO579;B50;Adults;Mon;den Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL592;NIO580;B50;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL593;NIO581;B50;Adults;Mon;Tim und Max ;1;EN | EN;Name;NP;Main;Reintroduction
+LL594;NIO582;B51;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL595;NIO583;B51;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL596;NIO584;B51;Adults;Mon;Die Drei;1;defNP;defNP;NP;Main;Maintenance
+LL597;NIO585;B51;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL598;NIO586;B51;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL599;NIO587;B51;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL600;NIO588;B51;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL601;NIO589;B51;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL602;NIO590;B51;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL603;NIO591;B51;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL604;NIO592;B51;Adults;Mon;[vor] sein Herrchen und seinen Freund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL605;NIO593;B51;Adults;Mon;der Troll und der Elf;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL606;NIO594;B51;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL607;NIO595;B51;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL608;NIO596;B51;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL609;NIO597;B51;Adults;Mon;die Beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL610;NIO598;B51;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL611;NIO599;B51;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Reintroduction
+LL612;NIO600;B51;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Maintenance
+LL613;NIO601;B51;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL614;NIO602;B51;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL615;NIO603;B51;Adults;Mon;der;1;RP;Pron;Pron;Main;Maintenance
+LL616;NIO604;B51;Adults;Mon;Tim und seine beiden Begleiter;1;EN | defNP;Name+defNP;NP;Main;Reintroduction
+LL617;NIO605;B51;Adults;Mon;seinem Enkel;1;defNP;defNP;NP;Main;Reintroduction
+LL618;NIO606;B51;Adults;Mon;ihn;1;PP;Pron;Pron;Main;Maintenance
+LL619;NIO607;B51;Adults;Mon;[auf] ihn;1;PP;Pron;Pron;Main;Maintenance
+LL620;NIO608;B51;Adults;Mon;[für] Tim;1;EN;Name;NP;Main;Maintenance
+LL621;NIO609;B51;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL622;NIO610;B53;Adults;Mon;Tim, Bello und Max;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL623;NIO611;B53;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL624;NIO612;B53;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL625;NIO613;B53;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL626;NIO614;B53;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL627;NIO615;B53;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL628;NIO616;B53;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL629;NIO617;B53;Adults;Mon;Die eine Gestalt;1;defNP;defNP;NP;Secondary;Reintroduction
+LL630;NIO618;B53;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL631;NIO619;B53;Adults;Mon;er;1;PP;Pron;Pron;Secondary;Maintenance
+LL632;NIO620;B53;Adults;Mon;Die zweite Gestalt;1;defNP;defNP;NP;Secondary;Reintroduction
+LL633;NIO621;B53;Adults;Mon;[nur etwas größer als] Tim und Max ;1;EN | EN;Name;NP;Main;Reintroduction
+LL634;NIO622;B53;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL635;NIO623;B53;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL636;NIO624;B53;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL637;NIO625;B53;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL638;NIO626;B53;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL639;NIO627;B53;Adults;Mon;seine Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL640;NIO628;B53;Adults;Mon;Die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL641;NIO629;B66;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL642;NIO630;B66;Adults;Mon;[mit] ihrem Hund Bello;1;defNP;defNP;NP;Main;Maintenance
+LL643;NIO631;B66;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL644;NIO632;B66;Adults;Mon;Tim und Max;1;EN | EN ;Name;NP;Main;Reintroduction
+LL645;NIO633;B66;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL646;NIO634;B66;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL647;NIO635;B66;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL648;NIO636;B66;Adults;Mon;den beiden;1;defNP;defNP;NP;Main;Maintenance
+LL649;NIO637;B66;Adults;Mon;[Vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL650;NIO638;B66;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL651;NIO639;B66;Adults;Mon;Die eine Kreatur;1;defNP;defNP;NP;Secondary;Reintroduction
+LL652;NIO640;B66;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL653;NIO641;B66;Adults;Mon;Die andere Kreatur;1;defNP;defNP;NP;Secondary;Reintroduction
+LL654;NIO642;B66;Adults;Mon;[auf] Tim und Max;1;EN | EN ;Name;NP;Main;Reintroduction
+LL655;NIO643;B66;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL656;NIO644;B66;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL657;NIO645;B66;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL658;NIO646;B66;Adults;Mon;den Monstern;1;defNP;defNP;NP;Secondary;Reintroduction
+LL659;NIO647;B66;Adults;Mon;Beide Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL660;NIO648;B66;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL661;NIO649;B66;Adults;Mon;den beiden ;1;defNP;defNP;NP;Main;Maintenance
+LL662;NIO650;B69;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL663;NIO651;B69;Adults;Mon;seine kleine Gruppe;1;defNP;defNP;NP;Main;Reintroduction
+LL664;NIO652;B69;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL665;NIO653;B69;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL666;NIO654;B69;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL667;NIO655;B69;Adults;Mon;Er;1;PP;Pron;Pron;Main;Reintroduction
+LL668;NIO656;B69;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL669;NIO657;B69;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL670;NIO658;B69;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL671;NIO659;B69;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL672;NIO660;B69;Adults;Mon;er;1;PP;Pron;Pron;Main;Reintroduction
+LL673;NIO661;B69;Adults;Mon;die drei Entdecker;1;defNP;defNP;NP;Main;Reintroduction
+LL674;NIO662;B69;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL675;NIO663;B69;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL676;NIO664;B69;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL677;NIO665;B69;Adults;Mon;Die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL678;NIO666;B69;Adults;Mon;[vor] ihnen;1;PP;Pron;Pron;Secondary;Maintenance
+LL679;NIO667;B69;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL680;NIO668;B69;Adults;Mon;die  beiden  ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL681;NIO669;B69;Adults;Mon;der Kobold;1;defNP;defNP;NP;Secondary;Reintroduction
+LL682;NIO670;B69;Adults;Mon;Er;1;PP;Pron;Pron;Secondary;Maintenance
+LL683;NIO671;B69;Adults;Mon;den Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL684;NIO672;B69;Adults;Mon;die beiden ;1;defNP;defNP;NP;Secondary;Maintenance
+LL685;NIO673;B69;Adults;Mon;Max und Tim;1;EN | EN ;Name;NP;Main;Reintroduction
+LL686;NIO674;B69;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL687;NIO675;B69;Adults;Mon;die beiden kuriosen Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL688;NIO676;B69;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL689;NIO677;B69;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL690;NIO678;B69;Adults;Mon;die beiden Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL691;NIO679;B69;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL692;NIO680;B69;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL693;NIO681;B69;Adults;Mon;den beiden Jungen;1;defNP;defNP;NP;Main;Reintroduction
+LL694;NIO682;B69;Adults;Mon;Der Kobold und der Troll;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL695;NIO683;B69;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL696;NIO684;B71;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL697;NIO685;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL698;NIO686;B71;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL699;NIO687;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL700;NIO688;B71;Adults;Mon;[mit] Bello ;1;EN;Name;NP;Main;Reintroduction
+LL701;NIO689;B71;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL702;NIO690;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL703;NIO691;B71;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL704;NIO692;B71;Adults;Mon;den anderen ;1;defNP;defNP;NP;Main;Reintroduction
+LL705;NIO693;B71;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL706;NIO694;B71;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL707;NIO695;B71;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL708;NIO696;B71;Adults;Mon;die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL709;NIO697;B71;Adults;Mon;Die beiden ;1;defNP;defNP;NP;Main;Reintroduction
+LL710;NIO698;B71;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL711;NIO699;B71;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL712;NIO700;B71;Adults;Mon;den beiden Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL713;NIO701;B71;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL714;NIO702;B71;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL715;NIO703;B71;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL716;NIO704;B71;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL717;NIO705;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL718;NIO706;B71;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL719;NIO707;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL720;NIO708;B71;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL721;NIO710;B71;Adults;Mon;Das große Monster;1;defNP;defNP;NP;Secondary;Reintroduction
+LL722;NIO711;B71;Adults;Mon;Der kleine Kobold;1;defNP;defNP;NP;Secondary;Reintroduction
+LL723;NIO712;B71;Adults;Mon;[auf] Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL724;NIO713;B71;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL725;NIO714;B71;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL726;NIO715;B71;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL727;NIO716;B71;Adults;Mon;Die zwei unbekannten Gestalten ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL728;NIO717;B71;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL729;NIO718;B71;Adults;Mon;die Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL730;NIO719;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL731;NIO720;B74;Adults;Mon;die beiden Freunde und ihr Hund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL732;NIO721;B74;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL733;NIO722;B74;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL734;NIO723;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL735;NIO724;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL736;NIO725;B74;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL737;NIO726;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL738;NIO727;B74;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL739;NIO728;B74;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL740;NIO729;B74;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL741;GL24;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL742;NIO730;B74;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL743;NIO731;B74;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL744;NIO732;B74;Adults;Mon;Die drei;1;defNP;defNP;NP;Main;Maintenance
+LL745;NIO733;B74;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL746;NIO734;B74;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL747;NIO735;B74;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL748;NIO736;B74;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL749;NIO737;B74;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL750;NIO738;B74;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL751;NIO739;B74;Adults;Mon;seinen Hund;1;defNP;defNP;NP;Main;Reintroduction
+LL752;NIO740;B74;Adults;Mon;Es;1;PP;Pron;Pron;Secondary;Maintenance
+LL753;NIO741;B74;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL754;NIO742;B74;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL755;NIO743;B74;Adults;Mon;[Neben] der großen, grünen Gestalt;1;defNP;defNP;NP;Secondary;Maintenance
+LL756;NIO744;B74;Adults;Mon;Es;1;PP;Pron;Pron;Secondary;Maintenance
+LL757;NIO745;B74;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL758;NIO746;B74;Adults;Mon;Das Wesen;1;defNP;defNP;NP;Secondary;Maintenance
+LL759;NIO747;B74;Adults;Mon;[die Ankunft] der drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL760;NIO748;B74;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL761;NIO749;B74;Adults;Mon;[auf] sie;1;PP;Pron;Pron;Main;Maintenance
+LL762;NIO750;B74;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL763;NIO751;B74;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL764;NIO752;B74;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL765;NIO753;B74;Adults;Mon;Max und Tim ;1;EN | EN;Name;NP;Main;Maintenance
+LL766;NIO754;B74;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL767;NIO755;B74;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL768;NIO756;B74;Adults;Mon;[so schnell] sie [konnten] ;1;PP;Pron;Pron;Main;Maintenance
+LL769;NIO757;B74;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL770;NIO758;B74;Adults;Mon;[Zu] diesen gruseligen gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL771;NIO759;B77;Adults;Mon;Tim und Bello;1;EN | EN;Name;NP;Main;Maintenance
+LL772;NIO760;B77;Adults;Mon;Tim, Max und ihr Hund Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL773;NIO761;B77;Adults;Mon;Die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL774;NIO762;B77;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL775;NIO764;B77;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL776;NIO766;B77;Adults;Mon;Er;1;PP;Pron;Pron;Secondary;Maintenance
+LL777;NIO767;B77;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL778;NIO768;B77;Adults;Mon;Beide  ;1;IP;Pron;Pron;Secondary;Reintroduction
+LL779;NIO769;B77;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL780;NIO770;B77;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL781;NIO771;B77;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL782;NIO772;B77;Adults;Mon;Bello;1;EN ;Name;NP;Main;Reintroduction
+LL783;NIO773;B77;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Maintenance
+LL784;NIO774;B77;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL785;NIO775;B77;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL786;NIO776;B77;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL787;NIO777;B77;Adults;Mon;Der kleine Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL788;NIO778;B77;Adults;Mon;die große grüne Kreatur;1;defNP;defNP;NP;Secondary;Reintroduction
+LL789;NIO779;B77;Adults;Mon;Er;1;PP;Pron;Pron;Secondary;Maintenance
+LL790;NIO780;B77;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL791;NIO781;B77;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL792;NIO782;B79;Adults;Mon;die  beiden Jungen und der Hund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL793;NIO783;B79;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL794;NIO784;B79;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Maintenance
+LL795;NIO785;B79;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL796;NIO786;B79;Adults;Mon;den beiden;1;defNP;defNP;NP;Main;Maintenance
+LL797;NIO787;B79;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL798;NIO788;B79;Adults;Mon;sie ;1;PP;Pron;Pron;Main;Maintenance
+LL799;NIO789;B79;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL800;NIO791;B79;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL801;NIO793;B79;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL802;NIO794;B79;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL803;NIO795;B79;Adults;Mon;[vor] den beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL804;NIO796;B79;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL805;NIO797;B79;Adults;Mon;[so schnell] sie [können] ;1;PP;Pron;Pron;Main;Maintenance
+LL806;NIO798;B79;Adults;Mon;sich;1;RxP;Pron;Pron;Main;Maintenance
+LL807;NIO799;B79;Adults;Mon;die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL808;NIO800;B81;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL809;NIO801;B81;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL810;NIO802;B81;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL811;NIO803;B81;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL812;NIO804;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL813;NIO805;B81;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL814;NIO806;B81;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL815;NIO807;B81;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL816;NIO809;B81;Adults;Mon;der;1;RP;Pron;Pron;Secondary;Maintenance
+LL817;NIO810;B81;Adults;Mon;[Neben] ihm;1;PP;Pron;Pron;Secondary;Maintenance
+LL818;NIO812;B81;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL819;NIO813;B81;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL820;NIO814;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL821;NIO815;B81;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL822;NIO816;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL823;NIO817;B81;Adults;Mon;Sein bester Freund Max;1;defNP;defNP;NP;Main;Reintroduction
+LL824;NIO818;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL825;NIO819;B81;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL826;NIO820;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL827;NIO821;B81;Adults;Mon;Die beiden ;1;defNP;defNP;NP;Main;Reintroduction
+LL828;NIO822;B81;Adults;Mon;Bello der Hund;1;EN+defNP;Name;NP;Main;Reintroduction
+LL829;NIO823;B81;Adults;Mon;die beiden Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL830;NIO824;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL831;NIO825;B81;Adults;Mon;sein Herrchen;1;defNP;defNP;NP;Main;Reintroduction
+LL832;NIO826;B81;Adults;Mon;er;1;PP;Pron;Pron;Main;Reintroduction
+LL833;NIO827;B81;Adults;Mon;[mit] den Giganten ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL834;NIO828;B81;Adults;Mon;Diese;1;DP;Pron;Pron;Secondary;Maintenance
+LL835;NIO829;B81;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL836;NIO830;B81;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL837;NIO832;B81;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL838;NIO833;B81;Adults;Mon;der kleine Zwerg;1;defNP;defNP;NP;Secondary;Reintroduction
+LL839;NIO834;B81;Adults;Mon;[zu] Tim  ;1;EN;Name;NP;Main;Reintroduction
+LL840;GL25;B81;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL841;NIO835;B81;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL842;NIO836;B81;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL843;NIO837;B81;Adults;Mon;ihm;1;PP;Pron;Pron;Main;Maintenance
+LL844;NIO838;B81;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL845;NIO839;B81;Adults;Mon;ihnen;1;PP;Pron;Pron;Secondary;Maintenance
+LL846;NIO840;B81;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL847;NIO841;B87;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL848;NIO842;B87;Adults;Mon;Letzterer;1;NP;defNP;NP;Secondary;Reintroduction
+LL849;NIO843;B87;Adults;Mon;der Andere;1;defNP;defNP;NP;Secondary;Reintroduction
+LL850;NIO844;B87;Adults;Mon;die Kinder und den Hund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL851;NIO845;B87;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL852;NIO846;B100;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL853;NIO847;B100;Adults;Mon;sein Freund Max;1;defNP+EN;Name;NP;Main;Reintroduction
+LL854;NIO848;B100;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL855;NIO849;B100;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Maintenance
+LL856;NIO850;B100;Adults;Mon;welches;1;RP;Pron;Pron;Secondary;Maintenance
+LL857;NIO851;B100;Adults;Mon;Max, Tim und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL858;NIO852;B100;Adults;Mon;den beiden mysteriösen Gestallten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL859;NIO853;B100;Adults;Mon;Max;1;EN;Name;NP;Main;Maintenance
+LL860;NIO854;B100;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL861;NIO855;B100;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL862;NIO856;B100;Adults;Mon;Der Hund Bello;1;defNP+EN;Name;NP;Main;Reintroduction
+LL863;NIO857;B100;Adults;Mon;Der Kobold und sein großer grüner Freund;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL864;NIO858;B100;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL865;NIO859;B100;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL866;NIO861;B105;Adults;Mon;Die beiden Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL867;NIO862;B105;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL868;NIO863;B105;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL869;NIO864;B105;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL870;NIO865;B105;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL871;NIO866;B105;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL872;NIO867;B105;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL873;NIO868;B105;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL874;NIO869;B105;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL875;NIO870;B105;Adults;Mon;die beiden ;1;defNP;defNP;NP;Main;Maintenance
+LL876;NIO871;B105;Adults;Mon;Beide;1;IP;Pron;Pron;Secondary;Maintenance
+LL877;NIO873;B105;Adults;Mon;Der eine;1;defNP;defNP;NP;Secondary;Reintroduction
+LL878;NIO874;B105;Adults;Mon;der andere;1;defNP;defNP;NP;Secondary;Reintroduction
+LL879;NIO875;B105;Adults;Mon;die beiden ;1;defNP;defNP;NP;Main;Reintroduction
+LL880;NIO876;B105;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL881;NIO877;B105;Adults;Mon;beide Jungs;1;defNP;defNP;NP;Main;Maintenance
+LL882;NIO878;B105;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL883;NIO879;B105;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL884;NIO880;B108;Adults;Mon;Die drei  ;1;defNP;defNP;NP;Main;Maintenance
+LL885;NIO881;B108;Adults;Mon;Bello und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL886;NIO882;B108;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL887;NIO883;B108;Adults;Mon;Tim und seine Gefährten ;1;EN | defNP;Name+defNP;NP;Main;Reintroduction
+LL888;NIO884;B108;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL889;NIO885;B108;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL890;NIO886;B108;Adults;Mon;dieser;1;DP;Pron;Pron;Secondary;Reintroduction
+LL891;NIO887;B108;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL892;NIO888;B108;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL893;NIO889;B108;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL894;NIO890;B108;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL895;NIO891;B108;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL896;NIO892;B108;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL897;NIO893;B108;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL898;NIO894;B115;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL899;NIO895;B115;Adults;Mon;[mit] Max und Bello;1;EN | EN ;Name;NP;Main;Maintenance
+LL900;NIO896;B115;Adults;Mon;Die drei;1;defNP;defNP;NP;Main;Maintenance
+LL901;NIO897;B115;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL902;NIO898;B115;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL903;NIO899;B115;Adults;Mon;Einer;1;IP;Pron;Pron;Secondary;Reintroduction
+LL904;NIO900;B115;Adults;Mon;die drei Schatzsucher;1;defNP;defNP;NP;Main;Reintroduction
+LL905;NIO901;B115;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL906;NIO903;B115;Adults;Mon;[auf] sie;1;PP;Pron;Pron;Main;Maintenance
+LL907;NIO904;B120;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL908;NIO905;B120;Adults;Mon;Beide;1;IP;Pron;Pron;Main;Maintenance
+LL909;NIO906;B120;Adults;Mon;Bello ;1;EN;Name;NP;Main;Reintroduction
+LL910;NIO907;B120;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL911;NIO908;B120;Adults;Mon;Die beiden Schlossbewohner;1;defNP;defNP;NP;Secondary;Reintroduction
+LL912;NIO910;B120;Adults;Mon;Bilbo  ;1;EN;Name;NP;Secondary;Reintroduction
+LL913;NIO911;B120;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL914;NIO912;B120;Adults;Mon;Balbi;1;EN;Name;NP;Secondary;Reintroduction
+LL915;NIO913;B120;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL916;NIO914;B120;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL917;NIO915;B120;Adults;Mon;Balbi;1;EN;Name;NP;Secondary;Reintroduction
+LL918;NIO916;B120;Adults;Mon;[hinter] Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL919;NIO917;B120;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL920;NIO918;B120;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL921;NIO919;B120;Adults;Mon;Balbi;1;EN;Name;NP;Secondary;Reintroduction
+LL922;NIO920;B120;Adults;Mon;[Angst vor] Bello;1;EN;Name;NP;Main;Reintroduction
+LL923;NIO921;B120;Adults;Mon;Ø;1;NSA;null;Pron;Main;Reintroduction
+LL924;NIO922;B120;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL925;NIO923;B120;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL926;NIO924;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL927;NIO925;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL928;GL26;B120;Adults;Mon;[zu] Bello;1;EN;Name;NP;Main;Reintroduction
+LL929;NIO926;B120;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL930;NIO927;B120;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL931;NIO928;B120;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL932;NIO929;B120;Adults;Mon;Balbi;1;EN;Name;NP;Main;Reintroduction
+LL933;NIO930;B120;Adults;Mon;[hinter] Bilbo;1;EN;Name;NP;Secondary;Maintenance
+LL934;NIO931;B120;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Reintroduction
+LL935;NIO932;B120;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL936;NIO933;B120;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL937;NIO934;B120;Adults;Mon;[Angst vor] Bello;1;EN;Name;NP;Main;Reintroduction
+LL938;NIO935;B120;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL939;NIO936;B120;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL940;NIO937;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL941;NIO938;B120;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL942;NIO939;B120;Adults;Mon;den  beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL943;NIO940;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL944;GL27;B120;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL945;NIO941;B120;Adults;Mon;Balbi;1;EN;Name;NP;Secondary;Reintroduction
+LL946;GL28;B120;Adults;Mon;er;1;Pron;Pron;Pron;Secondary;Maintenance
+LL947;GL29;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL948;GL30;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL949;NIO942;B120;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL950;GL31;B120;Adults;Mon;Balbo;1;EN;Name;NP;Secondary;Reintroduction
+LL951;GL32;B120;Adults;Mon;Bilbo;1;EN;Name;NP;Secondary;Reintroduction
+LL952;NIO943;B120;Adults;Mon;Tim ;1;EN;Name;NP;Main;Maintenance
+LL953;NIO944;B120;Adults;Mon;die Nicht-Menschen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL954;NIO945;B124;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL955;NIO946;B124;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL956;NIO947;B124;Adults;Mon;mit seinem Freund Max und seinem Hund Bello;1;defNP+EN | defNP+EN;Name;NP;Main;Reintroduction
+LL957;NIO948;B124;Adults;Mon;Die drei Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL958;NIO949;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL959;NIO950;B124;Adults;Mon;die Jungen;1;defNP;defNP;NP;Main;Reintroduction
+LL960;NIO951;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL961;NIO952;B124;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL962;NIO953;B124;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL963;NIO954;B124;Adults;Mon;Tim und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL964;NIO955;B124;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL965;GL33;B124;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL966;GL34;B124;Adults;Mon;seinem Freund;1;defNP;defNP;NP;Main;Reintroduction
+LL967;NIO956;B124;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL968;NIO957;B124;Adults;Mon;[in die von] Max [angezeigte Richtung];1;EN;Name;NP;Main;Maintenance
+LL969;NIO958;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL970;NIO959;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL971;NIO960;B124;Adults;Mon;Max, Tim und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL972;NIO961;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL973;NIO962;B124;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL974;NIO963;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL975;NIO964;B124;Adults;Mon;die Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL976;NIO965;B124;Adults;Mon;mit ihrem Hund Bello;1;defNP;defNP;NP;Main;Reintroduction
+LL977;NIO966;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL978;NIO967;B124;Adults;Mon;den Troll und den Oger;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL979;NIO968;B124;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL980;NIO969;B124;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL981;NIO970;B124;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL982;NIO971;B124;Adults;Mon;der Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL983;NIO972;B124;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL984;GL35;B124;Adults;Mon;Max, Tim und Bello;1;EN;Name;NP;Main;Reintroduction
+LL985;NIO973;B124;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL986;NIO974;B124;Adults;Mon;auf den Troll und den Oger;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL987;NIO975;B124;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL988;GL36;B124;Adults;Mon;Der Troll und der Oger;1;defNP;defNP;NP;Secondary;Reintroduction
+LL989;NIO976;B124;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL990;NIO977;B124;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL991;NIO978;B124;Adults;Mon;mit dem Troll und dem Oger;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL992;NIO979;B126;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL993;NIO980;B126;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL994;NIO981;B126;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL995;NIO982;B126;Adults;Mon;Die drei;1;defNP;defNP;NP;Main;Maintenance
+LL996;NIO983;B126;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL997;NIO984;B126;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL998;NIO985;B126;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL999;NIO986;B126;Adults;Mon;den sichtlich erstauten Troll und den Oger;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL1000;NIO987;B126;Adults;Mon;[fuer] die Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL1001;NIO988;B138;Adults;Mon;die Beiden;1;defNP;defNP;NP;Main;Maintenance
+LL1002;NIO989;B138;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1003;NIO990;B138;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1004;NIO991;B138;Adults;Mon;Mit Bello;1;EN;Name;NP;Main;Reintroduction
+LL1005;NIO992;B138;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1006;NIO993;B138;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1007;NIO994;B138;Adults;Mon;die Drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1008;NIO995;B138;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1009;NIO996;B138;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL1010;NIO997;B138;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1011;NIO998;B138;Adults;Mon;den Dreien;1;defNP;defNP;NP;Main;Reintroduction
+LL1012;NIO999;B138;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1013;NIO1000;B141;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1014;NIO1001;B141;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1015;NIO1002;B141;Adults;Mon;die beiden Freund und Bello;1;defNP | EN;Name+defNP;NP;Main;Reintroduction
+LL1016;NIO1003;B141;Adults;Mon;Die drei;1;defNP;defNP;NP;Main;Maintenance
+LL1017;NIO1004;B141;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1018;NIO1005;B141;Adults;Mon;der eine;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1019;NIO1006;B141;Adults;Mon;der andere;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1020;NIO1007;B141;Adults;Mon;er;1;PP;Pron;Pron;Secondary;Maintenance
+LL1021;NIO1008;B141;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1022;NIO1009;B141;Adults;Mon;unsere drei Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL1023;NIO1010;B141;Adults;Mon;die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1024;NIO1011;B141;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1025;NIO1012;B141;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1026;NIO1013;B141;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1027;NIO1014;B141;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1028;NIO1015;B141;Adults;Mon;seine beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1029;NIO1016;B141;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1030;NIO1017;B141;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1031;NIO1018;B141;Adults;Mon;die beiden Kreaturen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1032;NIO1019;B141;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1033;NIO1020;B141;Adults;Mon;durch Bello;1;EN;Name;NP;Main;Reintroduction
+LL1034;NIO1021;B141;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1035;NIO1022;B141;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1036;NIO1023;B143;Adults;Mon;die beiden Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL1037;NIO1024;B143;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1038;NIO1025;B143;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1039;NIO1026;B143;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1040;NIO1027;B143;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1041;NIO1028;B143;Adults;Mon;die Trolle;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1042;NIO1029;B143;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1043;NIO1030;B143;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1044;NIO1031;B143;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1045;NIO1032;B143;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1046;NIO1033;B143;Adults;Mon;die Trolle;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1047;NIO1034;B143;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1048;NIO1035;B143;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1049;NIO1036;B153;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL1050;NIO1037;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1051;NIO1038;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1052;NIO1039;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1053;NIO1040;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1054;NIO1041;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1055;NIO1042;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1056;NIO1043;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1057;GL37;B153;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1058;GL38;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1059;NIO1044;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1060;NIO1045;B153;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1061;NIO1046;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1062;NIO1047;B153;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1063;NIO1048;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1064;NIO1049;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1065;NIO1050;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1066;NIO1051;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1067;GL39;B153;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1068;NIO1052;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1069;NIO1053;B153;Adults;Mon;[Vor] ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL1070;NIO1054;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1071;NIO1055;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1072;NIO1056;B153;Adults;Mon;die beiden;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1073;NIO1057;B153;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1074;NIO1058;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1075;NIO1059;B153;Adults;Mon;ihnen beiden;1;PP+IP;Pron;Pron;Main;Maintenance
+LL1076;NIO1060;B153;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1077;NIO1061;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1078;NIO1062;B153;Adults;Mon;der große grüne Troll;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1079;NIO1063;B153;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1080;GL40;B153;Adults;Mon;der kleine Elf;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1081;NIO1064;B153;Adults;Mon;[auf] sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1082;NIO1065;B153;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Reintroduction
+LL1083;NIO1066;B153;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1084;NIO1067;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1085;NIO1068;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1086;NIO1069;B153;Adults;Mon;ihn;1;PP;Pron;Pron;Main;Maintenance
+LL1087;NIO1070;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1088;NIO1071;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1089;NIO1072;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1090;NIO1073;B153;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1091;NIO1074;B153;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1092;NIO1075;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL1093;NIO1076;B153;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1094;NIO1077;B153;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1095;NIO1078;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1096;NIO1079;B153;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1097;NIO1080;B153;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1098;NIO1081;B154;Adults;Mon;Die beiden Freund;1;defNP;defNP;NP;Main;Maintenance
+LL1099;NIO1082;B154;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1100;NIO1083;B154;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1101;NIO1084;B154;Adults;Mon;seinen Freund Max;1;defNP;defNP;NP;Main;Reintroduction
+LL1102;NIO1085;B154;Adults;Mon;Dieser;1;DP;Pron;Pron;Main;Maintenance
+LL1103;NIO1086;B154;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1104;NIO1087;B154;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1105;NIO1088;B154;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1106;NIO1089;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1107;NIO1090;B154;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL1108;NIO1091;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1109;NIO1092;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1110;NIO1093;B154;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1111;NIO1094;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1112;NIO1095;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1113;NIO1096;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1114;NIO1097;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1115;NIO1098;B154;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL1116;NIO1099;B154;Adults;Mon;Die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1117;NIO1100;B154;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1118;NIO1101;B154;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1119;NIO1102;B154;Adults;Mon;die fremden Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1120;NIO1103;B154;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL1121;NIO1104;B154;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1122;NIO1105;B154;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1123;NIO1106;B154;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL1124;NIO1107;B154;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1125;NIO1108;B154;Adults;Mon;der Gnom und der Riese;1;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL1126;NIO1109;B154;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1127;NIO1110;B154;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1128;NIO1111;B154;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1129;NIO1112;B154;Adults;Mon;Sie ;1;PP;Pron;Pron;Secondary;Maintenance
+LL1130;NIO1113;B154;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1131;NIO1116;B154;Adults;Mon;Herr Gnom und Herr Riese;1;EN | EN;Name;NP;Secondary;Maintenance
+LL1132;NIO1117;B154;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1133;NIO1118;B154;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1134;NIO1119;B154;Adults;Mon;Max und Tim ;1;EN | EN;Name;NP;Main;Reintroduction
+LL1135;NIO1120;B156;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL1136;NIO1121;B156;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1137;NIO1122;B156;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1138;NIO1123;B156;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1139;NIO1124;B156;Adults;Mon;[neben] Tim;1;EN;Name;NP;Main;Maintenance
+LL1140;GL41;B156;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL1141;NIO1125;B156;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1142;GL42;B156;Adults;Mon;Max;1;EN;Name;NP;Main;Maintenance
+LL1143;NIO1126;B156;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL1144;NIO1127;B156;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1145;NIO1128;B156;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1146;GL43;B156;Adults;Mon;Tim ;1;EN;Name;NP;Main;Reintroduction
+LL1147;GL44;B156;Adults;Mon;ihm;1;Pron;Pron;Pron;Main;Maintenance
+LL1148;NIO1129;B156;Adults;Mon;den beiden  ;1;defNP;defNP;NP;Main;Maintenance
+LL1149;NIO1130;B156;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1150;NIO1131;B156;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1151;GL45;B156;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1152;NIO1132;B156;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1153;NIO1133;B156;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1154;NIO1134;B156;Adults;Mon;Die mystischen Gestalten;1;defNP;defNP;NP;Secondary;Maintenance
+LL1155;NIO1135;B156;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL1156;NIO1136;B156;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1157;NIO1137;B156;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1158;NIO1138;B156;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1159;NIO1139;B156;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1160;NIO1140;B156;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL1161;NIO1141;B156;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1162;NIO1142;B156;Adults;Mon;Die beiden Angreifer ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1163;NIO1143;B156;Adults;Mon;Max und Tim;1;EN | EN;Name;NP;Main;Reintroduction
+LL1164;NIO1144;B156;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1165;NIO1145;B164;Adults;Mon;Tim, Max und der Hund Bello;1;EN | EN | defNP+EN;Name;NP;Main;Maintenance
+LL1166;NIO1146;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1167;NIO1147;B164;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1168;NIO1148;B164;Adults;Mon;ihn;1;PP;Pron;Pron;Main;Maintenance
+LL1169;NIO1149;B164;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1170;NIO1150;B164;Adults;Mon;Beide ;1;IP;Pron;Pron;Main;Maintenance
+LL1171;NIO1151;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1172;NIO1152;B164;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1173;NIO1153;B164;Adults;Mon;Die beiden;1;defNP;defNP;NP;Secondary;Maintenance
+LL1174;NIO1154;B164;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1175;NIO1155;B164;Adults;Mon;Die beide Jungs und der Hund Bello;1;defNP | defNP+EN;Name+defNP;NP;Main;Reintroduction
+LL1176;NIO1156;B164;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1177;NIO1157;B164;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1178;NIO1158;B164;Adults;Mon;die beiden Figuren;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1179;NIO1159;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1180;NIO1160;B164;Adults;Mon;der Hund;1;defNP;defNP;NP;Main;Reintroduction
+LL1181;NIO1161;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1182;NIO1162;B164;Adults;Mon;die Jungen und der Hund;1;defNP | defNP;defNP;NP;Main;Reintroduction
+LL1183;NIO1163;B164;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1184;NIO1164;B164;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Maintenance
+LL1185;NIO1165;B164;Adults;Mon;die beiden Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL1186;NIO1166;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1187;NIO1167;B164;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1188;NIO1168;B164;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1189;NIO1169;B164;Adults;Mon;Die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1190;NIO1170;B166;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1191;NIO1171;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1192;NIO1172;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1193;NIO1173;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1194;NIO1174;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1195;NIO1175;B166;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1196;NIO1176;B166;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1197;NIO1177;B166;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1198;GL46;B166;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1199;NIO1178;B166;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL1200;NIO1179;B166;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1201;NIO1180;B166;Adults;Mon;[auf] seinen Freund Max;1;defNP+EN;Name;NP;Main;Reintroduction
+LL1202;NIO1181;B166;Adults;Mon;Die beiden ;1;defNP;defNP;NP;Main;Reintroduction
+LL1203;NIO1182;B166;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1204;NIO1183;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1205;NIO1184;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1206;NIO1185;B166;Adults;Mon;den beiden  ;1;defNP;defNP;NP;Main;Reintroduction
+LL1207;NIO1186;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1208;NIO1187;B166;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL1209;NIO1188;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1210;NIO1189;B166;Adults;Mon;ihnen;1;PP;Pron;Pron;Main;Reintroduction
+LL1211;NIO1190;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1212;NIO1191;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1213;NIO1192;B166;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1214;NIO1193;B166;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1215;NIO1194;B166;Adults;Mon;das kleine Geschöpf;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1216;NIO1195;B166;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1217;NIO1196;B166;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1218;NIO1197;B166;Adults;Mon;[zu] dem größeren;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1219;NIO1198;B166;Adults;Mon;der;1;RP;Pron;Pron;Secondary;Maintenance
+LL1220;NIO1199;B166;Adults;Mon;Dieser;1;DP;Pron;Pron;Secondary;Reintroduction
+LL1221;NIO1200;B166;Adults;Mon;[hinter] ihm;1;PP;Pron;Pron;Secondary;Reintroduction
+LL1222;NIO1201;B166;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1223;NIO1202;B166;Adults;Mon;der Hund von dem Tim;1;defNP+EN;Name;NP;Main;Reintroduction
+LL1224;NIO1203;B166;Adults;Mon;die beiden Geschöpfe;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1225;NIO1204;B166;Adults;Mon;Die beiden Freunde Tim und Max;1;defNP+EN+EN;Name;NP;Main;Reintroduction
+LL1226;NIO1205;B166;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1227;NIO1206;B166;Adults;Mon;Tims Hund  ;1;defNP;defNP;NP;Main;Reintroduction
+LL1228;NIO1207;B166;Adults;Mon;Die Jungs ;1;defNP;defNP;NP;Main;Reintroduction
+LL1229;NIO1208;B166;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1230;NIO1209;B166;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1231;NIO1210;B166;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1232;NIO1211;B166;Adults;Mon;den Hund;1;defNP;defNP;NP;Main;Reintroduction
+LL1233;NIO1212;B177;Adults;Mon;die drei Abenteurer;1;defNP;defNP;NP;Main;Reintroduction
+LL1234;NIO1213;B177;Adults;Mon;[Vor] ihnen;1;PP;Pron;Pron;Main;Maintenance
+LL1235;NIO1214;B177;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1236;NIO1215;B177;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1237;NIO1216;B177;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1238;NIO1217;B177;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1239;NIO1218;B177;Adults;Mon;die beiden Jungen und ihren Hund;1;defNP | defNP ;defNP;NP;Main;Reintroduction
+LL1240;NIO1219;B177;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1241;NIO1220;B177;Adults;Mon;die Jungen ;1;defNP;defNP;NP;Main;Reintroduction
+LL1242;NIO1221;B177;Adults;Mon;die Oger;1;defNP;defNP;NP;Secondary;Maintenance
+LL1243;NIO1222;B177;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1244;NIO1223;B177;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1245;NIO1224;B177;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1246;NIO1225;B177;Adults;Mon;Die beiden Oger ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1247;NIO1226;B182;Adults;Mon;Tim und sein Hund Bello;1;EN | defNP+EN;Name;NP;Main;Maintenance
+LL1248;NIO1227;B182;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1249;NIO1228;B182;Adults;Mon;Max und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL1250;NIO1229;B182;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1251;NIO1230;B182;Adults;Mon;auf die drei unerwarteten Besucher;1;defNP;defNP;NP;Main;Reintroduction
+LL1252;NIO1231;B182;Adults;Mon;Sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1253;NIO1232;B182;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1254;NIO1233;B182;Adults;Mon;die zwei Trolle;1;defNP;defNP;NP;Secondary;Maintenance
+LL1255;NIO1234;B182;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1256;NIO1235;B182;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1257;NIO1236;B182;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1258;NIO1237;B182;Adults;Mon;den zwei Fabelwesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1259;NIO1238;B182;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL1260;NIO1239;B182;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1261;NIO1240;B182;Adults;Mon;sie ;1;PP;Pron;Pron;Secondary;Maintenance
+LL1262;NIO1241;B183;Adults;Mon;die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1263;NIO1242;B183;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1264;NIO1243;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1265;NIO1244;B183;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1266;NIO1245;B183;Adults;Mon;in Begleitung ihres Hundes Bello;1;defNP;defNP;NP;Main;Reintroduction
+LL1267;NIO1246;B183;Adults;Mon;die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1268;NIO1247;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1269;GL47;B183;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1270;NIO1248;B183;Adults;Mon;Die beiden Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1271;NIO1249;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1272;NIO1250;B183;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Maintenance
+LL1273;NIO1251;B183;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1274;NIO1252;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1275;NIO1253;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1276;NIO1254;B183;Adults;Mon;die Gestalten ;1;defNP;defNP;NP;Secondary;Maintenance
+LL1277;NIO1255;B183;Adults;Mon;sie ;1;PP;Pron;Pron;Main;Maintenance
+LL1278;NIO1256;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1279;NIO1258;B183;Adults;Mon;die ;1;RP;Pron;Pron;Secondary;Maintenance
+LL1280;NIO1259;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1281;NIO1260;B183;Adults;Mon;Der eine;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1282;NIO1261;B183;Adults;Mon;der andere;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1283;NIO1262;B183;Adults;Mon;die beiden Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL1284;NIO1263;B183;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1285;NIO1264;B183;Adults;Mon;die beiden Wesen;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1286;NIO1265;B183;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1287;NIO1266;B183;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1288;NIO1267;B183;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1289;NIO1268;B183;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1290;NIO1269;B183;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1291;NIO1270;B185;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Maintenance
+LL1292;NIO1271;B185;Adults;Mon;den Jungen;1;defNP;defNP;NP;Main;Maintenance
+LL1293;NIO1272;B185;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1294;NIO1273;B185;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1295;NIO1274;B185;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1296;NIO1275;B185;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1297;NIO1276;B185;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1298;NIO1277;B185;Adults;Mon;die beiden;1;defNP;defNP;NP;Main;Reintroduction
+LL1299;NIO1278;B185;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1300;NIO1279;B185;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1301;GL48;B185;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1302;NIO1280;B185;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1303;NIO1281;B185;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1304;NIO1282;B185;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1305;NIO1283;B185;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Maintenance
+LL1306;NIO1284;B185;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1307;NIO1285;B185;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1308;NIO1287;B185;Adults;Mon;Tim und Max;1;EN | EN ;Name;NP;Main;Reintroduction
+LL1309;NIO1288;B185;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1310;NIO1289;B185;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL1311;NIO1290;B185;Adults;Mon;Der Troll und der Riese;1;defNP | defNP;defNP;NP;Secondary;Maintenance
+LL1312;NIO1291;B185;Adults;Mon;Tim und Max;1;EN | EN;Name;NP;Main;Reintroduction
+LL1313;NIO1292;B185;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1314;NIO1293;B185;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1315;NIO1294;B185;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1316;NIO1295;B185;Adults;Mon;Bello;1;EN ;Name;NP;Main;Reintroduction
+LL1317;NIO1296;B185;Adults;Mon;ihnen;1;PP;Pron;Pron;Secondary;Maintenance
+LL1318;NIO1297;B185;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1319;NIO1298;B185;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1320;;B185;Adults;Mon;Bello;1;EN;Name;NP;Main;Maintenance
+LL1321;NIO1299;B185;Adults;Mon;den großen Riesen und den Troll;1;defNP | defNP;defNP;NP;Secondary;Maintenance
+LL1322;GL49;B185;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1323;GL50;B185;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1324;GL51;B185;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1325;NIO1300;B185;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1326;NIO1301;B185;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1327;NIO1302;B186;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL1328;NIO1303;B186;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1329;NIO1304;B186;Adults;Mon;Tim und Bello;1;EN | EN;Name;NP;Main;Reintroduction
+LL1330;NIO1305;B186;Adults;Mon;[auf] Max;1;EN;Name;NP;Main;Reintroduction
+LL1331;NIO1306;B186;Adults;Mon;dieser;1;DP;Pron;Pron;Main;Maintenance
+LL1332;NIO1307;B186;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1333;NIO1308;B186;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1334;NIO1309;B186;Adults;Mon;Er;1;PP;Pron;Pron;Main;Reintroduction
+LL1335;NIO1310;B186;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1336;NIO1311;B186;Adults;Mon;Freunde und Bello;1;indNP | EN;Name;NP;Main;Reintroduction
+LL1337;NIO1312;B186;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1338;NIO1313;B186;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1339;NIO1314;B186;Adults;Mon;Die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1340;NIO1315;B186;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1341;NIO1317;B186;Adults;Mon;welche;1;RP;Pron;Pron;Secondary;Maintenance
+LL1342;NIO1318;B186;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1343;NIO1319;B186;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1344;NIO1320;B186;Adults;Mon;die Freunde;1;defNP;defNP;NP;Main;Maintenance
+LL1345;NIO1321;B186;Adults;Mon;Tim, Bello und Max;1;EN | EN | EN;Name;NP;Main;Maintenance
+LL1346;NIO1322;B186;Adults;Mon;die zwei gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1347;NIO1323;B186;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1348;NIO1324;B186;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1349;NIO1325;B186;Adults;Mon;Die Jungs;1;defNP;defNP;NP;Main;Reintroduction
+LL1350;NIO1326;B186;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1351;NIO1327;B186;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1352;NIO1328;B186;Adults;Mon;die Gestalten ;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1353;NIO1329;B186;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1354;NIO1330;B188;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1355;NIO1331;B188;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1356;NIO1332;B188;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1357;NIO1333;B188;Adults;Mon;Sie;1;PP;Pron;Pron;Main;Maintenance
+LL1358;NIO1334;B188;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1359;NIO1335;B188;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1360;NIO1336;B188;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1361;NIO1337;B188;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1362;NIO1338;B188;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1363;NIO1339;B188;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1364;NIO1340;B188;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1365;NIO1341;B188;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Maintenance
+LL1366;NIO1342;B188;Adults;Mon;den drei Freunden;1;defNP;defNP;NP;Main;Maintenance
+LL1367;NIO1343;B188;Adults;Mon;Die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1368;NIO1345;B188;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1369;NIO1347;B188;Adults;Mon;Ø;1;NSA;null;Pron;Secondary;Maintenance
+LL1370;NIO1348;B188;Adults;Mon;die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1371;NIO1349;B188;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1372;NIO1350;B188;Adults;Mon;die drei;1;defNP;defNP;NP;Main;Reintroduction
+LL1373;NIO1351;B188;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Maintenance
+LL1374;NIO1352;B188;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1375;NIO1353;B188;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1376;NIO1354;B188;Adults;Mon;sie;1;PP;Pron;Pron;Main;Maintenance
+LL1377;NIO1355;B188;Adults;Mon;die beiden Gestalten;1;defNP;defNP;NP;Secondary;Reintroduction
+LL1378;NIO1356;B188;Adults;Mon;[Für] die drei Freunde;1;defNP;defNP;NP;Main;Reintroduction
+LL1379;NIO1357;B191;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL1380;NIO1358;B191;Adults;Mon;er;1;PP;Pron;Pron;Main;Maintenance
+LL1381;NIO1359;B191;Adults;Mon;Tim und sein Hund Bello;1;EN | defNP+EN;Name;NP;Main;Reintroduction
+LL1382;NIO1360;B191;Adults;Mon;Max;1;EN;Name;NP;Main;Reintroduction
+LL1383;NIO1361;B191;Adults;Mon;Er;1;PP;Pron;Pron;Main;Maintenance
+LL1384;NIO1362;B191;Adults;Mon;Tim;1;EN;Name;NP;Main;Reintroduction
+LL1385;NIO1363;B191;Adults;Mon;Tim;1;EN;Name;NP;Main;Maintenance
+LL1386;NIO1364;B191;Adults;Mon;sie;1;PP;Pron;Pron;Main;Reintroduction
+LL1387;NIO1365;B191;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Maintenance
+LL1388;NIO1367;B191;Adults;Mon;die;1;RP;Pron;Pron;Secondary;Maintenance
+LL1389;NIO1368;B191;Adults;Mon;Tim, Max und Bello;1;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1390;NIO1369;B191;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1391;NIO1370;B191;Adults;Mon;Bello;1;EN;Name;NP;Main;Reintroduction
+LL1392;NIO1371;B191;Adults;Mon;sie;1;PP;Pron;Pron;Secondary;Reintroduction
+LL1393;NIO1372;B191;Adults;Mon;Ø;1;NSA;null;Pron;Main;Maintenance
+LL1394;NIO1373;ANBEAR;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1395;NIO1374;ANBEAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1396;NIO1375;ANBEAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1397;NIO1376;ANBEAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1398;NIO1377;ANDAIL;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1399;NIO1378;ANDAIL;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1400;NIO1379;ANDAIL;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1401;NIO1380;ANDAIL;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1402;NIO1381;ANDAIL;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1403;NIO1382;ANDAIL;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1404;NIO1383;ANDAIL;Children;Mon;Max und Tim;0;EN | EN;Name;NP;Main;Reintroduction
+LL1405;NIO1384;ANDAIL;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1406;NIO1385;ANDAIL;Children;Mon;Dobby und Gollum;0;EN | EN ;Name;NP;Secondary;Reintroduction
+LL1407;NIO1386;ANDAIL;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1408;NIO1387;ANDAIL;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1409;NIO1388;ANDAIL;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1410;NIO1389;ANMAST ;Children;Mon ;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1411;NIO1390;ANMAST ;Children;Mon ;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1412;NIO1391;ANMAST ;Children;Mon ;Max;0;EN;Name;NP;Main;Reintroduction
+LL1413;NIO1392;ANMAST ;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1414;NIO1393;ANMAST ;Children;Mon;Er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1415;NIO1394;ANMAST ;Children;Mon;Er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1416;NIO1395;ANMAST ;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1417;NIO1396;ANMAST ;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1418;NIO1397;ANSEAR;Children;Mon;Max bello und Tim;0;EN | EN | EN;Name;NP;Main;Maintenance
+LL1419;NIO1398;ANSEAR;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1420;NIO1399;ANSEAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1421;NIO1400;ANSEAR;Children;Mon;sie ;0;PP;Pron;Pron;Main;Maintenance
+LL1422;NIO1401;ANSEAR;Children;Mon;sie ;0;PP;Pron;Pron;Main;Maintenance
+LL1423;NIO1402;ANSVER;Children;Mon;Tim;0;EN;Name;NP;Main;Maintenance
+LL1424;NIO1403;ANSVER;Children;Mon;Sein Hund Bello;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1425;NIO1404;ANSVER;Children;Mon;[neben] ihm;0;PP;Pron;Pron;Main;Maintenance
+LL1426;NIO1405;ANSVER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1427;NIO1406;ANSVER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1428;NIO1407;ANSVER;Children;Mon;Alle;0;IP;Pron;Pron;Main;Reintroduction
+LL1429;NIO1408;ANSVER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1430;NIO1409;ANSVER;Children;Mon;[auf] sie [zu];0;PP;Pron;Pron;Main;Maintenance
+LL1431;NIO1410;ANSVER;Children;Mon;[hinter] ihm;0;PP;Pron;Pron;Secondary;Maintenance
+LL1432;NIO1411;ANSVER;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1433;NIO1412;ANSVER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1434;NIO1413;ANSVER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1435;NIO1414;ANSVER;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1436;NIO1415;ANSVER;Children;Mon;Bello;0;EN;Name;NP;Main;Maintenance
+LL1437;NIO1416;ANSVER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1438;NIO1417;ANSVER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1439;NIO1418;ANSVER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1440;NIO1419;ANSVER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1441;NIO1420;ANSVER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1442;NIO1421;ANSVER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1443;NIO1422;ANSVER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1444;NIO1423;ANSVER;Children;Mon;er;0;PP;Pron;Pron;Main;Reintroduction
+LL1445;NIO1424;ANSVER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1446;NIO1425;ANSVER;Children;Mon;[von] Tim;0;EN;Name;NP;Main;Reintroduction
+LL1447;NIO1426;ANSVER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1448;NIO1427;BEANLI;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1449;NIO1428;BEANLI;Children;Mon;[vor] ihnen;0;PP;Pron;Pron;Main;Maintenance
+LL1450;GL52;BEANLI;Children;Mon;Sie;0;Pron;Pron;Pron;Main;Reintroduction
+LL1451;NIO1429;BEANLI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1452;NIO1430;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1453;NIO1431;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1454;NIO1432;BEANLI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1455;NIO1433;BEANLI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1456;NIO1434;BEANLI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1457;NIO1435;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1458;NIO1436;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1459;NIO1437;BEANLI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1460;NIO1438;BEANLI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1461;NIO1439;BEANLI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1462;NIO1440;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1463;NIO1441;BEANLI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1464;NIO1442;BEANLI;Children;Mon;die Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1465;NIO1443;BEANLI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1466;NIO1444;BEANLI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1467;GL53;BEANLI;Children;Mon;sie;0;Pron;Pron;Pron;Main;Reintroduction
+LL1468;NIO1445;BEANLI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1469;NIO1446;BIHEAI;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1470;NIO1447;BIHEAI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1471;NIO1448;BIHEAI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1472;NIO1449;BIHEAI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1473;NIO1450;BIHEAI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1474;NIO1451;BIHEAI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1475;NIO1452;BIHEAI;Children;Mon;die Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1476;NIO1453;CHCHER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1477;NIO1454;CHCHER;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1478;NIO1455;CHCHER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1479;NIO1456;CHCHER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1480;NIO1457;CHCHER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1481;NIO1459;CHCHER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1482;NIO1460;CHPEER;Children;Meh;Bello und Tim;0;EN | EN;Name;NP;Main;Maintenance
+LL1483;NIO1461;CHPEER;Children;Meh;Max;0;EN;Name;NP;Main;Maintenance
+LL1484;NIO1462;CHPEER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1485;NIO1463;CHPEER;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1486;NIO1464;CHPEER;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1487;NIO1465;CHPEER;Children;Meh;der Hund  ;0;PP;Pron;Pron;Main;Reintroduction
+LL1488;NIO1466;CHTOAR;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1489;NIO1467;CHTOAR;Children;Meh;Sie;0;PP ;Pron;Pron;Main;Maintenance
+LL1490;NIO1468;CHTOAR;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1491;NIO1469;CHTOAR;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1492;NIO1470;CHWAEN;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1493;NIO1471;CHWAEN;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1494;NIO1472;CHWAEN;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1495;NIO1473;CHWAEN;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1496;NIO1474;CHWAEN;Children;Meh;die zwei Kobeute;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1497;GL54;CHWAEN;Children;Meh;sie;0;Pron;Pron;Pron;Main;Reintroduction
+LL1498;NIO1475;CHWAEN;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1499;NIO1476;CHWAEN;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1500;NIO1477;CHWAEN;Children;Meh;Tim und sein Freund;0;EN | defNP;Name;NP;Main;Reintroduction
+LL1501;NIO1478;CHWAEN;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1502;NIO1479;CHWAEN;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1503;NIO1480;DOUWST;Children;Mon;Tim;0;EN;Name;NP;Main;Maintenance
+LL1504;NIO1481;DOUWST;Children;Mon;mit seinem Hund Bello und seinen Freund Max;0;defNP+EN | defNP+EN;Name;NP;Main;Maintenance
+LL1505;NIO1482;DOUWST;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1506;NIO1483;DOUWST;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1507;NIO1484;DOUWST;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1508;NIO1485;DOUWST;Children;Mon;der eine;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1509;NIO1486;DOUWST;Children;Mon;er;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1510;NIO1487;DOUWST;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1511;NIO1488;DOUWST;Children;Mon;Die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1512;NIO1489;DOUWST;Children;Mon;der und;0;defNP;defNP;NP;Main;Reintroduction
+LL1513;NIO1490;DOUWST;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1514;NIO1491;ELTHAR;Children;Mon;Tim;0;EN;Name;NP;Main;Maintenance
+LL1515;NIO1492;ELTHAR;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1516;NIO1493;ELTHAR;Children;Mon;[vor] ihnen;0;PP;Pron;Pron;Main;Reintroduction
+LL1517;NIO1494;ELTHAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1518;NIO1495;ELTHAR;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1519;NIO1496;ELTHAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1520;NIO1497;ELTHAR;Children;Mon;Das grüne Wesen;0;defNP;defNP;NP;Secondary;Maintenance
+LL1521;NIO1498;ELTHAR;Children;Mon;den Troll  ;0;defNP;defNP;NP;Secondary;Maintenance
+LL1522;NIO1499;ELTHAR;Children;Mon;die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1523;NIO1500;ELTHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1524;NIO1501;ELTHAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1525;NIO1502;ELTHAR;Children;Mon;der Troll;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1526;NIO1503;ELTHAR;Children;Mon;Der Troll und dass Wesen;0;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL1527;GL55;ELTHAR;Children;Mon;Die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1528;GL56;ELTHAR;Children;Mon;Die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1529;NIO1504;EVRONI;Children;Mon;Tim und Max, Bello;0;EN | EN | EN;Name;NP;Main;Maintenance
+LL1530;NIO1505;EVRONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1531;NIO1506;EVRONI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1532;NIO1507;EVRONI;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1533;NIO1508;EVRONI;Children;Mon;ihn ;0;PP;Pron;Pron;Main;Maintenance
+LL1534;NIO1509;EVRONI;Children;Mon;er;0;PP;Pron;Pron;Main;Reintroduction
+LL1535;NIO1510;EVRONI;Children;Mon;sie beide;0;PP+IP;Pron;Pron;Main;Reintroduction
+LL1536;NIO1511;EVRONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1537;NIO1512;EVRONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1538;NIO1513;EVRONI;Children;Mon;sie;0;PP;Pron;Pron;Secondary;Maintenance
+LL1539;NIO1514;EVRONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1540;NIO1515;EVRONI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1541;NIO1516;EWRINI;Children;Meh;Tim;0;EN;Name;NP;Main;Maintenance
+LL1542;NIO1517;EWRINI;Children;Meh;[auf] Max;0;EN;Name;NP;Main;Maintenance
+LL1543;NIO1518;EWRINI;Children;Meh;[mit] Bello ;0;EN;Name;NP;Main;Maintenance
+LL1544;NIO1519;EWRINI;Children;Meh;er;0;PP;Pron;Pron;Main;Maintenance
+LL1545;NIO1520;EWRINI;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1546;NIO1521;EWRINI;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1547;NIO1522;EWRINI;Children;Meh;der eine [dachte] von den Monstern;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1548;GL57;EWRINI;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1549;NIO1523;EWRINI;Children;Meh;die Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1550;NIO1524;EWRINI;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1551;NIO1525;EWRINI;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1552;NIO1526;EWRINI;Children;Meh;Die Monster ;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1553;NIO1527;GÖBERZ ;Children;Meh;Tim;0;EN;Name;NP;Main;Maintenance
+LL1554;NIO1528;GÖBERZ ;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1555;NIO1529;GÖBERZ ;Children;Meh;[neben] ihm;0;PP;Pron;Pron;Main;Maintenance
+LL1556;NIO1530;GÖBERZ ;Children;Meh;Max;0;EN;Name;NP;Main;Maintenance
+LL1557;NIO1531;GÖBERZ ;Children;Meh;[hinter] ihm;0;PP;Pron;Pron;Main;Maintenance
+LL1558;NIO1532;GÖBERZ ;Children;Meh;Max;0;EN;Name;NP;Main;Maintenance
+LL1559;NIO1533;GÖBERZ ;Children;Meh;Er;0;PP;Pron;Pron;Main;Maintenance
+LL1560;NIO1534;GÖBERZ ;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1561;NIO1535;GÖBERZ ;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1562;NIO1536;GÖBERZ ;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1563;NIO1537;GÖBERZ ;Children;Meh;der Kobold;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1564;NIO1538;GÖBERZ ;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1565;GL58;GÖBERZ ;Children;Meh;Die Jungs;0;defNP;defNP;NP;Main;Reintroduction
+LL1566;NIO1539;JEFRER;Children;Mon;Tim, Bello;0;EN | EN;Name;NP;Main;Maintenance
+LL1567;NIO1540;JEFRER;Children;Mon;[neben] den beiden;0;defNP;defNP;NP;Main;Maintenance
+LL1568;NIO1541;JEFRER;Children;Mon;der Freund Max;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1569;NIO1542;JEFRER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1570;NIO1543;JEFRER;Children;Mon;Tim, Bello und Max;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1571;NIO1544;JEFRER;Children;Mon;der;0;RP;Pron;Pron;Secondary;Maintenance
+LL1572;NIO1545;JEFRER;Children;Mon;Timm, Bello und Max;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1573;NIO1546;JEFRER;Children;Mon;die beiden ;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1574;NIO1547;JEFRER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1575;NIO1548;JEFRER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1576;NIO1549;JEFRER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1577;NIO1550;KAANER;Children;Mon;Tim;0;EN;Name;NP;Main;Maintenance
+LL1578;NIO1551;KAANER;Children;Mon;mit Max und Bello dem Hund;0;EN | EN+defNP;Name;NP;Main;Maintenance
+LL1579;NIO1552;KAANER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1580;NIO1553;KAANER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1581;NIO1554;KAANER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1582;NIO1555;KAANER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1583;NIO1556;KAANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1584;NIO1557;KAANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1585;NIO1558;KAANER;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1586;NIO1559;KAANER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1587;NIO1560;KAANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1588;NIO1561;KACHAI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Maintenance
+LL1589;NIO1562;KACHAI;Children;Mon;er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1590;NIO1563;KACHAI;Children;Mon;Das große Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1591;NIO1564;KACHAI;Children;Mon;[inter] Max, Tim und Bello;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1592;NIO1565;KACHAI;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1593;NIO1566;KACHAI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1594;NIO1567;KACHAI;Children;Mon;[inter] Tim, max und Bello;0;EN | EN | EN;Name;NP;Main;Maintenance
+LL1595;NIO1568;KACHAI;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1596;NIO1569;KACHAI;Children;Mon;das Elieen;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1597;NIO1570;LENOER;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Maintenance
+LL1598;NIO1571;LENOER;Children;Mon;Der Hund Bello;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1599;NIO1572;LENOER;Children;Mon;Das Monster;0;defNP;defNP;NP;Secondary;Maintenance
+LL1600;NIO1573;LENOER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1601;NIO1574;LENOER;Children;Mon;[auf] das Monster;0;defNP;defNP;NP;Secondary;Maintenance
+LL1602;NIO1575;LENOER;Children;Mon;das Monster;0;defNP;defNP;NP;Secondary;Maintenance
+LL1603;NIO1576;LENOER;Children;Mon;Ø;0;NSA;null;Pron;Secondary;Maintenance
+LL1604;NIO1577;LENOER;Children;Mon;der Hund ;0;defNP;defNP;NP;Main;Reintroduction
+LL1605;NIO1578;LENOER;Children;Mon;[zu] Tim und zu Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1606;NIO1579;LENOER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1607;NIO1580;LENOER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1608;NIO1581;MAEDER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1609;NIO1582;MAEDER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1610;NIO1583;MAEDER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1611;NIO1584;MAEDER;Children;Meh;Der Riese;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1612;NIO1585;MAEDER;Children;Meh;Tim, Max und Bello;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1613;NIO1586;MAEDER;Children;Meh;der Riese;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1614;NIO1587;MAEDER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1615;NIO1588;MAEDER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1616;NIO1589;MAEDER;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1617;NIO1590;MAEDER;Children;Meh;den Riesen und den kleinen;0;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL1618;NIO1591;MAEDER;Children;Meh;der Riese;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1619;NIO1594;MAMAER;Children;Mon;Er;0;PP;Pron;Pron;Main;Maintenance
+LL1620;NIO1595;MAMAER;Children;Mon;seinen Freund max;0;defNP+EN;Name;NP;Main;Maintenance
+LL1621;NIO1596;MAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1622;NIO1597;MAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1623;NIO1598;MAMAER;Children;Mon;Ø;0;NSA;null;Pron;Main;Reintroduction
+LL1624;NIO1599;MAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1625;NIO1600;MAMAER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1626;NIO1601;MAMAER;Children;Mon;das Höhlenmonster;0;defNP;defNP;NP;Secondary;Maintenance
+LL1627;NIO1602;MAMAER;Children;Mon;Max und sein Freund;0;EN | defNP;Name+defNP;NP;Main;Reintroduction
+LL1628;NIO1603;MASTER;Children;Mon;Tim;0;EN;Name;NP;Main;Maintenance
+LL1629;NIO1604;MASTER;Children;Mon;[mit] seinen Hund;0;defNP;defNP;NP;Main;Maintenance
+LL1630;;MASTER;Children;Mon;[mit] Seinen Freund;0;defNP;defNP;NP;Main;Maintenance
+LL1631;NIO1605;MASTER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1632;NIO1606;MASTER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1633;NIO1607;MASTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1634;NIO1608;MASTER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1635;NIO1609;MASTER;Children;Mon;Der eine;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1636;NIO1610;MASTER;Children;Mon;der andere;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1637;NIO1611;MASTER;Children;Mon;Tim und sein Hund uns sein Freund;0;EN | defNP |defNP;Name+defNP;NP;Main;Reintroduction
+LL1638;NIO1612;MASTER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1639;NIO1613;MAUWAI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1640;NIO1614;MAUWAI;Children;Mon;Tims Hund Bello;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1641;NIO1615;MAUWAI;Children;Mon;Max ;0;EN;Name;NP;Main;Reintroduction
+LL1642;NIO1616;MAUWAI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1643;NIO1617;MAUWAI;Children;Mon;Sie ;0;PP;Pron;Pron;Main;Reintroduction
+LL1644;NIO1618;MAUWAI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1645;NIO1619;MAUWAI;Children;Mon;Der Bergtroll;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1646;NIO1620;MAUWAI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1647;NIO1621;MAUWAI;Children;Mon;ihn;0;PP;Pron;Pron;Secondary;Maintenance
+LL1648;NIO1622;MAUWAI;Children;Mon;Die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1649;NIO1623;MAUWAI;Children;Mon;der Bergtroll;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1650;GL59;MAUWAI;Children;Mon;die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1651;NIO1624;MAUWAI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1652;NIO1625;MAUWAI;Children;Mon;[mit] den Besitzern des Schlosses;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1653;NIO1626;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1654;NIO1627;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1655;NIO1628;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1656;NIO1629;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1657;NIO1630;MIMAER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1658;NIO1631;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1659;NIO1632;MIMAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1660;NIO1633;MIMAER;Children;Meh;der;0;RP;Pron;Pron;Secondary;Maintenance
+LL1661;NIO1634;MIMAER;Children;Meh;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1662;NIO1635;MIMAER;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1663;NIO1636;MIMAER;Children;Meh;Bello;0;EN;Name;NP;Main;Maintenance
+LL1664;NIO1637;MIMAER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1665;NIO1638;MIMAER;Children;Meh;den Golem;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1666;NIO1639;MIMAER;Children;Meh;der Golem;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1667;NIO1640;MIMAER;Children;Meh;Ø;0;NSA;null;Pron;Secondary;Maintenance
+LL1668;NIO1641;MIMAER;Children;Meh;den Kobold;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1669;NIO1642;MIMAER;Children;Meh;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1670;NIO1643;MIMAER;Children;Meh;der Kobold;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1671;GL62;MIMAER;Children;Meh;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1672;NIO1644;MIMAER;Children;Meh;sie ;0;PP;Pron;Pron;Main;Maintenance
+LL1673;NIO1645;MIMAER2;Children;NI;Tim ;0;EN;Name;NP;Main;Maintenance
+LL1674;NIO1646;MIMAER2;Children;NI;Max und Tim;0;EN | EN;Name;NP;Main;Reintroduction
+LL1675;NIO1647;MIMAER2;Children;NI;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1676;NIO1648;MIMAER2;Children;NI;[noch geiner] von den beiden;0;defNP;defNP;NP;Main;Maintenance
+LL1677;NIO1649;MIMAER2;Children;NI;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1678;NIO1650;MIMAER2;Children;NI;die;0;RP;Pron;Pron;Secondary;Maintenance
+LL1679;NIO1651;MIMAER2;Children;NI;Der großer;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1680;NIO1652;MIMAER2;Children;NI;den kleineren;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1681;NIO1653;MIMAER2;Children;NI;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1682;NIO1654;MIMAER2;Children;NI;Der Hund;0;defNP;defNP;NP;Main;Reintroduction
+LL1683;NIO1655;MIMAER2;Children;NI;Die Beiden Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1684;NIO1656;MIMAER2;Children;NI;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1685;NIO1657;MIMALI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1686;NIO1658;MIMALI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1687;NIO1659;MIMALI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1688;NIO1660;MIMALI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1689;NIO1661;MIMALI;Children;Mon;der Hund Bello;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1690;NIO1662;MIMALI;Children;Mon;sie;0;PP;Pron;Pron;Secondary;Maintenance
+LL1691;NIO1663;MIMALI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1692;NIO1664;MIMALI;Children;Mon;Tim und Mex;0;EN | EN;Name;NP;Main;Reintroduction
+LL1693;NIO1665;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1694;NIO1666;MOCHAR;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1695;NIO1667;MOCHAR;Children;Mon;Bello;0;EN;Name;NP;Main;Maintenance
+LL1696;NIO1668;MOCHAR;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1697;NIO1669;MOCHAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1698;NIO1670;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1699;NIO1671;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1700;NIO1672;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1701;NIO1673;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1702;NIO1674;MOCHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1703;NIO1675;MOCHAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1704;NIO1676;NABEER;Children;Mon;Max und Tim;0;EN | EN;Name;NP;Main;Maintenance
+LL1705;NIO1677;NABEER;Children;Mon;Max und Tim;0;EN | EN;Name;NP;Main;Maintenance
+LL1706;NIO1678;NABEER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1707;NIO1679;NABEER;Children;Mon;Die beiden;0;defNP;defNP;NP;Main;Maintenance
+LL1708;NIO1680;NABEER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1709;NIO1681;NABEER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1710;NIO1682;NABEER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1711;NIO1683;NABEER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1712;NIO1684;NAJAER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1713;NIO1685;OLJAER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1714;NIO1686;OLJAER;Children;Meh;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1715;NIO1687;OLJAER;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1716;NIO1688;OLJAER;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1717;NIO1689;OLJAER;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1718;NIO1690;OLJAER;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1719;NIO1691;OLJAER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1720;NIO1692;OLJAER;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1721;NIO1693;OLJAER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1722;NIO1694;OLJAER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1723;NIO1695;OLJAER;Children;Meh;Sie;0;PP;Pron;Pron;Secondary;Maintenance
+LL1724;GL63;OLJAER;Children;Meh;Max und Tim;0;EN | EN;Name;NP;Main;Reintroduction
+LL1725;NIO1696;OLJAER;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1726;NIO1697;OLJAER;Children;Meh;sie;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1727;NIO1698;OLJAER;Children;Meh;Bello;0;EN;Name;NP;Main;Maintenance
+LL1728;NIO1699;OLJAER;Children;Meh;Max;0;EN ;Name;NP;Main;Reintroduction
+LL1729;GL64;OLJAER;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1730;NIO1700;OLJAER;Children;Meh;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1731;NIO1701;OLWAST;Children;Meh;Tim;0;EN;Name;NP;Main;Maintenance
+LL1732;NIO1702;OLWAST;Children;Meh;mit seinem Hund Bello und seinem Freund Max;0;defNP+EN | defNP+EN;Name;NP;Main;Maintenance
+LL1733;NIO1703;OLWAST;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1734;NIO1704;OLWAST;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1735;NIO1705;OLWAST;Children;Meh;Tim und Max;0;EN | EN ;Name;NP;Main;Reintroduction
+LL1736;NIO1706;OLWAST;Children;Meh;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1737;NIO1707;OLWAST;Children;Meh;sie;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1738;NIO1708;RORAAR;Children;Meh;Max;0;EN;Name;NP;Main;Maintenance
+LL1739;NIO1709;RORAAR;Children;Meh;Beide;0;IP;Pron;Pron;Main;Reintroduction
+LL1740;NIO1710;RORAAR;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1741;NIO1711;RORAAR;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1742;NIO1712;RORAAR;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1743;NIO1713;RORAAR;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1744;NIO1714;RORAAR;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1745;NIO1715;RORAAR;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1746;NIO1716;RORAAR;Children;Meh;Max und Tim;0;EN | EN;Name;NP;Main;Reintroduction
+LL1747;NIO1717;RORAAR;Children;Meh;bello;0;EN;Name;NP;Main;Reintroduction
+LL1748;NIO1718;RORAAR;Children;Meh;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1749;;RORAAR;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1750;NIO1719;SAMAER;Children;Mon;Tim und sein Freund Max;0;EN | defNP+EN;Name;NP;Main;Maintenance
+LL1751;NIO1720;SAMAER;Children;Mon;Sein Hund Bello;0;defNP+EN;Name;NP;Main;Reintroduction
+LL1752;NIO1721;SAMAER;Children;Mon;ihnen;0;PP;Pron;Pron;Main;Maintenance
+LL1753;NIO1722;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1754;NIO1723;SAMAER;Children;Mon;der eine;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1755;NIO1724;SAMAER;Children;Mon;Der zweite;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1756;NIO1725;SAMAER;Children;Mon;er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1757;NIO1726;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1758;NIO1727;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1759;NIO1728;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1760;NIO1729;SAMAER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1761;NIO1730;SAMAER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1762;GL65;SAMAER;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1763;NIO1731;SAMAER;Children;Mon;die zwei Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1764;NIO1732;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Secondary;Maintenance
+LL1765;GL66;SAMAER;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1766;NIO1733;SAMAER;Children;Mon;das Monsta;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1767;NIO1734;SAMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1768;NIO1735;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1769;NIO1736;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1770;NIO1737;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1771;NIO1738;SIANER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1772;NIO1739;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1773;NIO1740;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1774;NIO1741;SIANER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1775;NIO1742;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1776;NIO1743;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1777;NIO1744;SIANER;Children;Mon;den Troll und den Oga;0;defNP | defNP;defNP;NP;Secondary;Maintenance
+LL1778;NIO1745;SIANER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1779;NIO1746;SIANER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1780;NIO1747;SIANER;Children;Mon;der Hund;0;defNP;defNP;NP;Main;Reintroduction
+LL1781;NIO1748;SIANER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1782;NIO1749;SIANER;Children;Mon;die beiden;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1783;NIO1750;SOULAR;Children;Mon;Tim, Max und Bello;0;EN | EN | EN;Name;NP;Main;Maintenance
+LL1784;NIO1751;SOULAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1785;NIO1752;SOULAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1786;NIO1753;SOULAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1787;NIO1754;SOULAR;Children;Mon;[von] den Monstern;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1788;NIO1755;SOULAR;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1789;NIO1756;SOULAR;Children;Mon;Die Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1790;NIO1757;SOULAR;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1791;NIO1758;SOULAR;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1792;NIO1759;SOULAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1793;NIO1760;SOULAR;Children;Mon;die Monster ;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1794;NIO1761;STSTER;Children;Mon;Tim und Bello;0;EN | EN;Name;NP;Main;Maintenance
+LL1795;NIO1762;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1796;NIO1763;STSTER;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1797;NIO1764;STSTER;Children;Mon;[vor] ihm;0;PP;Pron;Pron;Main;Maintenance
+LL1798;NIO1765;STSTER;Children;Mon;Max sein Freund;0;EN+defNP;Name;NP;Main;Reintroduction
+LL1799;NIO1766;STSTER;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1800;NIO1767;STSTER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1801;NIO1768;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1802;NIO1769;STSTER;Children;Mon;Tim, Bello und Max;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1803;NIO1770;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1804;NIO1771;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1805;NIO1772;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1806;NIO1773;STSTER;Children;Mon;Die Braune Person ;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1807;NIO1774;STSTER;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1808;NIO1775;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1809;NIO1776;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1810;NIO1778;STSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1811;NIO1779;STSTER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1812;NIO1780;STSTER;Children;Mon;die beinden gestallten;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1813;NIO1781;STSTER;Children;Mon;die dicke Figur;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1814;NIO1782;STSTER;Children;Mon;Tim ;0;EN;Name;NP;Main;Reintroduction
+LL1815;NIO1783;STSTER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1816;NIO1784;STTHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1817;NIO1785;STTHAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1818;NIO1786;STTHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1819;NIO1787;STTHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1820;NIO1788;STTHAR;Children;Mon;Das große Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1821;NIO1789;STTHAR;Children;Mon;ihnen;0;PP;Pron;Pron;Main;Maintenance
+LL1822;NIO1790;STTHAR;Children;Mon;Tim ;0;EN;Name;NP;Main;Reintroduction
+LL1823;GL67;STTHAR;Children;Mon;Das Monster;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1824;NIO1791;STTHAR;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1825;NIO1792;STTHAR;Children;Mon;es ;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1826;NIO1793;STTHAR;Children;Mon;das Monster;0;defNP;defNP;NP;Secondary;Maintenance
+LL1827;NIO1794;STTHAR;Children;Mon;[auf] Max, Bello und Tim ;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1828;NIO1795;STTHAR;Children;Mon;die Kinder;0;defNP;defNP;NP;Main;Reintroduction
+LL1829;NIO1796;STTHAR;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1830;NIO1797;STTHAR;Children;Mon;er ;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1831;NIO1798;STTHAR;Children;Mon;Ø;0;NSA;null;Pron;Main;Reintroduction
+LL1832;NIO1799;SUMAER;Children;Mon;den Jungs;0;defNP;defNP;NP;Main;Maintenance
+LL1833;NIO1800;SUMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1834;NIO1801;SUMAER;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1835;NIO1802;SUMAER;Children;Mon;Brodo;0;EN;Name;NP;Secondary;Reintroduction
+LL1836;NIO1803;SUMAER;Children;Mon;Ø;0;NSA;null;Pron;Secondary;Maintenance
+LL1837;NIO1804;SUMAER;Children;Mon;[bei] den Jungs;0;defNP;defNP;NP;Main;Reintroduction
+LL1838;NIO1805;SUMAER;Children;Mon;Er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1839;NIO1806;SUMAER;Children;Mon;Er;0;PP;Pron;Pron;Secondary;Maintenance
+LL1840;NIO1807;SUMAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1841;NIO1808;SUPAER;Children;Mon;Die drei;0;defNP;defNP;NP;Main;Maintenance
+LL1842;NIO1809;SUPAER;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1843;NIO1810;SUPAER;Children;Mon;Bello;0;EN;Name;NP;Main;Maintenance
+LL1844;NIO1811;SUPAER;Children;Mon;die Freunde;0;defNP;defNP;NP;Main;Reintroduction
+LL1845;NIO1812;SUPAER;Children;Mon;sie ;0;PP;Pron;Pron;Main;Maintenance
+LL1846;NIO1813;SUPAER;Children;Mon;Die Freunde;0;defNP;defNP;NP;Main;Maintenance
+LL1847;NIO1814;SUPAER;Children;Mon;sie ;0;PP;Pron;Pron;Main;Maintenance
+LL1848;NIO1815;SUPAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1849;NIO1816;SUPAER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1850;NIO1817;SUSTER;Children;Mon;Er;0;PP;Pron;Pron;Main;Maintenance
+LL1851;NIO1818;SUSTER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1852;NIO1819;SUSTER;Children;Mon;die beiden;0;defNP;defNP;NP;Main;Reintroduction
+LL1853;NIO1820;SUSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1854;NIO1821;SUSTER;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1855;NIO1822;SUSTER;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1856;NIO1823;SUSTER;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1857;NIO1824;SUSTER;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1858;NIO1825;SYUWNI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1859;NIO1826;SYUWNI;Children;Mon;Sie;0;PP;Pron;Pron;Main;Maintenance
+LL1860;NIO1827;SYUWNI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1861;NIO1828;SYUWNI;Children;Mon;Tim Max und Bello;0;EN | EN | EN;Name;NP;Main;Reintroduction
+LL1862;NIO1829;SYUWNI;Children;Mon;die Gollumis;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1863;NIO1830;SYUWNI;Children;Mon;Max und Tim;0;EN | EN;Name;NP;Main;Reintroduction
+LL1864;NIO1831;SYUWNI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1865;NIO1832;SYUWNI;Children;Mon;er;0;PP;Pron;Pron;Main;Maintenance
+LL1866;NIO1833;SYUWNI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1867;NIO1834;SYUWNI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1868;NIO1835;SYUWNI;Children;Mon;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1869;NIO1836;SYUWNI;Children;Mon;ihn ;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1870;NIO1837;SYUWNI;Children;Mon;der grüne Gollum;0;defNP;defNP;NP;Secondary;Maintenance
+LL1871;NIO1838;SYUWNI;Children;Mon;Ø;0;NSA;null;Pron;Secondary;Maintenance
+LL1872;NIO1839;SYUWNI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1873;NIO1840;SYUWNI;Children;Mon;Tim und Max;0;EN | EN;Name;NP;Main;Reintroduction
+LL1874;NIO1841;SYUWNI;Children;Mon;Bello;0;EN;Name;NP;Main;Reintroduction
+LL1875;NIO1842;THDIER;Children;Meh;die Jungs;0;defNP;defNP;NP;Main;Maintenance
+LL1876;NIO1843;THDIER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1877;NIO1844;THDIER;Children;Meh;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1878;GL68;THDIER;Children;Meh;Max;0;EN;Name;NP;Main;Reintroduction
+LL1879;GL69;THDIER;Children;Meh;Sie;0;Pron;Pron;Pron;Main;Reintroduction
+LL1880;NIO1845;THDIER;Children;Meh;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1881;NIO1846;THDIER;Children;Meh;der Elf;0;defNP;defNP;NP;Secondary;Reintroduction
+LL1882;GL70;THDIER;Children;Meh;Tim und sein Freund Max ;0;EN | defNP;Name+defNP;NP;Main;Reintroduction
+LL1883;NIO1847;THDIER;Children;Meh;sie;0;PP;Pron;Pron;Secondary;Reintroduction
+LL1884;NIO1848;THDIER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1885;NIO1849;THDIER;Children;Meh;Der Hund;0;defNP;defNP;NP;Main;Reintroduction
+LL1886;NIO1850;THDIER;Children;Meh;Ø;0;NSA;null;Pron;Main;Maintenance
+LL1887;NIO1851;THDIER;Children;Meh;den Elf und den Älien;0;defNP | defNP;defNP;NP;Secondary;Reintroduction
+LL1888;NIO1852;WEJONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1889;NIO1853;WEJONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1890;NIO1854;WEJONI;Children;Mon;Sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1891;NIO1855;WEJONI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1892;GL71;WEJONI;Children;Mon;Max;0;EN;Name;NP;Main;Reintroduction
+LL1893;GL72;WEJONI;Children;Mon;se ;0;Pron;Pron;Pron;Main;Reintroduction
+LL1894;NIO1856;WEJONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Maintenance
+LL1895;NIO1857;WEJONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
+LL1896;NIO1858;WEJONI;Children;Mon;Tim;0;EN;Name;NP;Main;Reintroduction
+LL1897;NIO1859;WEJONI;Children;Mon;sie;0;PP;Pron;Pron;Main;Reintroduction
