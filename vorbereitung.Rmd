@@ -1,0 +1,53 @@
+---
+title: "Vorbereitende Hausaufgabe für unseren R-Workshop zu Mixed Models"
+author: "Felix . Golcher @hu-berlin.de"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M')`"
+header-includes: |
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{german}
+  \setsansfont{Latin Modern Sans}
+  \setmainfont{Latin Modern Sans}
+urlcolor: blue
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: false
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 6
+    number_sections: true
+    fig_caption: yes
+    table_caption: yes
+    df_print: "paged"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE,
+                      autodep = TRUE,
+                      message = FALSE)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+```
+
+Diese vorbereitende Hausaufgabe soll nur testen, was sie bereits wissen und können. Bitte investieren Sie keine Zeit um nachzulesen oder zu lernen, was alles nötig ist um alle Aufgaben zu erledigen. Antworten Sie einfach aus Ihrem bestehenden Wissen heraus.
+
+Bitte beantworten Sie die folgenden Fragen. Die bevorzugte Art der Rückmeldung wäre ein Rmarkdown-Dokument, dass Sie [an mich zurücksenden](mailto:felix.golcher@hu-berlin.de). Wenn Sie nicht genau wissen, was das ist, können Sie gerne auch ein normales R-Skript schicken. Wenn Ihnen auch das schwerfällt, antworten Sie schlicht in Textform. Wenn Ihnen eine Frage nichts sagt, ist auch das kein Problem, sondern eine interessante Information.
+
+Je besser ich weiß, was Sie wissen, desto besser kann ich den Inhalt des Workshops an Ihre Bedürfnisse anpassen.
+
+(Bitte entschuldigen Sie, dass der Rest des Dokuments in zweifelhaftem Englisch gehalten ist.)
+
+1) set up an R-Markdown document.
+1) read in the file `RDaten.csv`.
+2) use tidyverse functions to keep only the data where `Sprache` has the value "Mon".
+3) use tidyverse functions to count the number of different values for each column. Do that for all columns with one command.
+3) Make descriptive plots for the data, at least one of which shows the dependency of `PronNP` on `Age` and `Function`. This plot should show the variance at least between subjects, if not also within subjects.
+4) Explain the mathematical background of linear mixed models in a few sentences.
+5) Explain the mathematical background of generalized linear mixed models in a few sentences.
+6) Set up a binomial mixed model with the main aim to check the dependency of `PronNP` from the `Age` group.
+7) What is overdispersion? Do we have to check for overdispersion? How would you check for it? How would you react if there is significant overdispersion?
