@@ -40,6 +40,8 @@ Bitte beantworten Sie die folgenden Fragen. Die bevorzugte Art der Rückmeldung 
 
 Je besser ich weiß, was Sie wissen, desto besser kann ich den Inhalt des Workshops an Ihre Bedürfnisse anpassen.
 
+**Anvisierte Bearbeitungszeit: ~1h**
+
 (Bitte entschuldigen Sie, dass der Rest des Dokuments in zweifelhaftem Englisch gehalten ist.)
 
 1) set up an R-Markdown document.
