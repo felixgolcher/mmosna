@@ -165,235 +165,24 @@ knitr::opts_chunk$set(fig.width = (myfw <- 7),
 
 # Prep
 
-## Configure Names
-
 ```{r}
-Sit <- c(
-  A="E-Mail/pupil",
-  C="E-Mail/L2 student",
-  B="Exam task",
-  D="Tutorial task")
-sitseq <- c("A","C","B","D")
-quest <- c(
-  d="that",
-  w="while",
-  s="there",
-  t="dance"
-)
+maindata <- read_excel("data/LengthInWords.xlsx")
+metadata <- read_excel("data/LengthInWords-meta.xlsx")
+fulldata <- full_join(maindata, metadata)
+stopifnot(nrow(fulldata) == nrow(maindata))
+stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1)
 ```
-
-
-
-## read in meta data
-
-```{r}
-(read_excel(file.path(inputpath, "meta_perso.xlsx"),
-           sheet = 1,
-           .name_repair = "universal") -> meta_perso.raw) %>% 
-  select(-Studie,
-         -GT2_tasks_pc, # perf corr with GT2_corr_items
-         -GT_items_pc, # similar
-         -PerCent_GT2, # ...
-         -PerCent_GT1,
-         -PerCent_all
-         ) %>% 
-  mutate(Akad_Fam = as.character(c("non academic","academic")[Akad_Fam+1])) %>% 
-  rename(Datum_start = Datum) -> meta_perso_2
-```
-
-Das Datum in `data/ReFlex_2020_Metadaten_Hauptstudie.xlsx` ist der Zeitpunkt der demographischen Daten, die die erste Aufgabe in der Studie darstellen. Somit markiert es den Beginn der Studie, für die die TN 3 Wochen Zeit hatten. In der Tabelle `data/ReFlex_2020_Qualitative_Bewertung_der_Erklärungen_Hauptstudie.xlsx` beziehen sich Datumsangaben auf die Erstellungstage der einzelnen Erklärungen.
-
-```{r} 
-(read_excel(file.path(inputpath, "meta_perso.xlsx"),
-           sheet = 2,
-           .name_repair = "universal") -> meta_perso_meta.raw) %>% 
-  filter(!is.na(Bezeichnung_Plot),
-         !as.character(Bezeichnung_Plot) %in% 0:10 # Right now, there are numbers interspersed
-         ) -> meta_perso_meta
-stopifnot(sum(!meta_perso_meta$Variable %in% names(meta_perso_2)) == 0)
-labelmap <-meta_perso_meta$Bezeichnung_Plot
-names(labelmap) <- meta_perso_meta$Variable
-
-meta_perso_2 %>% 
-  mutate(across(meta_perso_meta$Variable,
-                labelcol
-  )) -> meta_perso
-```
-
-
-## read 2nd meta data file
-
-```{r}
-(read_excel(file.path(inputpath, "meta_quali.xlsx"),
-            sheet = 1,
-           .name_repair = "universal") -> meta_quali.raw) %>% 
-  mutate(Correctness_score = ifelse(Correctness_score == 11,
-                                    NA,
-                                    Correctness_score),
-         Mixed_expanation = ifelse(Mixed_expanation == 9,
-                                    NA,
-                                    Mixed_expanation),
-         Sem_explanation = ifelse(Sem_explanation == 9,
-                                    NA,
-                                    Sem_explanation),
-         Explanation_type = ifelse(Explanation_type == 9,
-                                    NA,
-                                    Explanation_type))-> meta_quali_2
-```
-
-```{r} 
-(read_excel(file.path(inputpath,
-                      "meta_quali.xlsx"),
-           sheet = 2,
-           .name_repair = "universal") -> meta_quali_meta.raw) %>% 
-  filter(!is.na(Bezeichnung_Plot),
-         !as.character(Bezeichnung_Plot) %in% 0:10 # Right now, there are numbers interspersed
-         ) -> meta_quali_meta
-stopifnot(sum(!meta_quali_meta$Variable %in% names(meta_quali_2)) == 0)
-labelmap <-meta_quali_meta$Bezeichnung_Plot
-names(labelmap) <- meta_quali_meta$Variable
-
-meta_quali_2 %>% 
-  mutate(across(meta_quali_meta$Variable,
-                labelcol
-  )) -> meta_quali
-```
-
-```{r}
-meta <- full_join(meta_perso, meta_quali)
-if(nrow(meta) != nrow(meta_quali)){
-  warning("The number of rows in the joined meta data (",
-          nrow(meta),
-          ") is not equal to the number of rows in the
-qualitative meta data (",nrow(meta_quali),") as it should be.")
-}
-```
-
-
-## read in main data and join with meta data
-
-```{r, warning=TRUE, cache=FALSE}
-(read_excel(file.path(inputpath, "main.xlsx"),
-            sheet = 1,
-           .name_repair = "universal") -> dta.raw) %>% 
-  rename_all(~ gsub("\\.+","_",.)) %>% 
-  select(-starts_with("..")) %>% 
-  filter(!is.na(Situation))-> dta.halfcooked
-full_join(dta.halfcooked,
-          meta) -> meta.joined
-
-if(nrow(dta.halfcooked) != nrow(meta.joined)){
-  warning("merging did not completely work!\n only in meta: ",
-          unique(meta$TN_ID)[! unique(meta$TN_ID) %in% unique(dta.halfcooked$TN_ID)],
-          "\n only in data: ", 
-          unique(dta.halfcooked$TN_ID)[! unique(dta.halfcooked$TN_ID) %in% unique(meta$TN_ID)])
-}
-meta.joined %>% 
-  select(-LingAufgabe # same as "Situation"
-         ) %>% 
-  filter(Anf == 1, ## filter out non beginners
-         !is.na(Document) ## filter out merging errors.
-         ) %>% 
-  mutate(Kohorte = factor(Kohorte),
-         Situation_orig = Situation,
-         Situation = factor(Situation, 
-                            levels = sitseq,
-                            labels = Sit[sitseq]),
-         Question = quest[Question],
-         sex = factor(c("male","female")[sex]),
-         Sem_explanation = as.character(c("yes","no")[Sem_explanation+1]))-> dta
-```
-
-Die ausgeschlossenen Personen (`r length(unique(dta.raw$TN.ID[!is.na(dta.raw$TN.ID)]))-length(unique(dta$TN_ID))`) hatten bereits ein oder beide linguistische Module abgeschlossen haben und sind somit keine Anfänger mehr.
-
-## read in 2nd sheet from main data file
-
-There we have descriptions of variables and information about the norm measure.
-
-```{r}
-read_excel(file.path(inputpath, "main.xlsx"),
-            sheet = 2,
-           .name_repair = "universal",
-           na = c("keine")) %>% 
-  mutate(Normalisierung = factor(Normalisierung,
-                                 levels = c("N_Clauses",
-                                            "Words",
-                                            "sentences")),
-         Variablenname = vctrs::vec_as_names(Variablenname,
-                                             repair = "universal"),
-         Variablenname = gsub("\\.+","_",Variablenname)) -> mapping
-stopifnot(nrow(mapping) == ncol(dta.halfcooked))
-stopifnot(length(mapping$Variablenname[!mapping$Variablenname %in% colnames(dta)]) == 1) # LingAufgabe 
-stopifnot(length(colnames(dta.halfcooked)[!colnames(dta.halfcooked) %in% mapping$Variablenname])==0) # Clauses
-
-mapper <- mapping %>% filter(!is.na(Normalisierung))
-
-nmap = as.character(mapper$Normalisierung)
-names(nmap) <- as.character(mapper$Variablenname)
-
-dta %>%
-  mutate(across(names(nmap[nmap == "N_Clauses"]),
-                list(norm_clauses = ~./N_Clauses),
-                .names = "{col}_{fn}")) %>% 
-  mutate(across(names(nmap[nmap == "Words"]),
-                list(norm_tokens = ~./Words),
-                .names = "{col}_{fn}")) %>% 
-  mutate(across(names(nmap[nmap == "sentences"]),
-                list(norm_sentences = ~./Sentences_total_),
-                .names = "{col}_{fn}")) %>%
-  mutate(across(contains("_norm_"),
-                list(scaled = ~ (. - mean(., na.rm=T))/sd(., na.rm=T)),
-                .names = "{col}_{fn}")) %>% 
-  select(TN_ID, Situation, Words, N_Clauses, Sentences_total_, everything()) %>% 
-  select(-Nr, -Document, -Kohorte, -Question, everything())-> dte2
-```
-
-```{r}
-(mapping %>% 
-  filter(!is.na(Bezeichnung_Plot))->lmn) %>% 
-  pull(Bezeichnung_Plot) -> labelmap
-names(labelmap) <- lmn$Variablenname
-
-dte2 %>% 
-  mutate(across(names(labelmap),
-                labelcol
-  )) -> dte
-```
-
-
-
-We have 
-
-* `r nrow(dta)` rows in `r ncol(dta)` Spalten in `dta` and 
-* `r nrow(dte)` rows in `r ncol(dte)` Spalten in the normed data `dte`.
-
-
-```{r}
-dte %>% 
-  filter(Anf_Fort == 1,
-         Expl_given == 1) -> dtr
-```
-
-```{r}
-dtr %>% 
-  filter(!is.na(Abi)) %>% 
-  mutate(TaskCompliance = set_label(ifelse(Correctness_score > 0,
-                                           "Yes", "No"),
-                                    "Task Compliance")) -> dtr.abi
-```
-
 
 
 # Complexity
 
-S. [issue 20](https://scm.cms.hu-berlin.de/golchefe/reflex-pipeline/-/issues/20)
 
 ## Words
 
 The data don't look very normally distributed:
 
 ```{r, echo=FALSE}
-dtr.abi %>% 
+fulldata %>% 
   ggplot(aes(Situation, Words#, col=Question
              ))+
   #geom_violin()+
@@ -403,7 +192,7 @@ dtr.abi %>%
 ```
 
 ```{r, include=FALSE}
-dtr.abi %>% 
+fulldata %>% 
     group_by(Situation) %>% 
     mutate(Words = scale(Words)) %>% 
     ungroup() %>% 
@@ -419,21 +208,21 @@ When we try some standard transformation the $\sqrt{~~}$-Transformation is a cle
 grid.arrange(gg7 + ggtitle("untransformed"),
              (gg7 +
                ggtitle("log transformed")) %+% 
-               (dtr.abi %>% 
+               (fulldata %>% 
                   mutate(Words = log(Words)) %>% 
                   group_by(Situation) %>% 
                   mutate(Words = scale(Words)) %>% 
                   ungroup()),
              (gg7 +
                ggtitle("sqrt transformed")) %+% 
-               (dtr.abi %>% 
+               (fulldata %>% 
                   mutate(Words = sqrt(Words)) %>% 
                   group_by(Situation) %>% 
                   mutate(Words = scale(Words)) %>% 
                   ungroup()),
              (gg7 +
                ggtitle("reverse transformed")) %+% 
-               (dtr.abi %>% 
+               (fulldata %>% 
                   mutate(Words = -1/(Words)) %>% 
                   group_by(Situation) %>% 
                   mutate(Words = scale(Words)) %>% 
@@ -444,7 +233,7 @@ grid.arrange(gg7 + ggtitle("untransformed"),
 We did not look at residuals so far, which is what actually has to be normally distributed. But we got a glance that gave us a very good candidate.
 
 ```{r}
-w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=dtr.abi)
+w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=fulldata)
 summary(w0)
 ```
 
