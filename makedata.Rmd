@@ -386,8 +386,11 @@ dtr %>%
 w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=dtr.abi)
 
 ```{r}
+sit2 <- setNames(c("CasualA","CasualB","FormalC","FormaldD"),
+                 Sit)
 dtr.abi %>%
   select(TN_ID, Words, Situation, Question, Correctness_score) %>% 
+  mutate(Situation = sit2[Situation]) %>% 
   write.xlsx("data/LengthInWords.xlsx", overwrite = T)
 dtr.abi %>% 
   select(TN_ID, Abi, Age, sex, GT_points) %>% 
