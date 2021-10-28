@@ -4,3 +4,7 @@
 *~
 *.pdf
 .Rhistory
+.~lock*
+packages.bib
+*.log
+*.tex

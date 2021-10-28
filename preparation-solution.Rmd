@@ -1,0 +1,160 @@
+---
+title: "Preparatory homework for our R-Workshop on mixed models"
+subtitle: Solution (part)
+author: "Felix . Golcher @hu-berlin.de"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M')`"
+header-includes: |
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{english}
+  \setsansfont{Latin Modern Sans}
+  \setmainfont{Latin Modern Sans}
+urlcolor: blue
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 6
+    number_sections: true
+    fig_caption: yes
+    table_caption: yes
+    df_print: "paged"
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE,
+                      autodep = TRUE,
+                      message = FALSE)
+```
+
+```{r packages, include=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+This preparatory homework is only for testing your existing knowledge and experience. Please do not invest time in reading and learning the skills needed for completing all the tasks. Just answer from what you already know.
+
+Please answer the following questions. The preferred result would be an Rmarkdown document that you would send [back to me](mailto:felix.golcher@hu-berlin.de). If you do not know what that is, reply with an R-Script. If that is not easily possible for you, reply in any other way. If a question does not mean anything to you, just state that fact. If none of the questions mean anything to you, I would be interested in this fact as well.
+
+The better I know what you already know the better I can adapt the workshop to your needs.
+
+# set up an R-Markdown document
+
+## Markdown
+
+R-markdown is an extension of Markdown. Markdown is kinda this thing we do sometimes in emails when we write `*italics*` to write *italics* or list preceded
+
+```
+* by
+* asterisks
+```
+
+to represent a
+
+* bullet
+* list
+
+This way of basic formatting was [formalised](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) and there are powerful [tools](https://pandoc.org/) to convert it to all other formats you could think of like Word, PDF, html, whatever (is there more?). 
+
+This allows you to write versatile, publication ready (possible) reports based on a text based source format that is easy to learn^[That is not Latex or some other magic.].
+
+## R-Markdown
+
+You can intersperse Markdown with R-Code if you enclose it into markers like
+
+    ```{r}`r ""`
+    rnorm(3)
+    ```
+
+If you write something like this into an Markdown document, and tell `rstudio` to translate it, the code gets evaluated and code and output may appear in the output document:
+
+```{r}
+(x <- rnorm(3))
+```
+
+You can finely tune what should and what should not appear in the output document. You can print values like the first element of `x` in running text as well (`r x[1]`, in this case).
+
+## Why R-Markdown
+
+* No cut and paste. You can write your PhD-thesis and change a data point at the day of submission, recompile, and get all 21547 numbers in your document updated.
+* Self documenting. You don't repeat the p-value's value, but tell R-markdown to insert this and that p-value from this and that model into your document.
+* Reproducable research. Give someone data and R-markdown and she can recreate your analysis. And critize it. Or praise it.
+* As a text based format R-markdown is accessible to Version control programs like [git](https://en.wikipedia.org/wiki/Git). You can use all the powerful tools, platforms like [github.com](https://github.com) give you for collaborative work.
+
+# read in the file `RDaten.csv`.
+
+```{r}
+dta <- read_csv2("data/RDaten.csv")
+```
+
+How do the data look like?
+
+```{r}
+dta %>% 
+  slice(as.integer(seq(1,n(), length.out = 6))) %>% 
+  select(-2) %>% 
+  select(-Character, -Proband) %>% 
+  kbl(booktabs = T) %>% 
+  column_spec(4, width = "7em") %>% 
+  kable_styling(latex_options = "striped")
+```
+
+# The Tidyverse
+
+## Filter data with the tidyverse
+
+Usually you want to have much longer pipelines and do a lot of preparatory stuff like on a conveyer belt. Here we use the `tidyverse` just to keep only the data where `Sprache` has the value "Mon":
+
+```{r}
+dta %>% 
+  filter(Sprache == "Mon") %>% 
+  select(-2) -> dtb # we remove one column as well...
+```
+
+If done right you get very clean code that is handled according to universal conventions, easy to read, easy to maintain(!) and to transfer.
+
+# Another example, summarising data
+
+It's always a good idea to do some consistency checks befor you trust your data. You might want to see if the number of levels are right or if some typo sneaked its way in.
+
+Use tidyverse functions to count the number of different values for each column. Do that for all columns with one command.
+
+```{r}
+dtb %>% 
+  summarise(across(everything(), ~ n_distinct(.))) %>% 
+  print(width=Inf)
+```
+
+Does that look OK? Good. Some other, nicer looking output can be created of course, but that's just something we do for ourselves, not for publication.
+
+# Plots
+
+Make descriptive plots for the data, especially one showing the dependency of `PronNP` on `Age` and `Function`. The plot should show the variance at least between subjects, if not even within subjects.
+
+```{r p1, fig.cap="As often we see much more Variation in Children than in adults.",echo=FALSE,warning=FALSE, fig.width=4, fig.width=8}
+dtb %>% 
+  ggplot(aes(Function, as.numeric(PronNP == "Pron"), group = Proband))+
+  stat_summary(fun.max = function(x)mean_cl_boot(x)$ymax,
+               fun.min = function(x)mean_cl_boot(x)$ymin,
+               geom = "errorbar",
+               width = 0,
+               position = position_dodge(width = .3),
+               alpha = .4)+
+  stat_summary(fun = mean,
+               position = position_dodge(width = .3))+
+  scale_y_continuous("relative frequency of Pron")+
+  facet_grid(.~Age)+
+  theme_bw()
+```
+
+You can refer to your figures, for example to Figure \@ref(fig:p1) by tags that adapt when you reorder or add more Figures before.
+
+You do **not** have to save the image files somewhere. This is done automatically.
+
+# The rest of the preparatory home work
+
+is the content of this workshop.
