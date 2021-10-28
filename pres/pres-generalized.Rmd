@@ -1,0 +1,173 @@
+---
+title: "From general to generalized (linear) mixed models"
+subtitle: "Non-normally distributed data"
+author: '[Felix Golcher](https://www.linguistik.hu-berlin.de/de/staff/golcherf) [\@fgolcher](https://twitter.com/fgolcher/)'
+date: "2021-10-29"
+bibliography: [flybib.bib,bibliography.bib]
+tables: yes
+output:
+  iosp::ioslides_plus:
+    fig_height: 5
+    fig_width: 6
+    keep_md: no
+    logo: fig/hu.png
+    footer: "R Workshop, 2021-10-29 Session 1"
+    smaller: yes
+    widescreen: yes
+    self_contained: false
+    lib_dir: libs
+    fig_retina: null
+    css: styles.css
+---
+
+```{r config, include=FALSE}
+pcks <- c("ggplot2", "tidyverse","lme4","languageR", "itsadug", 
+          "car", "kableExtra",
+          "ggrepel","broom", "latex2exp","lmerTest", "knitr", "rmarkdown", "performance")
+```
+
+
+```{r, include=FALSE}
+## ähnliches geht auch mit write_bib {knitr}
+## die anreicherung muss dann natürlich auch extra durchgeführt werden.
+## pcks list of packages.
+for(pck in pcks) library(pck, character.only = T)
+pcks <- unique(c(pcks, names(sessionInfo()$otherPkgs)))
+versions <- installed.packages()[pcks,"Version"]
+fc <- file("flybib.bib", open="wt")
+invisible(sapply(pcks, function(pck){
+  pck.cit <- citation(pck)[[1]]
+  pck.cit$key <- pck
+  hds <- ifelse(pck == "base", 
+                "Version", 
+                paste("R package \\texttt{",pck,"} version",sep=""))
+  vsn <- paste(hds,versions[pck])
+  if(length(grep("version",pck.cit$note))==0){
+      pck.cit$addendum <- ifelse(is.null(pck.cit$note), 
+                           vsn, 
+                           paste(pck.cit$note,vsn,sep=", "))
+  }
+  writeLines(toBibtex(pck.cit),fc)
+}))
+close(fc)
+```
+
+```{r knitroptions, include=FALSE}
+knitr::opts_chunk$set(cache=T,
+                      #echo=FALSE,
+                      #results='hide',
+                      message=FALSE,
+                      warning=FALSE,
+                      autodep=T,
+                      root.dir=getwd()
+               )
+theme_set(theme_minimal())# +
+```
+
+
+## where are we | and where do we wanna go?
+
+### where we are {.box .bg-green .build}
+
+* We know how to handle data that are
+  - normally (gaussianly(?)) distributed
+  - or can be tranformed into something normally distributed
+* The **mean** expectation value might vary depending on many variables on different levels.
+* We allow for idiosyncratic variation between people, items, plots of land, years, countries...
+  - The expectation value might be distributed normally around the **mean value**    (random intercept)
+  - The effect of each variable might be normally distributed around it's mean value (random slope)
+
+### What's lying ahead? {.box .bg-red .build}
+
+* Not all data [are/is/does](https://www.theguardian.com/news/datablog/2010/jul/16/data-plural-singular) normally distributed.
+  - actually, no data is.
+* If your data follow one of several standard distributions you can extend the models we know to them.
+  - **Binomially** distributed data: how many out of $n$ times did something happen?
+  - **Poisson** data: How often did something happen in a given time?
+  - Other distributions, most notably the **Gamma** distribution.
+* Then you do not directly model the expectation value anymore.
+
+## What the f$\cdots$k is a Poisson distribution? {.build}
+
+```{r, include=FALSE}
+lambda <- .45
+```
+### {.box-9}
+
+* Suppose you stand at a traffic light. It is a very quiet street.
+* You count the numbers of cars stopped by each red light.
+* Usually it's zero. Sometimes there is one car, somtimes two cars etc.
+* Let's suppose, there are $\lambda = `r lambda`$ cars on average.
+
+### The PMF {.box-3}
+
+$\Pr(k)= \frac{\lambda^k e^{-\lambda}}{k!}$
+
+%end%
+
+```{r, title="That's what you see: The Poisson distribution", row=c(6,5), fig.width=3, fig.height=1.5}
+data.frame(cars = 0:10) %>% 
+  mutate(probability = dpois(cars, lambda)) %>% 
+  filter(probability>.001) %>% 
+  ggplot(aes(cars, probability)) + 
+  geom_bar(stat = "identity")
+```
+
+### {.box-12}
+
+* This distribution is completely defined by the mean $\lambda$.
+* The variance is always $\lambda$. The Poisson distribution has only one parameter.
+
+## Set up example data | simulation
+
+```{r, include=FALSE}
+rate <- .1 # pro s => this gives us the log, so not per second!
+eff <- c(0.,.05) # delta pro s
+mn <- 6
+mx <- 12
+time <- seq(mn, mx, length=2000)  # s
+```
+
+
+* Suppose we install a wild life camera in the forest.
+* It is triggered `r signif(exp(rate),3)` times per hour.
+* Not all nights have are equally long, but have between `r mn` and `r mx` hour.
+* We watch the same habitat again after 10 years.
+* We want to figure out if something changed. 
+* Let's assume it actually did and the rate is now `r signif(exp(eff[2]),3)` times as high, that is `r signif(exp(rate+eff[2]),3)` per hour.
+
+```{r, title = "Create our simulated data", results='hide'}
+expand_grid(rate=rate, eff=eff, time=time) %>% 
+  mutate(cond = c("damals","heute")[as.numeric(factor(eff))],
+         eta = eff+rate, # witout offset here
+         h_eta = exp(eta), # still w/o offset, the resulting rate.
+         lambda = h_eta*time, # =exp(eff)*exp(rate)*time <=> log(lambda) = log(time) + ... 
+         resp = rpois(n(), lambda)
+         ) -> dta
+```
+
+
+## Acknowledgements { .column}
+
+```{r include=F}
+pkn <- sort(names(sessionInfo()$otherPkgs))
+brk <- 17
+```
+
+
+### Packages used in this presentation {.box-6 .bg-yellow .small}
+
+* `r paste(pkn[1:brk], pkn[1:brk], sep=", [@", collapse="]\n* " )`]
+
+
+### {.box-6 .bg-yellow .small}
+
+* `r paste(pkn[(brk+1):length(pkn)], pkn[(brk+1):length(pkn)], sep=", [@", collapse="]\n* " )`]
+
+### Inspired by {.box-6 .bg-red}
+
+technical enlightenment and substantial stimulus from @Krause2020
+
+## References 
+
+### {.col-12 .x-small}

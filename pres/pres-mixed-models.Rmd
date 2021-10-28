@@ -1,0 +1,1291 @@
+---
+title: "Inferential Statistics in R"
+subtitle: "An Overview up to Mixed Models"
+author: '[Felix Golcher](https://www.linguistik.hu-berlin.de/de/staff/golcherf) [\@fgolcher](https://twitter.com/fgolcher/)'
+date: "2021-10-29"
+bibliography: [flybib.bib,bibliography.bib]
+tables: yes
+output:
+  iosp::ioslides_plus:
+    fig_height: 5
+    fig_width: 6
+    keep_md: no
+    logo: fig/hu.png
+    footer: "R Workshop, 2021-10-29 Session 1"
+    smaller: yes
+    widescreen: yes
+    self_contained: false
+    lib_dir: libs
+    fig_retina: null
+    css: styles.css
+---
+
+```{r config, include=FALSE}
+pcks <- c("ggplot2", "tidyverse","lme4","languageR", "itsadug", 
+          "car", "kableExtra",
+          "ggrepel","broom", "latex2exp","lmerTest", "knitr", "rmarkdown", "performance")
+```
+
+
+```{r, include=FALSE}
+## ähnliches geht auch mit write_bib {knitr}
+## die anreicherung muss dann natürlich auch extra durchgeführt werden.
+## pcks list of packages.
+for(pck in pcks) library(pck, character.only = T)
+pcks <- unique(c(pcks, names(sessionInfo()$otherPkgs)))
+versions <- installed.packages()[pcks,"Version"]
+fc <- file("flybib.bib", open="wt")
+invisible(sapply(pcks, function(pck){
+  pck.cit <- citation(pck)[[1]]
+  pck.cit$key <- pck
+  hds <- ifelse(pck == "base", 
+                "Version", 
+                paste("R package \\texttt{",pck,"} version",sep=""))
+  vsn <- paste(hds,versions[pck])
+  if(length(grep("version",pck.cit$note))==0){
+      pck.cit$addendum <- ifelse(is.null(pck.cit$note), 
+                           vsn, 
+                           paste(pck.cit$note,vsn,sep=", "))
+  }
+  writeLines(toBibtex(pck.cit),fc)
+}))
+close(fc)
+```
+
+```{r knitroptions, include=FALSE}
+knitr::opts_chunk$set(cache=T,
+                      #echo=FALSE,
+                      #results='hide',
+                      message=FALSE,
+                      warning=FALSE,
+                      autodep=T,
+                      root.dir=getwd()
+               )
+theme_set(theme_minimal())# +
+
+```
+
+
+## Let's start with a data set | Lexical decision latencies {.build}
+
+```{r, eval=FALSE, width=3}
+library(languageR)
+lexdec
+```
+
+### {.col-8 .xx-small}
+
+```{r, echo=FALSE}
+(lexdec %>% 
+    as_tibble() %>% 
+    mutate(cTrial = scale(Trial),
+           RTraw = exp(RT),
+           RTsq = -1/sqrt(RTraw)) -> lexdec) %>% 
+  mutate(across(where(is_double), signif, 3)) %>% 
+  slice(as.integer(seq(1,n(), length.out = 10))) %>%
+  select(Subject, 
+         Word, 
+         RT,
+         Trial, 
+         NativeLanguage, 
+         Frequency,
+         Correct, 
+         PrevCorrect, 
+         PrevType,
+         Length, 
+         Complex) %>% 
+  kable %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = FALSE)
+
+```
+
+### Legend {.col-6}
+
+* experimental `Subject`
+* item `Word`
+* Reaction Time `RT`
+* $n$th experimental `Trial`.
+
+### {.col-6}
+
+* `NativeLanguage` of `Subject`.
+* `Frequency` of `Word`
+* `Correct`ness of answer.
+* Correctness of previous answer `PrevCorrect`.
+* Was the last word a word/nonword `PrevType`.
+* `Length` of `Word` in characters.
+
+## A suitable research qestion {.build}
+
+### Research Question {.box-6 .offset-3 .bg-red .x-large}
+
+Does it have an influence on reaction time, if the last trial was correct?
+
+### Discussion / Expectations {.box-12 .bg-blue}
+
+> * Not completely obvious
+> * If there is an effect, the direction should be clear:
+> * $\Rightarrow$ We expect people to slow down if they made a mistake.
+
+## First Step in Every Analysis | Look at your data! {.build .column}
+
+```{r, title="Is it possible at all?", width=6}
+ggplot(lexdec, aes(PrevCorrect, RTraw))+
+  geom_boxplot(fill="grey", width=.3)+
+  scale_y_log10()+
+  geom_violin(alpha=.1, fill="red")+
+  theme_minimal()
+```
+
+### Discussion {.box-6}
+
+* It is possible that there is an effect.
+* The medians are clearly different in the expected direction.
+* There is a lot of variance.
+* The distribution as a whole looks not different.
+
+```{r bu, include=FALSE}
+ggplot(lexdec, aes(PrevCorrect, RTraw))+
+  geom_boxplot(fill="grey", 
+               outlier.colour = NA
+               )+
+  scale_y_log10()+
+  geom_violin(alpha=.1, fill="red", 
+              data=function(dtx)filter(dtx, PrevCorrect=="correct")
+              )+
+  geom_point(data=function(dtx)filter(dtx, PrevCorrect!="correct"),
+             position = position_jitter(width=.01))+
+  theme_minimal()
+```
+
+
+### jump {.box-3 .offset-3 .bg-grey}
+
+[error prone words](#12)
+
+## Further Checks | Are there very odd people? {.build}
+
+
+```{r, title="Are the per person means normally distributed?",row=T}
+(lexdec %>% 
+  group_by(Subject, NativeLanguage) %>% 
+  summarise(meanRT = mean(RTraw)) -> mnrt) %>% 
+  ggplot(aes(meanRT))+
+  geom_histogram()
+```
+
+One person seems to stick out.
+
+## Check for normality | Do it visually {.build}
+
+```{r, title="Indeed there seems to be one offender...", results='hide',row=T}
+qqPlot(mnrt$meanRT, pch=19,
+       ylab="mean RT")
+```
+
+* There are signs for systematic departure from normality anyway.
+* Didn't we miss something?
+
+## Look closer | Non native speakers differ. {.build}
+
+
+```{r fig7, title="Non Natives are clearly slower and they spread more heavily", row=T}
+(lexdec %>% 
+  group_by(Subject, NativeLanguage) %>% 
+  summarise(meanRT = mean(RT)) -> mnrt) %>% 
+  ggplot(aes(meanRT, fill=NativeLanguage))+
+  geom_histogram()
+```
+
+$\Rightarrow$ We do not exclude anyone based on Reaction times.
+
+## Are there people with an unusally bad performance?
+
+```{r, title="Natives vs. Non Natives", row=c(7,5)}
+lexdec %>% 
+  group_by(Subject, NativeLanguage) %>% 
+  summarise(n = n(),
+            errors = sum(Correct == "incorrect")) %>% 
+  ggplot(aes(errors))+
+  geom_bar()+
+  facet_grid(.~NativeLanguage)
+```
+
+$\Rightarrow$ Looks legit.
+
+## What about items (`Word`)? {.column}
+
+```{r fig1, title="Are the means normally distributed?",row=T, eval=FALSE, width=6}
+(lexdec %>% 
+  group_by(Word, NativeLanguage, Frequency) %>% 
+  summarise(meanRT = mean(RTraw)) ->
+   mnrt.wrd) %>% 
+  ggplot(aes(meanRT))+
+  geom_histogram()+
+  facet_grid(.~NativeLanguage)
+```
+
+### Discussion {.box-6 .build}
+
+* some words are distributed differently.
+* This might be due to those words behaving differently.
+* Other reasons?
+  * General distribution of reaction times.
+  * Another factor is heavily smearing out the distribution.
+  * Might just look that way.
+
+### {.col-6}
+
+```{r, ref.label="fig1", echo=FALSE, width=4}
+```
+
+
+
+## What about items (`Word`)? {.column}
+
+```{r fig2, eval=F, width=6}
+mnrt.wrd %>% 
+  ggplot(aes(sample=meanRT, col=NativeLanguage))+
+  geom_qq()+
+  geom_qq_line()+
+  theme_minimal()
+```
+
+### Discussion {.box-6 .build}
+
+* Should be straight lines if normally distributed.
+* $\Rightarrow$ Mean reaction times per word are not normally distributed.
+* In part, because reaction times are not normally distributed.
+* In part, because something else is influencing reaction times **heavily**.
+
+### {.col-6}
+
+```{r, ref.label="fig2", echo=FALSE}
+```
+
+
+## Something heavily influences how words behave {.build}
+
+```{r fig8, title="Frequency dependency", row=T, width=11}
+ggplot(mnrt.wrd, aes(Frequency, meanRT,
+                 col = NativeLanguage,
+                 label = Word))+
+  geom_point()+
+  geom_text_repel(data = function(dtx)
+    filter(dtx, 
+           Frequency < 3 | 
+             Frequency > 6.5 | 
+             meanRT > 670))
+```
+
+### {.col-6}
+
+* Strong frequency dependency
+* Strong differences by `NativeLanguae`.
+* Some words behave different.
+
+### Attention {.box-6 .bg-red}
+
+This could justify a very close look what words to exclude.
+
+## Error prone words? {.column .build}
+
+```{r fig3, width=7, include=F}
+(lexdec %>% 
+  group_by(Word, NativeLanguage) %>% 
+  summarise(n = n(),
+            errors = sum(Correct == "incorrect")) ->
+   corrwords) %>% 
+  ggplot(aes(errors))+
+  geom_bar()+
+  facet_grid(.~NativeLanguage)
+```
+
+### Discussion {.box-6}
+
+* Should be binomially distributed, if all words behave the same.
+* It's not.
+* Some overdispersion is to be expected.
+* Most error prone words could be excluded.
+
+```{r, echo=FALSE}
+corrwords %>% 
+  group_by(NativeLanguage) %>% 
+  arrange(desc(errors)) %>% 
+  slice_head(n=2) %>%
+  select(-n) %>% 
+  kable %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = FALSE)
+```
+
+
+### {.col-5}
+
+```{r, ref.label="fig3", echo=F, fig.height=7}
+```
+
+
+```{r, include=F, eval=FALSE}
+plot(table(corrwords$errors[corrwords$NativeLanguage != "English"]))
+points(0:9, dbinom(0:9, 9, #.468/9
+                   .037
+                   )*sum(corrwords$NativeLanguage != "English"), pch=19)
+```
+
+```{r, include=F, eval=FALSE}
+plot(table(corrwords$errors[corrwords$NativeLanguage == "English"]))
+points(0:12, dbinom(0:12, 12, #.354/12
+                    .3/12)*sum(corrwords$NativeLanguage != "English"), pch=19)
+```
+
+
+## Cleaning 1 | Removing suspicious words {.build}
+
+```{r}
+(corrwords %>% 
+   group_by(NativeLanguage) %>% 
+   arrange(desc(errors)) %>% 
+   slice_max(errors) %>% 
+   mutate(Word = as.character(Word)) %>% 
+   pull(Word) -> badeggs)
+
+lexdec %>% 
+  filter(!Word %in% badeggs) -> lexdec_1
+
+nrow(lexdec) - nrow(lexdec_1)
+```
+
+That is we lost `r nrow(lexdec) - nrow(lexdec_1)` rows of data.
+
+## Are there unrealistic reaction times? {.column}
+
+```{r fig4, width=6, fig.keep='none'}
+cutoff <- 1450
+lexdec_1 %>% 
+  ggplot(aes(RTraw, fill=NativeLanguage)) +
+  geom_histogram()+
+  geom_vline(xintercept = cutoff, 
+             linetype = "dashed", 
+             color="darkgrey") +
+  theme_minimal()
+```
+
+### Discussion {.box-6 .build}
+
+* That is a very typical distribution for reaction times.
+* There is a lower limit.
+* There is a heavy right tail.
+* That is why we use transformed reaction times, **If we cannot use averages**.
+* we do not believe in reaction times $>$ `r cutoff` ms.
+
+### {.col-6}
+
+```{r, ref.label="fig4", echo=FALSE}
+```
+
+### {.col-6 .build}
+
+```{r}
+lexdec_1 %>% 
+  filter(RTraw < cutoff) -> lexdec_2
+nrow(lexdec_1) - nrow(lexdec_2)
+```
+
+## One last step {.build}
+
+### Remove false trials
+
+```{r}
+lexdec_2 %>% 
+  filter(Correct == "correct") -> lexdec_3
+nrow(lexdec_2) - nrow(lexdec_3)
+```
+
+## Let's go | The first significance test {.build}
+
+```{r}
+t.test(RT ~ PrevCorrect, lexdec_3)
+```
+
+### Discussion {.box-12}
+
+* That is significant.
+* What does that mean?
+* What does a $p$ value of `r signif(t.test(RT ~ PrevCorrect, lexdec_3)$p.value,1)` mean? (Avoid more than one digit.)
+
+## Significance Testing | Recapitulation {.build}
+
+### The Null Hypothesis $H_0$ {.box-6 .bg-green .stretch}
+
+We assume that there is no difference. This assumption is called Null Hypothesis. 
+
+<font size="2">There are a lot of problems asscociated with this concept.</font>
+
+### The Alternative Hypothesis $H_1$ {.box-6 .bg-red .stretch}
+
+The default $H_1$ is just the complement of $H_0$.
+
+<font size="2">There is a version of the formalism without $H_1$. The default version is kind of a mixture of two competing formalisms.</font>
+
+%end%
+
+> The $p$-value is the probability of the data, given $H_0$ is assumed to be true. | Very, very roughly. {.bg-yellow .col-11 .offset-1}
+
+### Quintessence {.box-12 .bg-orange}
+
+If the $p$ value drops below $\alpha$, usually 0.05, we decide not to believe in $H_0$ any more.
+
+### Underlying logic {.box-12 .bg-blue}
+
+If we have a hypothesis ("I am human"), but see data that are not possible if the hypothesis is true ("Hey, I can fly like a birdy"), the hypothesis is false.
+
+## Problems (⇨[gloss over problems](#20)⇨[beyond a t-test](#23)) | A short compendium {.build}
+
+### Problems with the concept {.box-12 .bg-red}
+
+> * $H_0$ saying "there is no difference" is a very strong hypothesis. It is almost always wrong. This translates the difference significant/non-significant into enough/not enough data.
+> * Popper [@Popper1934; @Popper2002] & Co say you have to try to falsify **your hypothesis**. But that is usually $H_1$ in practice. It cannot be falsified by a significance test.
+> * For the concept to be valid, **everything** has to be planned in advance. This is not possible. Preregistered reports offer some remedy. 
+
+
+
+### Problems with the interpretation {.box-12 .bg-orange}
+
+> * $p$ is the probability of the data given $H_0$. It is very often mistaken as the probability of $H_0$ given the data.
+> * $p$ is not a measure of effect size, but is routinely misunderstood as such.
+> * A non-significant result is no proof of the truth of $H_0$.
+
+%end%
+
+<font size="3">For nice thoughts on the subject see @Spiegelhalter2019, especially the later chapters.</font>
+
+## Back to our Problem | What does the $t$-Test actually test? {.build}
+
+### $H_0$ of our $t$-Test {.box-6 .bg-green .stretch}
+
+$H_0$: $\mu_{correct} = \mu_{incorrect}$
+
+Reaction times in both groups have the same expectation value (~ theoretical mean).
+
+### $H_1$ of our $t$-Test {.box-6 .bg-red .stretch}
+
+$H_1$: $\mu_{correct} \ne \mu_{incorrect}$
+
+They do not.
+
+### Any problems? {.box-6 .bg-blue}
+
+What is wrong with that?
+
+### Exactly {.box-6 .bg-orange}
+
+It is not what we actually assumed.
+
+### Improved $H_0$ {.box-6 .bg-green}
+
+$H_0$: $\mu_{correct} \ge \mu_{incorrect}$
+
+Reaction times are the same or slower (larger) if the previous trial was *correct*.
+
+### Improved $H_1$ {.box-6 .bg-red}
+
+$H_1$: $\mu_{correct} < \mu_{incorrect}$
+
+Reaction times are the faster if the previous trial was *correct*. 
+
+**That's what we actually assumed.**
+
+## Improved version of our $t$-Test | one sided testing {.middle .build}
+
+### {.box-12}
+
+```{r}
+t.test(RT ~ PrevCorrect, lexdec_3, alternative = "less")
+```
+
+Because the observed difference is in the expected direction, the $p$ value is halved.
+
+### Attention {.box-5 .bg-red}
+
+* Does our test satisfy the assumptions?
+* What are those assumptions?
+
+### Assumptions of the $t$-Test {.box-7 .bg-blue}
+
+* Normally distributed data (approximately) ✅
+* Independence of data points.❌ 
+
+## What can we do about that? {.build}
+
+### We average over people {.col-7}
+
+```{r fig5, fig.keep='none'}
+(lexdec_3 %>% 
+  group_by(Subject, PrevCorrect, NativeLanguage) %>% 
+  summarise(meanRT = mean(RTraw))->prevcorsum) %>% 
+  ggplot(aes(PrevCorrect, meanRT))+
+  geom_boxplot(outlier.colour = NA)+
+  geom_jitter(width=.1)
+```
+
+
+### {.col-5}
+
+```{r, ref.label="fig5", echo=FALSE, fig.height=3}
+```
+
+### {.col-12}
+
+```{r}
+t.test(meanRT~PrevCorrect, prevcorsum, alternative="less")
+```
+
+This does not look very good, non-significant result. Anything missing?
+
+## There is structure in our data. {.column .build}
+
+### {.col-6}
+
+```{r fig6, width=12, row=F}
+ggplot(prevcorsum, aes(PrevCorrect, meanRT, 
+                       label=Subject,
+                       col=Subject))+
+  geom_point(width=.1)+
+  geom_text_repel()+
+  guides(color="none") + theme_minimal()
+```
+
+
+### Discussion {.col-6}
+
+> * Slow people are slow in both cases
+> * We need a paired $t$-Test.
+
+### Paired $t$-Test {.col-6}
+
+```{r}
+t.test(meanRT~PrevCorrect, prevcorsum, 
+       alternative="less",
+       paired=T)
+```
+
+### {.col-6}
+
+Significant. End of story?
+
+```{r, echo=F, message=FALSE, eval=FALSE, include=FALSE}
+prevcorsum %>% 
+  ggplot(aes(PrevCorrect, meanRT, fill=NativeLanguage))+
+  geom_boxplot(outlier.colour = NA)+
+  geom_point(position = position_jitterdodge(jitter.width = .1))
+t.test(meanRT~PrevCorrect, prevcorsum %>% filter(NativeLanguage == "English"), paired=T)
+t.test(meanRT~PrevCorrect, prevcorsum %>% filter(NativeLanguage != "English"), paired=T)
+prevcorsum %>% pivot_wider(id_cols = c(Subject, NativeLanguage), 
+                           names_from = PrevCorrect,
+                           values_from = meanRT) -> prevcorsumwide
+with(prevcorsumwide, t.test(correct,incorrect,paired=T))
+with(prevcorsumwide %>% filter(NativeLanguage == "English"), t.test(correct,incorrect,paired=T))
+```
+
+## It might be necessary to look at other variables | fantasy data
+
+### A hypothetical research question {.box-12 .build}
+
+Let's assume we have measured some variable `var` in two `group`s, `A` and `B`. Are the values of `var` different in both groups?
+
+%end%
+
+```{r, include=F}
+N <- 100
+bind_rows(
+  tibble(nuissance = rnorm(N),
+         group = "A",
+         var = 1 + nuissance*1.2+ rnorm(N)),
+  tibble(nuissance = rnorm(N, 3),
+         group = "B",
+         var = 0 + nuissance*1.2 + rnorm(N))) %>% 
+  nest(-group) %>% 
+  mutate(lmfit = map(data, ~ lm(.$var ~ .$nuissance)),
+         results = map(lmfit, tidy)) %>% 
+  unnest(results) %>% 
+  mutate(term = c("(Intercept)"="a",
+                  ".$nuissance"="b")[term]) %>% 
+  select(-(std.error:p.value),-lmfit) %>% 
+  pivot_wider(c(group, data), names_from = "term",
+              values_from="estimate")%>%
+  unnest(data) %>% 
+  mutate(model_estimate = a+nuissance*b) -> spieldaten
+```
+
+### {.col-6}
+
+```{r, echo=F, width=3}
+ggplot(spieldaten, aes(group, var, fill=group))+
+  geom_boxplot()
+```
+
+### An easy answer? {.box-3}
+
+>* Quite obviously, group `A` is lower than `B`.
+>* Isn't it?
+
+### The missing variable. {.box-3}
+
+> * There was another variable, called `nuissance`.
+> * What is its influence?
+> * Let's have a look...
+
+## A changing picture | nuissance paramters
+
+### {.col-6}
+
+```{r, echo=FALSE}
+(ggplot(spieldaten, aes(nuissance,
+                       var, 
+                       col=group,
+                       ymin=var,
+                       ymax=model_estimate))+
+  geom_point()+
+  geom_smooth(method="lm", se=F)+
+   theme_minimal()->gg1)
+```
+
+### Discussion {.box-6 .build}
+
+* We see that, in a sense `A` is above `B`.
+* Our previous description does not make sense any more.
+* There might be 2 other reasons to incorporate variables we are not actually interested in.
+ 1) They might ruin the distribution of our data, making normally distributed data not normally distributed any more.
+ 2) Taking them into account could raise our "resolution": In our example, the data's spread is much narrower around the regression lines than around the median.
+
+## Regression {.build}
+
+### The regression model {.box-12 .bg-yellow}
+
+$$
+var_i = a + b \cdot nuissance_i + c\cdot g_i + \epsilon_i
+$$
+
+### What is what? {.box-9 .bg-green}
+
+
+| what | meaning |
+|------|---------|
+| $var_i$ | $i$th measurement of $var$ |
+| $nuissance_i$ | value of $nuissance$ in this measurement |
+| $g_i$ | Indicating the `group` this measurement belonged to |
+| $a$, $b$, $c$ | some numbers. Unknown. <br/><font color="red">**We want to estimate them!**</font> |
+| $\epsilon_i$ | normally distributed noise, standard deviation $\sigma$|
+
+### Group is translated to a number {.box-3 .bg-blue}
+
+In the 2 group case, $g_i$ simply takes different values for the groups. Could be
+
+| group  |  $g$ |
+|---|---|
+| "A" | 0 |
+| "B" | 1 |
+
+%end%
+
+
+## Fit procedure | What is the best line?
+
+### Graphic explanation {.box-6}
+
+A picture best shows how $a$ and $b$ are estimated:
+
+```{r, echo=F}
+gg1+
+  geom_pointrange(alpha=.5)
+```
+
+### In words {.box-6}
+
+* The bold lines cutting through the cloud of data represent the non random part of the model
+$$
+var_i = a + b \cdot nuissance_i + c\cdot g_i
+$$
+* The thin vertical lines are the difference between this model and the data.
+* They are called the residuals $r_i$.
+* They estimate the $\epsilon_i$.
+* Their squared sum is minimized. That is, we choose $a$ and $b$ such that
+$$
+\sum r_i^2
+$$
+is minimal.
+
+## How to do that in R
+
+```{r, width=7}
+lm0 <- lm(var ~ nuissance + group , data=spieldaten)
+```
+
+> How does `var` depend on `group` and `nuissance`? {.col-5}
+
+```{r, width=8}
+summary(lm0)
+```
+
+### Correspondence {.col-4}
+
+$$
+\begin{split}
+var_i =& a + \\
+& b \cdot nuissance_i + \\
+& c\cdot g_i + \epsilon_i
+\end{split}
+$$
+
+
+| R output | our model |
+|---|---|
+| `(Intercept)` | $a$ |
+| `nuissance` | $b$ |
+| `groupB` | $c$ |
+| `Pr(>|t|)` | $p$ value |
+
+## Let's transfer that to our original problem
+
+### Variables we look at {.box-7}
+
+| Variable | Meaning |
+|---|---|
+| `RTraw` | reaction time in ms.
+| `PrevCorrect` | Was the last trial correctly answered?<br/><font color="red">That one interests us most.</font>|
+| `Trial` | Numeric. The how many*th* trial is that? <br/><font color="red">That one is new</font> |
+
+### {.col-5}
+
+```{r, echo=FALSE}
+lexdec_3 %>% 
+  ggplot(aes(Trial, RTraw, color=PrevCorrect))+
+  geom_point()+
+  geom_smooth(method = "lm")
+```
+
+### {.box-6 .offset-3 .bg-red}
+
+That are not normally distributed data!
+Obviously, we have something to do here!
+
+## Creating normality | The raw data
+
+### What it looks like {.box-6}
+
+```{r, echo=F}
+ggplot(lexdec_3,
+       aes(RTraw))+
+  geom_histogram(binwidth = 20)+
+  theme_minimal()
+```
+
+### What it should look like {.box-6}
+
+
+```{r, echo=F}
+Dnorm <- function(x,N,...){
+  N*dnorm(x,...)
+}
+tibble(RTraw = rnorm(nrow(lexdec_3),
+                     mean(lexdec_3$RTraw),
+                     sd(lexdec_3$RTraw))) %>% 
+  ggplot(aes(RTraw))+
+  geom_histogram(binwidth = 20)+
+  stat_function(fun = Dnorm, args = list(mean = mean(lexdec_3$RTraw),
+                                         sd = sd(lexdec_3$RTraw),
+                                         N = 30000))
+```
+
+
+## Creating normality | Logarithmically transformed data
+
+The standard transformation is $RT_{log}=\log RT$.
+
+### What is transformed to normality? {.box-6}
+
+```{r, echo=F,fig.height=4.7}
+Dnormlog <- function(x,N,...){
+  N*dlnorm(x,...)
+}
+
+tibble(RTlog = exp(rnorm(nrow(lexdec_3),
+                         mean = mean(lexdec_3$RT),
+                         sd = sd(lexdec_3$RT)))) %>% 
+  ggplot(aes(RTlog))+
+  geom_histogram(binwidth = 20)+
+  stat_function(fun = Dnormlog, args = list(mean = mean(lexdec_3$RT),
+                                            sd = sd(lexdec_3$RT),
+                                            N = 30000))+
+  theme_minimal()
+```
+
+
+### Does it work on our data? (Not so well) {.box-6}
+
+```{r, echo=FALSE,fig.height=4.7}
+ggplot(lexdec_3,
+       aes(RTraw))+
+  geom_histogram()+
+  theme_minimal()+
+  scale_x_log10("logarithmically transformed reaction times")
+```
+
+### {.box-12 .bg-red}
+
+We do not expect the data itself to be normally distributed, but the **residuals**.
+
+## Let's try `lm()`
+
+A model for the dependency of $log(RT)$ on `Trial` and `PrevCorrect`?
+
+```{r, width=8}
+lexdec_3 %>% 
+  mutate(RTlog = log(RTraw)) -> lexdec_4
+lm1 <- lm(RTlog ~ Trial + PrevCorrect, data = lexdec_4)
+summary(lm1)
+```
+
+### Discussion {.col-4}
+
+* People get a bit faster in the course of the experiment: `Estimate` for `Trial` < 0.
+* They are slower in the "incorrect" condition: `Estimate` for `PrevCorrectincorrect` < 0.
+* Something still isnt right.
+
+```{r, echo=FALSE}
+(lexdec_4 %>% 
+  ggplot(aes(Trial, RTlog, color=PrevCorrect))+
+  geom_point(alpha=.5)+
+   theme_minimal()->gg2)+
+  geom_smooth(method = "lm")
+```
+
+## There is a problem though
+
+### Slope Hypothesis Testing {.box-10 .center. .offset-1}
+
+![[https://xkcd.com/2533/](https://xkcd.com/2533/)](fig/slope_hypothesis_testing.png)
+
+### The Problem with what we did {.box-9 .offset-3}
+
+* We treated data points as coming all from different persons
+* That vastly overestimates the information in each data point.
+* That is exactly why we need mixed models.
+
+## Independence is violated again | Random effects for people
+
+* We need to take into account that some people are fast, others are slow.
+* Otherwise the assumption of independence of data points is not given.
+* We do that by introducing a person specific offset:
+
+$$
+\log RT_{ij} = a + a_j + b \cdot Trial_{ij} + c\cdot PrevCorrect_{ij} + \epsilon_{ij} 
+$$
+Most terms are known to us by now. Some things are new:
+
+| Term | Meaning |
+|---|---|
+|$RT_{ij}$ | $i$th reaction time of $j$th subject.
+| $a_j$ | Person specific offset. Normally distributed around $0$. Standard deviation $\sigma_a$. That is the important bit. We do not add a new parameter for each $a_j$. The only parameter entering the model is $\sigma_a$.
+
+### Parameters now {.box-4 .offset-2 .bg-red .large}
+
+$a$, $b$, $c$, $\sigma_{\epsilon}$, and $\sigma_a$.
+
+## In R | lme4 [@lme4] {.middle}
+
+```{r, eval=FALSE}
+library(lme4)
+lmer1 <- lmer(RTlog ~ Trial + PrevCorrect + (1|Subject), data = lexdec_4)
+summary(lmer1)
+```
+
+## 
+
+```{r, echo=FALSE}
+summary(lmer1 <- lmer(RTlog ~ Trial + PrevCorrect + (1|Subject), data = lexdec_4))
+```
+
+## Visualisation
+
+### {.col-6}
+
+```{r, echo=FALSE, width=6}
+coef(summary(lmer1)) -> cf
+tibble(PrevCorrect = c("correct","incorrect"),
+       intercept = c(cf[1,1], cf[1,1]+cf[3,1]),
+       slope = cf[c(2,2),1]) -> fxd
+coef(lmer1)$Subject %>% 
+  rename("correct" = "(Intercept)",
+         "incorrect" = "PrevCorrectincorrect") %>% 
+  mutate(incorrect = incorrect+correct) %>% 
+  pivot_longer(cols = c(correct, incorrect),
+               names_to = "PrevCorrect",
+               values_to = "intercept") -> rxd
+(gg2 + geom_abline(data = fxd,
+                  mapping = aes(intercept = intercept,
+                                slope = slope,
+                                col = PrevCorrect),
+                  size=2)->gg3)+
+  geom_abline(data = rxd,
+              mapping = aes(intercept = intercept,
+                            slope = Trial,
+                            col = PrevCorrect),
+              linetype = "solid",
+              alpha=.5)
+
+```
+
+### Our model so far {.box-6}
+
+* The thick lines are the mean slopes
+* The thin lines are the personalized lines.
+* We see that this model is still somewhat limited.
+* $\Rightarrow$ We will extend it.
+* First a remark.
+
+## We should centralize our predictors | uncentralized
+
+### {.col-6}
+
+```{r, echo=F}
+(gg3+
+  scale_x_continuous(limits=c(0,200))+
+  geom_abline(data = fxd,
+              mapping = aes(intercept = intercept+.1,
+                            slope = 5*slope,
+                            col = PrevCorrect),
+              size=2,
+              linetype="dashed")->gg4) +
+    geom_vline(xintercept = 0, color="grey", size=1)
+```
+
+###  {.col-6}
+
+* If we change the slope, the intercept will change as well.
+* That is intercept and slope are correlated.
+* That is not good for numerical reasons.
+* Our models work better, if we move the 0 to the middle of our data.
+
+## We should centralize our predictors | centralized
+
+### {.col-6}
+
+```{r, echo=F}
+gg4 +
+  scale_x_continuous("cTrial",
+                     breaks = seq(0,300, by=50),
+                     labels = seq(-100,200,by=50),
+                     limits = c(0,200))+
+  geom_vline(xintercept = 100, color = "grey", size=1)
+```
+
+###  {.col-6}
+
+* If we change the slope, the intercept will change as well.
+* That is intercept and slope are correlated.
+* That is not good for numerical reasons.
+* Our models work better, if we move the 0 to the middle of our data.
+
+```{r}
+lexdec_4 %>% 
+  mutate(cTrial = scale(Trial)) -> lexdec_5
+```
+
+
+* Now, intercept and slope are independent.
+
+## Not all subjects behave the same {.middle}
+
+### {.col-6}
+
+```{r, echo=FALSE}
+ggplot(lexdec_5, aes(cTrial, RTlog#, col=NativeLanguage
+                     ))+
+  geom_point(alpha=.5)+
+  geom_smooth(method="lm")+
+  facet_wrap(~Subject)
+```
+
+### {.box-6}
+
+If we want to take that into account, we need another model term.
+
+## Random slopes
+
+$$
+\log RT_{ij} = a + a_j + (b + b_j) \cdot Trial_{ij} + c\cdot PrevCorrect_{ij} + \epsilon_{ij} 
+$$
+Only one term is new here: $b_j$, the person specific slope correction. Normally distributed around $0$. Standard deviation $\sigma_b$. That is the important bit. We do not add a new parameter for each $b_j$. The only parameter entering the model is $\sigma_b$.
+
+### Parameters now {.box-4 .offset-2 .bg-red .large}
+
+$a$, $b$, $c$, $\sigma_{\epsilon}$, $\sigma_a$, and $\sigma_b$.
+
+%end%
+
+If we allow for a correlation between $a_j$ and $b_j$ (people starting fast are getting slower maybe), that would be another parameter, $\varrho_{ab}$:
+
+### Parameters then {.box-5 .offset-2 .bg-yellow .large}
+
+$a$, $b$, $c$, $\sigma_{\epsilon}$, $\sigma_a$, $\sigma_b$, and $\varrho_{ab}$.
+
+%end%
+
+R, that is `lme4` adds it by default.
+
+## How to do that in R | lme4 [@lme4] {.middle}
+
+```{r}
+lmer2 <- lmer(RTlog ~ cTrial + PrevCorrect + (1+cTrial|Subject), data = lexdec_5)
+```
+
+We replaced `(1|Subject)` by `(1+cTrial|Subject)`.
+
+##
+
+```{r, echo=F}
+summary(lmer2)
+```
+
+
+## Visualisation
+
+### {.col-6}
+
+```{r, echo=FALSE, width=6, fig.height=4}
+coef(summary(lmer2)) -> cf
+tibble(PrevCorrect = c("correct","incorrect"),
+       intercept = c(cf[1,1], cf[1,1]+cf[3,1]),
+       slope = cf[c(2,2),1]) -> fxd
+coef(lmer2)$Subject %>% 
+  rename("correct" = "(Intercept)",
+         "incorrect" = "PrevCorrectincorrect") %>% 
+  mutate(incorrect = incorrect+correct) %>% 
+  pivot_longer(cols = c(correct, incorrect),
+               names_to = "PrevCorrect",
+               values_to = "intercept") -> rxd
+ggplot(lexdec_5,
+       aes(cTrial, RTlog, col=PrevCorrect))+
+  geom_point(alpha=.5)+ 
+  geom_abline(data = fxd,
+                  mapping = aes(intercept = intercept,
+                                slope = slope,
+                                col = PrevCorrect),
+                  size=2)+
+  geom_abline(data = rxd,
+              mapping = aes(intercept = intercept,
+                            slope = cTrial,
+                            col = PrevCorrect),
+              linetype = "solid",
+              alpha=.5)+
+  theme_minimal()
+lmer1a <- lmer(RTlog ~ cTrial + PrevCorrect + (1|Subject), data=lexdec_5)
+```
+
+### Which model is better? {.box-6}
+
+```{r}
+AIC(lmer1a, lmer2)
+```
+
+* The model fit is greatly improved by the random slopes.
+* The lower the AIC [@Akaike1973], the better the model fit.
+
+### {.col-12}
+
+```{r, row=c(3,9)}
+anova(lmer1a, lmer2)
+```
+
+## Extensions | `Word`: Another random effect {.build}
+
+### {.col-6}
+
+```{r, echo=F, title="Words", width=6}
+lexdec_5 %>% 
+  mutate(Word = fct_reorder(Word, RTlog, median)) %>% 
+  ggplot(aes(Word, RTlog))+
+  geom_boxplot(fill="grey")+
+  coord_flip()+
+  theme_minimal()
+```
+
+### {.col-6}
+
+```{r, echo=F, title="Subjects", width=6}
+lexdec_5 %>% 
+  mutate(Subject = fct_reorder(Subject, RTlog, median)) %>% 
+  ggplot(aes(Subject, RTlog, fill=NativeLanguage))+
+  geom_boxplot()+
+  coord_flip()+
+  theme_minimal()
+```
+
+%end%
+
+* Differences much less pronounced in items
+* Usually much less random slopes
+
+## Extensions | More variables
+
+### Native Languge plays a huge role {.box-6}
+
+We have seen that already
+
+### {.col-6}
+
+```{r, ref.label="fig7", echo=FALSE, fig.width=5, fig.height=1.8}
+```
+
+### Frequency Effects are always strong {.box-5}
+
+* We have seen that already
+* might interact with `NativeLanguage`.
+  * maybe not on log scale?
+
+### {.col-7}
+
+```{r, ref.label="fig8", echo=FALSE, fig.width=5, fig.height=2.8,eval=T}
+```
+
+%end%
+
+### {.col-7 .bg-red}
+
+We ignore further variables for pedagogical reasons.
+
+## How could our final model look like? {.build}
+
+| Term | Status |
+|---|---|
+| `RTlog` | Our response variable. Log transformed: $\log(RT)$. |
+| `PrevCorrect` | Our target variable. Categorical. |
+| `NativeLanguage` | Highly influential. Native speakers are always faster and have a much smaller variance. |
+| `Frequency` | Highly influential. Might interact with native language. Log transform as well! |
+| `Trial` | Trial number. People get tired, people get practice, people just drift.
+| `Subjects` | Subjects behave very different. Random variable. A random intercept is often not enough. |
+| `Word` | Words behave somewhat different. Random intercepts often enough. |
+
+### Model Formula {.box-12}
+
+```{r, eval=FALSE}
+RTlog ~ RTsq ~ cTrial + NativeLanguage*Frequency + PrevCorrect+(1+cTrial|Subject)+(1|Word)
+```
+
+##
+```{r lmer3, echo=FALSE, width=12}
+lmer3 <- lmer(RTsq ~ 
+                cTrial + 
+                NativeLanguage*Frequency +
+                PrevCorrect+
+                (cTrial|Subject)+
+                (1|Word), 
+              data = 
+                lexdec_5)
+summary(lmer3)
+```
+
+
+## `check_model` from package `performance`
+
+```{r, fig.width=12, fig.height=6}
+check_model(lmer3)
+```
+
+## remove outliers
+
+```{r}
+lexdec_5 %>% 
+  mutate(lmer3.resid = resid(lmer3)) %>% 
+  filter(abs(lmer3.resid) < .01) -> lexdec_6
+lmer3a <- update(lmer3, data=lexdec_6)
+
+```
+
+## check again
+
+```{r, fig.width=12, fig.height=6}
+check_model(lmer3a)
+```
+
+##
+
+```{r, echo=FALSE, width=12}
+summary(lmer3a)
+```
+
+
+## People are different and they drift
+
+```{r, echo=F, fig.width=12}
+ggplot(lexdec_6, aes(Trial, RTlog, col=NativeLanguage))+
+  #geom_point()+
+  geom_smooth(method="loess", span=1)+
+  facet_wrap(~Subject, scales="free_y")+
+  theme_minimal()
+```
+
+## Frequency Dependence nonlinear by Native Language
+
+
+### linear {.col-6}
+
+```{r, echo=FALSE, width=5, fig.cap="looks much stronger"}
+ggplot(lexdec_6, aes(Frequency, RTlog, col=NativeLanguage))+
+  geom_point()+
+  geom_smooth(method="lm")
+```
+
+### nonlinear {.col-6}
+
+```{r, echo=FALSE, width=6}
+ggplot(lexdec_6, aes(Frequency, RTlog, col=NativeLanguage))+
+  geom_point()+
+  geom_smooth()
+```
+
+## Outlook
+
+### How to get further {.box-12 .bg-yellow}
+
+* To cope with nonlinearities like that we need something even more powerful.
+* *generalized additive mixed models*, GAMMs, [@mgcv; @itsadug].
+  * They give you nonlinear smoothers you can fit.
+  * Random smoothers. Every person gets his own time dependency.
+  * Auto correlation handling.
+  
+### GAMMs come with a whole bunch of problems of their own (who would have guessed) {.box-12 .bg-red}
+
+Significance tests love to give contradictory results.
+
+### Into the blue {.box-12 .bg-blue}
+
+Wanna have a look at Bayesian modeling? Have a look at @McElreath2016
+
+## Acknowledgements { .column}
+
+```{r include=F}
+pkn <- sort(names(sessionInfo()$otherPkgs))
+brk <- 17
+```
+
+
+### Packages used in this presentation {.box-6 .bg-yellow .small}
+
+* `r paste(pkn[1:brk], pkn[1:brk], sep=", [@", collapse="]\n* " )`]
+
+
+### {.box-6 .bg-yellow .small}
+
+* `r paste(pkn[(brk+1):length(pkn)], pkn[(brk+1):length(pkn)], sep=", [@", collapse="]\n* " )`]
+
+### Inspired by {.box-6 .bg-red}
+
+technical enlightenment and substantial stimulus from @Krause2020
+
+## References 
+
+### {.col-12 .x-small}
