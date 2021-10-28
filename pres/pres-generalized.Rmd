@@ -87,7 +87,7 @@ theme_set(theme_minimal())# +
   - Other distributions, most notably the **Gamma** distribution.
 * Then you do not directly model the expectation value anymore.
 
-## What the f$\cdots$k is a Poisson distribution? {.build}
+## What is a Poisson distribution? {.build}
 
 ```{r, include=FALSE}
 lambda <- .45
@@ -170,19 +170,58 @@ $$
 
 ## One last step | the length of a night
 
-## Why do we do this?
+* The number of trigger events will be proportional to the length $L$ of the night.
+* So what we have up to now has to be modified to accommodate our situation:
+
+$$
+\lambda = E(y) = L\cdot e^\eta = L\cdot e^{\eta_0 + a\cdot when} = L\cdot e^{\eta_0}e^{a\cdot when}
+$$
+
+
+* or, the other way round:
+
+
+$$
+\log \lambda = \log( L\cdot e^\eta) = \log( L\cdot e^{\eta_0}e^{a\cdot when}) = \log L + \eta_0 + a\cdot when
+$$
+
+* $\log L$ is called an *offset term*
+* Let's remember that $\lambda$ is the expectation value of the trigger events in one night.
+* The trigger events will be Poisson distributed around this value.
+
+## Why do we do this? {.build}
+
+* In this form, it's mathematically manageable.
+* Some influence, say climate change, will more likely have a relative, multiplicative influence:
+  - in one place there where around 100 animals back then, now there are 110.
+  - than, in another place, where there were 10 animals before, we do not expect
+    - 20 animals now, but rather
+    - 11 animals per night.
+* But, at the same time, we want to have mathematically additive effects like $y = y_0+a$
+* Since $e^{y_0+a} = e^{y_0}e^a$ the exponential function can give us 
+  - an additive formulation of a multiplicative effect.
 
 ## Simulating the data
 
 
-```{r, title = "Create our simulated data", results='hide'}
+```{r, title = "Create our simulated data", results='markup'}
+rate # actually log(base rate)
+eff # 1st element: 10YearsAgo, 2nd element: today
+head(time) # not so very realistic...
 expand_grid(rate=rate, eff=eff, time=time) %>% 
-  mutate(cond = c("damals","heute")[as.numeric(factor(eff))],
-         eta = eff+rate, # witout offset here
-         h_eta = exp(eta), # still w/o offset, the resulting rate.
-         lambda = h_eta*time, # =exp(eff)*exp(rate)*time <=> log(lambda) = log(time) + ... 
-         resp = rpois(n(), lambda)
-         ) -> dta
+  mutate(cond = c("10YearsAgo", "today")[as.numeric(factor(eff))],
+         eta = eff+rate, # still w/o offset
+         exp_eta = exp(eta), # still w/o offset, rate of triggers (per hour)
+         lambda = exp_eta*time, # =exp(eff)*exp(rate)*time <=> log(lambda) = log(time) + ... 
+         resp = rpois(n(), lambda)) -> dta # draw from poisson distribution
+```
+
+```{r, echo=FALSE}
+dta %>% 
+  some(4) %>% 
+  mutate(across(where(is.numeric), ~signif(., 4))) %>% 
+  kbl %>% 
+  kable_styling()
 ```
 
 
