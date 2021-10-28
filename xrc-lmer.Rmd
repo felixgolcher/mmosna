@@ -41,6 +41,7 @@ library(tidyverse)
 # library(emmeans)
 library(Hmisc)
 library(scales)
+library(GGally)
 library(qqplotr)
 library(lme4)
 # library(optimx)
@@ -79,24 +80,89 @@ tab_model <- function(...){
                     ci.hyphen = ",",
                     ...)
 }
+
+# this semantics should exist...
+some <- function(dtx, length = 10){
+    slice(dtx, as.integer(seq(1, n(), length = length)))
+}
 ```
 
 
-# Prep
+# Reading in the data
+
+We have two data files
+
+## Main data
 
 ```{r}
 maindata <- read_excel("data/LengthInWords.xlsx")
+maindata %>% 
+  some() %>% 
+  kbl() %>% 
+  kable_styling()
+```
+
+* Subjects wrote texts. Each data point (line) represents one text written by one subjects.
+* `TN_ID` is the subject id.
+* `Situation` is one of 4 situations the subjects were confronted with. There were 2 more formal and 2 more informal ones. The design is not really $2\times 2$ since the two pairs cannot be matched.
+* `Words` is the number of words the subjects produced in this situation.
+* `Question` is the prompt the subjects were given.
+* `Correctness_score` is a manual assessment of the texts.
+
+## Meta data
+
+```{r}
 metadata <- read_excel("data/LengthInWords-meta.xlsx")
+metadata %>% 
+    some() %>% 
+  kbl() %>% 
+  kable_styling()
+```
+
+These variables are mostly selfexplaining. `GT_points` are points reached in some grammar test.
+
+## Join main und meta data
+
+```{r}
 fulldata <- full_join(maindata, metadata)
-stopifnot(nrow(fulldata) == nrow(maindata))
-stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1)
+stopifnot(nrow(fulldata) == nrow(maindata)) # We should have the same number of lines afterwards
+stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1) # exactly on column for joining
+```
+
+# Analysis
+
+> Does the number of words differ between situations?
+
+```{r, fig.cap="Funny situation: Two of the three pairs are clearly correlated, but the third pair much less."}
+grid.arrange(
+  ggplot(metadata, aes(GT_points, Abi))+
+    geom_point()+
+    geom_smooth(method="lm"),
+  ggplot(fulldata, aes(GT_points, Correctness_score))+
+    geom_jitter()+
+    geom_smooth(method="lm"),
+  ggplot(fulldata, aes(Abi, Correctness_score))+
+    geom_jitter()+
+    geom_smooth(method="lm"), nrow=1)
 ```
 
 
-# Complexity
+```{r, fig.cap="When we average over people we still have the same situation."}
+my_fn <- function(data, mapping, method="lm", ...){
+  p <- ggplot(data = data, mapping = mapping) + 
+    geom_point() + 
+    geom_smooth(method=method, ...)
+  p
+}
+fulldata %>% 
+  group_by(TN_ID) %>% 
+  summarise(GT_points = first(GT_points),
+            Abi = first(Abi),
+            Correctness_score = mean(Correctness_score)) %>% 
+  select(-TN_ID) %>% 
+  ggpairs(lower = list(continuous = my_fn))
+```
 
-
-## Words
 
 The data don't look very normally distributed:
 
@@ -170,7 +236,7 @@ data.frame(resid = resid(w0)) %>%
 drop1(update(w0, REML = F), test = "Chisq")
 ```
 
-```{r}
+```{r, fig.width=8, fig.height=4}
 plot(allEffects(w0)[c(1,2)])
 ```
 
@@ -180,13 +246,6 @@ tab_model(w0)
 
 
 ```{r}
-Sit <- c(
-  A="E-Mail/pupil",
-  C="E-Mail/L2 student",
-  B="Exam task",
-  D="Tutorial task")
-sitseq <- c("A","C","B","D")
-
 cm <- as.matrix(cbind(
   # offset
   1/4,
@@ -198,12 +257,9 @@ cm <- as.matrix(cbind(
   c(1/2, 1/2, -1/2, -1/2)))
 cmm <- solve(t(cm))
 cmn <- cmm[,-1]
-colnames(cmn) <- paste0(": ",
-                        c(paste(Sit[c(1,3)], "-", Sit[c(2,4)]),
-                          "Email vs Exam/Tutorial"))
+colnames(cmn) <- c("Formal: A vs B","Informal: C vs D", "Formal vs Informal")
 fulldata %>% 
-  mutate(Situation = factor(Situation, levels = Sit),
-         Situation = C(Situation, contr = cmn)) -> contrdata
+  mutate(Situation = C(factor(Situation), contr = cmn)) -> contrdata
 ```
 
 ```{r}
