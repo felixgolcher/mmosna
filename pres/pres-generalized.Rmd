@@ -129,12 +129,51 @@ time <- seq(mn, mx, length=2000)  # s
 ```
 
 
-* Suppose we install a wild life camera in the forest.
-* It is triggered `r signif(exp(rate),3)` times per hour.
+* Suppose we install some wild life camera in the forest.
+* It is triggered `r signif(exp(rate),4)` times per hour.
 * Not all nights have are equally long, but have between `r mn` and `r mx` hour.
 * We watch the same habitat again after 10 years.
 * We want to figure out if something changed. 
-* Let's assume it actually did and the rate is now `r signif(exp(eff[2]),3)` times as high, that is `r signif(exp(rate+eff[2]),3)` per hour.
+* Let's assume it actually did and the rate is now `r signif(exp(eff[2]),4)` times as high, that is `r signif(exp(rate+eff[2]),4)` per hour.
+
+$$
+\text{some outcome} = \text{some offset} + \text{some effects of some variables}
+$$
+$$
+\eta = \eta_0 + a\cdot when
+$$
+
+* Here is $\eta_0$ the baserate of events.
+* $when$ is 0 for measurements 10 years ago, 1 for measurements taken this year.
+* $a$ is some parameter. It would be 0 if nothing changed.
+
+## The link
+
+* For a gausian model, $\eta$ would be the expectation value $E(y)$ of the response $y$.
+* The response itself would be normally distributed around it.
+* Here, it is some function of the expectation value:
+$$
+\lambda = E(y) = h(\eta) = h(\eta_0 + a\cdot when)
+$$
+
+* For Poisson data we usually use $h = exp$. That gives
+
+$$
+\lambda = E(y) = e^\eta = e^{\eta_0 + a\cdot when} = e^{\eta_0}e^{a\cdot when}
+$$
+
+* Or the other way round: $\eta = \log\eta$.
+* That is, if we assume, something happens `r signif(exp(rate), 3)` every hour
+  $$\eta_0 = \log(`r signif(exp(rate), 4)`) = `r signif(rate,4)`$$
+* and when it now happens `r signif(exp(eff[2]), 3)` times so often than 10 years ago
+  $$a = \log(`r signif(exp(eff[2]), 4)`) = `r signif(eff[2],4)`$$
+
+## One last step | the length of a night
+
+## Why do we do this?
+
+## Simulating the data
+
 
 ```{r, title = "Create our simulated data", results='hide'}
 expand_grid(rate=rate, eff=eff, time=time) %>% 
