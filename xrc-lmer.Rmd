@@ -179,6 +179,45 @@ tab_model(w0)
 ```
 
 
+```{r}
+Sit <- c(
+  A="E-Mail/pupil",
+  C="E-Mail/L2 student",
+  B="Exam task",
+  D="Tutorial task")
+sitseq <- c("A","C","B","D")
+
+cm <- as.matrix(cbind(
+  # offset
+  1/4,
+  # A vs B
+  c(1,-1,0,0),
+  # C vs D
+  c(0,0,1,-1),
+  # AB vd CD
+  c(1/2, 1/2, -1/2, -1/2)))
+cmm <- solve(t(cm))
+cmn <- cmm[,-1]
+colnames(cmn) <- paste0(": ",
+                        c(paste(Sit[c(1,3)], "-", Sit[c(2,4)]),
+                          "Email vs Exam/Tutorial"))
+fulldata %>% 
+  mutate(Situation = factor(Situation, levels = Sit),
+         Situation = C(Situation, contr = cmn)) -> contrdata
+```
+
+```{r}
+w1 <- update(w0, data = contrdata)
+```
+
+```{r}
+tab_model(w1)
+```
+
+```{r}
+plot(allEffects(w1)[c(1,2)])
+```
+
 
 ## packages
 
