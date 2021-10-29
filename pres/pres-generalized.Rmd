@@ -116,9 +116,9 @@ data.frame(cars = 0:10) %>%
 ### {.box-12}
 
 * This distribution is completely defined by the mean $\lambda$.
-* The variance is always $\lambda$. The Poisson distribution has only one parameter.
+* The variance is always $\lambda$ as well. The Poisson distribution has only one parameter!
 
-## Set up example data | simulation
+## Set up example data | simulation {.build}
 
 ```{r, include=FALSE}
 rate <- .1 # pro s => this gives us the log, so not per second!
@@ -129,7 +129,7 @@ time <- seq(mn, mx, length=2000)  # s
 ```
 
 
-* Suppose we install some wild life camera in the forest.
+> * Suppose we install some wild life camera in the forest.
 * It is triggered `r signif(exp(rate),4)` times per hour.
 * Not all nights have are equally long, but have between `r mn` and `r mx` hour.
 * We watch the same habitat again after 10 years.
@@ -143,26 +143,27 @@ $$
 \eta = \eta_0 + a\cdot when
 $$
 
-* Here is $\eta_0$ the baserate of events.
+> * Here is $\eta_0$ the baserate of events.
 * $when$ is 0 for measurements 10 years ago, 1 for measurements taken this year.
 * $a$ is some parameter. It would be 0 if nothing changed.
 
-## The link
+## The link | math magic {.build}
 
-* For a gausian model, $\eta$ would be the expectation value $E(y)$ of the response $y$.
+> * For a gausian model, $\eta$ would be the expectation value $E(y)$ of the response $y$.
 * The response itself would be normally distributed around it.
 * Here, it is some function of the expectation value:
+
 $$
 \lambda = E(y) = h(\eta) = h(\eta_0 + a\cdot when)
 $$
 
-* For Poisson data we usually use $h = exp$. That gives
+> * For Poisson data we usually use $h = exp$. That gives
 
 $$
 \lambda = E(y) = e^\eta = e^{\eta_0 + a\cdot when} = e^{\eta_0}e^{a\cdot when}
 $$
 
-* Or the other way round: $\eta = \log\eta$.
+> * Or the other way round: $\eta = \log\eta$.
 * That is, if we assume, something happens `r signif(exp(rate), 3)` every hour
   $$\eta_0 = \log(`r signif(exp(rate), 4)`) = `r signif(rate,4)`$$
 * and when it now happens `r signif(exp(eff[2]), 3)` times so often than 10 years ago
@@ -203,6 +204,10 @@ $$
 
 ## Simulating the data
 
+```{r, include=FALSE}
+set.seed(1)
+```
+
 
 ```{r, title = "Create our simulated data", results='markup'}
 rate # actually log(base rate)
@@ -224,6 +229,22 @@ dta %>%
   kable_styling()
 ```
 
+## Doing the model | not yet mixed! {.build .small .column}
+
+```{r, row = F, title = "We use glm for unmixed models.", width=9}
+m0 <- glm(resp~cond + offset(log(time)), data=dta, family = poisson)
+summary(m0)
+```
+
+
+```{r, row = F, title = "The truth", width=3}
+rate
+eff[2]
+```
+
+### {.box-3}
+
+That is very close to what we put into the model.
 
 ## Acknowledgements { .column}
 
