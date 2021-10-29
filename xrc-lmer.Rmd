@@ -189,23 +189,16 @@ Produce a plot:
 * and Words on the Y-axis
 * underlay it with boxplots.
 
-```{r, echo=FALSE, fig.cap="There seems to be an effect of *situation*; The data don't look normally distributed."}
+```{r, echo=FALSE, fig.cap="I prepared something for you..."}
 fulldata %>% 
-  ggplot(aes(Situation, Words#, col=Question
-             ))+
-  geom_boxplot()+
-  geom_jitter(width = .01)#+
-  # scale_y_sqrt()
+  ggplot()
 ```
 
 ### Plot 2: Distribution
 
 Plot the distribution of *Words*.
 
-```{r}
-fulldata %>% 
-  ggplot(aes(Words))+
-  geom_histogram()
+```{r, echo=FALSE, fig.cap="I prepared less for you..."}
 ```
 
 ### Plot 3: Transformations
@@ -226,44 +219,9 @@ Plot QQ-Plots for
 * $\sqrt{~~}$-transformed data: $x^\prime = \sqrt{x}$ (strangely it sometimes works)
 * inverse transformed data: $x^\prime = -1/x$ (good candidate for reaction time data)
 
-```{r, include=FALSE}
-fulldata %>% 
-    group_by(Situation) %>% 
-    mutate(Words = scale(Words)) %>% 
-    ungroup() %>% 
-   ggplot(aes(sample=Words))+
-   geom_qq_line()+
-   geom_qq()->gg7
-```
 
+**Remark:** Actually, the residuals have to be normally distributed. But often the noise is so much larger than the effects that it's fine to check the data itself. You don't need a model for that...
 
-```{r, fig.cap="Square root transformed data show pretty normally distributed.", echo=FALSE}
-grid.arrange(gg7 + ggtitle("untransformed"),
-             (gg7 +
-               ggtitle("log transformed")) %+% 
-               (fulldata %>% 
-                  mutate(Words = log(Words)) %>% 
-                  group_by(Situation) %>% 
-                  mutate(Words = scale(Words)) %>% 
-                  ungroup()),
-             (gg7 +
-               ggtitle("sqrt transformed")) %+% 
-               (fulldata %>% 
-                  mutate(Words = sqrt(Words)) %>% 
-                  group_by(Situation) %>% 
-                  mutate(Words = scale(Words)) %>% 
-                  ungroup()),
-             (gg7 +
-               ggtitle("reverse transformed")) %+% 
-               (fulldata %>% 
-                  mutate(Words = -1/(Words)) %>% 
-                  group_by(Situation) %>% 
-                  mutate(Words = scale(Words)) %>% 
-                  ungroup()),
-             nrow = 2)
-```
-
-We did not look at residuals so far, which is what actually has to be normally distributed. But we got a glance that gave us a very good candidate.
 
 ## The model
 
