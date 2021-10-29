@@ -244,7 +244,31 @@ eff[2]
 
 ### {.box-3}
 
-That is very close to what we put into the model.
+That is very close to what we put into the model:
+
+* The `(Intercept)` is the *estimate* for `rate` while 
+* `condtoday` is the *estimate* for `eff[2]`. 
+
+## fitted values
+
+This quite obviously reprorduces our preset parameters.
+
+```{r, include=T}
+cc <- coefficients(summary(m0))[,1]
+```
+
+Diese Vorkommensrate wäre dann wieder mit der Zeit zu multiplizieren, um den für eine bestimmte Nacht vorhergesagten Wert der Auslösungen zu bekommen.
+
+```{r}
+dta %>% 
+  mutate(fitted = fitted(m0), ## what the model gives us
+         computed = exp(cc[1]+(cond=="today")*cc[2])*time) %>% 
+  some(6)
+```
+
+It's quite straight forward so far. let's introduce random intercepts now.
+
+
 
 ## Acknowledgements { .column}
 
