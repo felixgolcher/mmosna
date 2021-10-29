@@ -184,7 +184,7 @@ We will use only one of those variables. Otherwise there could be problems with 
 
 ### Plot 1: Is there an effect?
 
-Produce a plot:
+**TASK** Produce a plot:
 
 * that has *situation* on the X-axis
 * and Words on the Y-axis
@@ -201,7 +201,7 @@ fulldata %>%
 
 ### Plot 2: Distribution
 
-Plot the distribution of *Words*.
+**TASK** Plot the distribution of *Words*.
 
 ```{r}
 fulldata %>% 
@@ -221,7 +221,7 @@ tibble(x = rnorm(1e3)) %>%
   geom_qq_line()
 ```
 
-Plot QQ-Plots for
+**TASK** Plot QQ-Plots for
 
 * the untransformed data
 * log-transformed data: $x^\prime = \log x$ (the standard)
@@ -273,7 +273,7 @@ Now we actually proceed with computing a mixed model. In reality we would do a l
 
 ### Setup
 
-Set up a mixed model with `lmer` from package `lme4` [@R-lme4]. Use one of the three variables `Abi`, `GT_Points` and `Correctness_score` that somehow measure the knowledge of the subjects.
+**TASK** Set up a mixed model with `lmer` from package `lme4` [@R-lme4]. Use one of the three variables `Abi`, `GT_Points` and `Correctness_score` that somehow measure the knowledge of the subjects.
 
 ```{r}
 w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=fulldata)
@@ -284,7 +284,7 @@ summary(w0)
 
 #### Residual plot
 
-Compile a QQ-Plot for the residuals. Is it OK?
+**TASK** Compile a QQ-Plot for the residuals. Is it OK?
 
 ```{r, echo=FALSE, fig.cap="The Residuals look quite nice"}
 data.frame(resid = resid(w0)) %>% 
@@ -312,6 +312,8 @@ coefficients(summary(w0))["Abi",]
 ```
 
 We can use the `drop1` function to remove one predictor at a time and run a significance test on it.
+
+**TASK**  Do that with your model. Do also add the interaction between `Abi` and `situation` and check its significance. 
 
 ```{r}
 drop1(update(w0, REML = F), test = "Chisq")
