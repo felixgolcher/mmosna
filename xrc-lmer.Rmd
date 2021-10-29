@@ -131,7 +131,11 @@ stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1) # exactly on col
 
 # Analysis
 
+## Research question
+
 > Does the number of words differ between situations?
+
+## Three variables describe something very similar
 
 ```{r, fig.cap="Funny situation: Two of the three pairs are clearly correlated, but the third pair much less."}
 grid.arrange(
@@ -163,18 +167,54 @@ fulldata %>%
   ggpairs(lower = list(continuous = my_fn))
 ```
 
+We will use only one of those variables. Otherwise there could be problems with interpreting the model.
 
-The data don't look very normally distributed:
+## How do the data look like?
 
-```{r, echo=FALSE}
+### Plot 1: Is there an effect?
+
+Produce a plot:
+
+* that has *situation* on the X-axis
+* and Words on the Y-axis
+* underlay it with boxplots.
+
+```{r, echo=FALSE, fig.cap="There seems to be an effect of *situation*; The data don't look normally distributed."}
 fulldata %>% 
   ggplot(aes(Situation, Words#, col=Question
              ))+
-  #geom_violin()+
   geom_boxplot()+
-  geom_jitter(width = .01)+
-  scale_y_sqrt()
+  geom_jitter(width = .01)#+
+  # scale_y_sqrt()
 ```
+
+### Plot 2: Distribution
+
+Plot the distribution of *Words*.
+
+```{r}
+fulldata %>% 
+  ggplot(aes(Words))+
+  geom_histogram()
+```
+
+### Plot 3: Transformations
+
+QQ-plots show us how normally the data are distributed. Perfect data look like this:
+
+```{r, fig.cap="QQ-Plot for perfectly normal data. You don't see those in the wild."}
+tibble(x = rnorm(1e3)) %>% 
+  ggplot(aes(sample = x))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+Plot QQ-Plots for
+
+* the untransformed data
+* log-transformed data: $x^\prime = \log x$ (the standard)
+* $\sqrt{~~}$-transformed data: $x^\prime = \sqrt{x}$ (strangely it sometimes works)
+* inverse transformed data: $x^\prime = -1/x$ (good candidate for reaction time data)
 
 ```{r, include=FALSE}
 fulldata %>% 
@@ -185,8 +225,6 @@ fulldata %>%
    geom_qq_line()+
    geom_qq()->gg7
 ```
-
-When we try some standard transformation the $\sqrt{~~}$-Transformation is a clear winner:
 
 
 ```{r, fig.cap="Square root transformed data show pretty normally distributed.", echo=FALSE}
@@ -217,11 +255,16 @@ grid.arrange(gg7 + ggtitle("untransformed"),
 
 We did not look at residuals so far, which is what actually has to be normally distributed. But we got a glance that gave us a very good candidate.
 
+## The model
+
+### Setup
+
 ```{r}
 w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=fulldata)
 summary(w0)
 ```
 
+### Assessment
 
 ```{r, echo=FALSE, fig.cap="The Residuals look quite nice"}
 data.frame(resid = resid(w0)) %>% 
@@ -234,7 +277,10 @@ data.frame(resid = resid(w0)) %>%
 
 ```{r}
 drop1(update(w0, REML = F), test = "Chisq")
+drop1(update(w0, .~. + Abi:Situation, REML = F), test = "Chisq")
 ```
+
+
 
 ```{r, fig.width=8, fig.height=4}
 plot(allEffects(w0)[c(1,2)])
@@ -243,6 +289,8 @@ plot(allEffects(w0)[c(1,2)])
 ```{r}
 tab_model(w0)
 ```
+
+### Change contrasts
 
 
 ```{r}
@@ -274,9 +322,10 @@ tab_model(w1)
 plot(allEffects(w1)[c(1,2)])
 ```
 
+# Acknowledgement
 
-## packages
+Thanks to Milena Kühnast for the nice data set.
+
+# packages we used
 
 `r paste0("@R-",setdiff(.packages(), c("datasets","grDevices", "graphics", "methods", "stats", "utils")), collapse = ", ")`
-
-# References
