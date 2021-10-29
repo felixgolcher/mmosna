@@ -16,23 +16,27 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(cache = TRUE,
-                      autodep = TRUE,
-                      message = FALSE,
-                      warning = FALSE,
-                      fig.width = (myfw <- 7),
-                      fig.height = myfw/2)
-knitr::write_bib(file = 'packages.bib')
-inputpath <- "data/"
-outputpath <- inputpath
+## It's not necessary that you understand the code in this block.
+## It's just convenient stuff and maybe nice to see.
 
+## Some defaults how to render the output doc
+knitr::opts_chunk$set(cache = TRUE, ## remember old computations, can _vastly_ reduce computation time.
+                      autodep = TRUE, ## recompute dependent chunks
+                      message = FALSE, ## do not write messages to the output document
+                      warning = FALSE, ## dito with warnings
+                      fig.width = (myfw <- 7), ## default width of figures
+                      fig.height = myfw/2) ## make figures half as high as they are wide.
+inputpath <- "data/" ## where to find the data
+outputpath <- inputpath ## where to write
+
+## you might want to change default contrasts
 # options(contrasts = c(unordered = "contr.sum",
 #                           ordered= "contr.poly"))
-
 
 ```
 
 ```{r packages, include=FALSE, cache=FALSE}
+## maybe you don't _need_ all those:
 library(readxl)
 library(gridExtra)
 # library(ggrepel)
@@ -52,6 +56,7 @@ library(sjPlot)
 library(sjlabelled)
 library(kableExtra)
 library(knitr)
+## if you don't want to render 0.001 as .001 remove this hook:
 knit_hooks$set(inline =
   function (x) {
       if (is.numeric(x)) {
@@ -64,7 +69,12 @@ knit_hooks$set(inline =
       paste(as.character(x), collapse = ", ")
       }
   )
+## write a bib file for each loaded package:
+## now you can cite package lme4 as @R-lme4.
+## It's nice to cite packages: People get the cred they deserve and
+## readers know what you were using.
 write_bib(x = .packages(), file="packages.bib")
+## plots light and white:
 theme_set(theme_minimal())
 
 ## set som defaults
@@ -81,7 +91,7 @@ tab_model <- function(...){
                     ...)
 }
 
-# this semantics should exist...
+# this semantics should exist, but what was it called again...
 some <- function(dtx, length = 10){
     slice(dtx, as.integer(seq(1, n(), length = length)))
 }
