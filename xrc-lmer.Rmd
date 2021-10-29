@@ -48,6 +48,7 @@ library(scales)
 library(GGally)
 library(qqplotr)
 library(lme4)
+library(lmerTest)
 # library(optimx)
 # library(nloptr)
 library(effects)
@@ -208,6 +209,7 @@ QQ-plots show us how normally the data are distributed. Perfect data look like t
 ```{r, fig.cap="QQ-Plot for perfectly normal data. You don't see those in the wild."}
 tibble(x = rnorm(1e3)) %>% 
   ggplot(aes(sample = x))+
+  geom_qq_band()+
   geom_qq()+
   geom_qq_line()
 ```
@@ -225,7 +227,11 @@ Plot QQ-Plots for
 
 ## The model
 
+Now we actually proceed with computing a mixed model. In reality we would do a lot more consistency checks on the data, more diagnostic plots and all that.
+
 ### Setup
+
+Set up a mixed model with `lmer` from package `lme4` [@R-lme4]. Use one of the three variables `Abi`, `GT_Points` and `Correctness_score` that somehow measure the knowledge of the subjects.
 
 ```{r}
 w0 <- lmer(sqrt(Words) ~ Abi + Situation + (1|TN_ID), data=fulldata)
@@ -233,6 +239,10 @@ summary(w0)
 ```
 
 ### Assessment
+
+#### Residual plot
+
+Compile a QQ-Plot for the residuals. Is it OK?
 
 ```{r, echo=FALSE, fig.cap="The Residuals look quite nice"}
 data.frame(resid = resid(w0)) %>% 
@@ -242,6 +252,24 @@ data.frame(resid = resid(w0)) %>%
   geom_qq_line()
 ```
 
+#### p-values
+
+* The function `update` can and should be used to change things in a model.
+* `anova` can be used to compare two nested models and to get a significance test.
+
+```{r}
+w0.reml <- update(w0, REML = T) # but anova does this automatically...
+w0.reml.noabi <- update(w0.reml, .~. -Abi)
+anova(w0.reml.noabi, w0.reml)
+```
+
+The result is very similar to what you saw in the model table:
+
+```{r}
+coefficients(summary(w0))["Abi",]
+```
+
+We can use the `drop1` function to remove one predictor at a time and run a significance test on it.
 
 ```{r}
 drop1(update(w0, REML = F), test = "Chisq")
@@ -250,9 +278,11 @@ drop1(update(w0, .~. + Abi:Situation, REML = F), test = "Chisq")
 
 
 
-```{r, fig.width=8, fig.height=4}
-plot(allEffects(w0)[c(1,2)])
+```{r, fig.cap="Always look at what you did.", fig.width=8, fig.height=4}
+plot(allEffects(w0))
 ```
+
+
 
 ```{r}
 tab_model(w0)
