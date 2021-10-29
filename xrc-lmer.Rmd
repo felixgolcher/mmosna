@@ -334,9 +334,49 @@ tab_model(w0)
 
 ### Change contrasts
 
+How do default contrasts look like?
 
 ```{r}
-cm <- as.matrix(cbind(
+(treat <- as.matrix(cbind(
+  # offset
+  c(1,0,0,0),
+  # A vs B
+  c(-1,1,0,0),
+  # A vs C
+  c(-1,0,1,0),
+  # A vd D
+  c(-1, 0, 0, 1))))
+(taert <- solve(t(treat)))
+aert <- taert[,-1]
+colnames(aert) <- c("A vs B","A vs C", "A vs D")
+aert == contr.treatment(4)
+aert == contrasts(factor(fulldata$Situation))
+```
+
+Or, the other way round:
+
+```{r}
+t(solve(cbind(1,aert)))
+```
+
+But now we do not want to compare a default level to all others. That is only useful for experiments where you have a clear control level.
+
+```{r}
+t(solve(cbind(1, contr.sum(4))))
+```
+
+This gives us the grand mean as an intercept and pitches the first three factors against the other three.
+
+This version of contrasts is quit readable. We can use it to easily construct contrasts that show whatever comparisons we want to see. Let's assume we want to compare 
+
+* the formal conditions with each other
+* the informal condition with each other
+* the formal pair against the informal pair
+
+**TASK** Set up those contrasts.
+
+```{r}
+(cm <- as.matrix(cbind(
   # offset
   1/4,
   # A vs B
@@ -344,13 +384,22 @@ cm <- as.matrix(cbind(
   # C vs D
   c(0,0,1,-1),
   # AB vd CD
-  c(1/2, 1/2, -1/2, -1/2)))
+  c(1/2, 1/2, -1/2, -1/2))))
 cmm <- solve(t(cm))
 cmn <- cmm[,-1]
 colnames(cmn) <- c("Formal: A vs B","Informal: C vs D", "Formal vs Informal")
+```
+
+**TASK** change the data so that the contrasts are taken to be the contrasts used for *situation*
+
+
+```{r}
 fulldata %>% 
   mutate(Situation = C(factor(Situation), contr = cmn)) -> contrdata
 ```
+
+**TASK** rerun your model.
+
 
 ```{r}
 w1 <- update(w0, data = contrdata)
