@@ -1,6 +1,6 @@
 ---
 title: "Preparatory homework for our R-Workshop on mixed models"
-subtitle: Solution (part)
+subtitle: Solution (parts of it)
 author: "Felix . Golcher @hu-berlin.de"
 date: "`r format(Sys.time(), '%d %B, %Y %H:%M')`"
 header-includes: |
@@ -36,11 +36,7 @@ library(tidyverse)
 library(kableExtra)
 ```
 
-This preparatory homework is only for testing your existing knowledge and experience. Please do not invest time in reading and learning the skills needed for completing all the tasks. Just answer from what you already know.
-
-Please answer the following questions. The preferred result would be an Rmarkdown document that you would send [back to me](mailto:felix.golcher@hu-berlin.de). If you do not know what that is, reply with an R-Script. If that is not easily possible for you, reply in any other way. If a question does not mean anything to you, just state that fact. If none of the questions mean anything to you, I would be interested in this fact as well.
-
-The better I know what you already know the better I can adapt the workshop to your needs.
+Some solutions to some of the questions with some explanation what it is all about.
 
 # set up an R-Markdown document
 
@@ -84,6 +80,12 @@ You can finely tune what should and what should not appear in the output documen
 * Self documenting. You don't repeat the p-value's value, but tell R-markdown to insert this and that p-value from this and that model into your document.
 * Reproducable research. Give someone data and R-markdown and she can recreate your analysis. And critize it. Or praise it.
 * As a text based format R-markdown is accessible to Version control programs like [git](https://en.wikipedia.org/wiki/Git). You can use all the powerful tools, platforms like [github.com](https://github.com) give you for collaborative work.
+
+## Why not a plain R-Script
+
+* R scripts easily fill with inactive code. They are run interactively and code ends up in an inconsistent sequence. R-Markdown should(!!) always be compiled. Then you know that the code actually works. Then you have reproducable research.
+* R scripts have comments. That's fine for commenting the code. For describing what you actually did, and why, real text interspersed with the results of your computation is much better. R-Markdown is both at once.
+* When using R scripts people sometimes save figures via the menue. You will never find the code again that produced this one figure you have to change **right now**. R-Markdown saves the figures for you to a predefined location. Even if you do not use R-Markdown as the final source document for your report, the figures do not get lost.
 
 # read in the file `RDaten.csv`.
 
