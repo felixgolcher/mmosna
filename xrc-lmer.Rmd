@@ -295,7 +295,11 @@ tab_model(w0)
 
 This section could use a lot of explanation. I don't know if it makes any sense falling from heavens like this.
 
-How do default contrasts look like?
+How do default contrasts look like? The idea behind this section is to show by example how contrasts work and how you can (re)construct them. The task is then to redo it with the real data.
+
+The problem: If you don't know for sure what contrasts are, it is very doubtful you will know after reading the example and you will be kind of lost with the task.
+
+That's how treatment contrasts are built:
 
 ```{r}
 (treat <- as.matrix(cbind(
@@ -336,42 +340,32 @@ This version of contrasts is quit readable. We can use it to easily construct co
 
 **TASK** Set up those contrasts.
 
-```{r, eval=FALSE}
-(cm <- as.matrix(cbind(
-  # offset
-  1/4,
-  # A vs B
-  c(1,-1,0,0),
-  # C vs D
-  c(0,0,1,-1),
-  # AB vd CD
-  c(1/2, 1/2, -1/2, -1/2))))
-cmm <- solve(t(cm))
-cmn <- cmm[,-1]
+```{r}
+cmn <- aert # This is _not_ the solution. We just assign something sensible to cmn.
+## Your task is to create the right matrix from scratch.
 colnames(cmn) <- c("Formal: A vs B","Informal: C vs D", "Formal vs Informal")
 ```
 
 **TASK** change the data so that the contrasts are taken to be the contrasts used for *situation*
 
 
-```{r, eval=FALSE}
-fulldata %>% 
-  mutate(Situation = C(factor(Situation), contr = cmn)) -> contrdata
+```{r}
+# you might call your updated model w1.
 ```
 
-**TASK** rerun your model.
+**TASK** rerun your model with the new model. Use update.
 
 
-```{r, eval=FALSE}
-w1 <- update(w0, data = contrdata)
+```{r}
+w1 <- update(w0) ## arguments are missing, but you can start here...
+```
+
+```{r}
+# tab_model(w1)
 ```
 
 ```{r, eval=FALSE}
-tab_model(w1)
-```
-
-```{r, eval=FALSE}
-plot(allEffects(w1))
+# plot(allEffects(w1))
 ```
 
 # Acknowledgement
