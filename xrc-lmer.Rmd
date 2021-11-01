@@ -98,10 +98,13 @@ some <- function(dtx, length = 10){
 }
 ```
 
+The data are about texts students wrote in reply to 4 situations intending to elicit different registers (`situation`). There where 4 linguisic scenarios the students had to explain (`question`).
+
+We are interested in the question if the length of the texts is different in different `situations`.
 
 # Reading in the data
 
-We have two data files
+We have two data files. We read them and combine them into one data frame (tibble).
 
 ## Main data
 
@@ -148,6 +151,14 @@ stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1) # exactly on col
 
 ## Three variables describe something very similar
 
+We have three variables somehow describing the academic achievment of the students: 
+
+* `Abi` Abiturnote
+* `GT_points` score in some grammar test.
+* `Correctness_score` grading of the texts itself.
+
+If we put correlating variables in the model, we run into problems. First we try to assess that the variables are indeed correlated. In a way that is kind of a consistency test. If they are not correlated, something is seriously wrong.
+
 ```{r, fig.cap="Funny situation: Two of the three pairs are clearly correlated, but the third pair much less."}
 grid.arrange(
   ggplot(metadata, aes(GT_points, Abi))+
@@ -160,6 +171,8 @@ grid.arrange(
     geom_jitter()+
     geom_smooth(method="lm"), nrow=1)
 ```
+
+The result is quite funny: `Abi` and `Correctness_score` are highly correlated, and so are `Correctness_score` and `GT_points`. But `Abi` and `GT_points` are not.
 
 
 ```{r, fig.cap="When we average over people we still have the same situation."}
@@ -279,6 +292,8 @@ tab_model(w0)
 ```
 
 ### Change contrasts
+
+This section could use a lot of explanation. I don't know if it makes any sense falling from heavens like this.
 
 How do default contrasts look like?
 
