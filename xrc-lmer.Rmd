@@ -349,7 +349,11 @@ tab_model(w0)
 
 This section could use a lot of explanation. I don't know if it makes any sense falling from heavens like this.
 
-How do default contrasts look like?
+How do default contrasts look like? The idea behind this section is to show by example how contrasts work and how you can (re)construct them. The task is then to redo it with the real data.
+
+The problem: If you don't know for sure what contrasts are, it is very doubtful you will know after reading the example and you will be kind of lost with the task.
+
+That's how treatment contrasts are built:
 
 ```{r}
 (treat <- as.matrix(cbind(
@@ -413,7 +417,7 @@ fulldata %>%
   mutate(Situation = C(factor(Situation), contr = cmn)) -> contrdata
 ```
 
-**TASK** rerun your model.
+**TASK** rerun your model with the new model. Use update.
 
 
 ```{r}
