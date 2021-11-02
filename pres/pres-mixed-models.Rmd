@@ -617,6 +617,13 @@ bind_rows(
               values_from="estimate")%>%
   unnest(data) %>% 
   mutate(model_estimate = a+nuissance*b) -> spieldaten
+## this complicated computation is nice and makes it possible to connect
+## the _smoother_ lines with the data points.
+## But that is not actually what we want: The smoother are computed on grouped
+## subsets of the data. They show different slopes in each group. That is not how we
+## describe it in the text.
+## => model_estimate is overwritten below, simply by the real model fit.
+## smoother are not used any more.
 ```
 
 ### {.col-6}
@@ -641,14 +648,33 @@ ggplot(spieldaten, aes(group, var, fill=group))+
 
 ### {.col-6}
 
+```{r lm0, include=FALSE}
+lm0 <- lm(var ~ nuissance + group , data=spieldaten)
+```
+
+
 ```{r, echo=FALSE}
+lm0c <- coefficients(lm0)
+## lm0d for drawing the lines.
+## todo: we could limit the lines to the respective point range.
+##       but it is not even sure if this would be good at all.
+##       the limits would not be part of the model anyway.
+lm0d <- data.frame(
+  intercept = c(lm0c["(Intercept)"],
+                lm0c["(Intercept)"]+lm0c["groupB"]),
+  slope = rep(lm0c["nuissance"],2),
+  group = c("A","B"))
 (ggplot(spieldaten, aes(nuissance,
-                       var, 
-                       col=group,
-                       ymin=var,
-                       ymax=model_estimate))+
+                        var, 
+                        col=group,
+                        ymin=var,
+                        ymax=model_estimate))+
   geom_point()+
-  geom_smooth(method="lm", se=F)+
+   geom_abline(data = lm0d,
+               aes(intercept = intercept,
+                   slope = slope,
+                   col = group),
+               size = 1)+
    theme_minimal()->gg1)
 ```
 
@@ -719,8 +745,7 @@ is minimal.
 
 ## How to do that in R
 
-```{r, width=7}
-lm0 <- lm(var ~ nuissance + group , data=spieldaten)
+```{r, width=7, ref.label="lm0"}
 ```
 
 > How does `var` depend on `group` and `nuissance`? {.col-5}
@@ -944,68 +969,17 @@ coef(lmer1)$Subject %>%
 * The thin lines are the personalized lines.
 * We see that this model is still somewhat limited.
 * $\Rightarrow$ We will extend it.
-* First a remark.
-
-## We should centralize our predictors | uncentralized
-
-### {.col-6}
-
-```{r, echo=F}
-(gg3+
-  scale_x_continuous(limits=c(0,200))+
-  geom_abline(data = fxd,
-              mapping = aes(intercept = intercept+.1,
-                            slope = 5*slope,
-                            col = PrevCorrect),
-              size=2,
-              linetype="dashed")->gg4) +
-    geom_vline(xintercept = 0, color="grey", size=1)
-```
-
-###  {.col-6}
-
-* If we change the slope, the intercept will change as well.
-* That is intercept and slope are correlated.
-* That is not good for numerical reasons.
-* Our models work better, if we move the 0 to the middle of our data.
-
-## We should centralize our predictors | centralized
-
-### {.col-6}
-
-```{r, echo=F}
-gg4 +
-  scale_x_continuous("cTrial",
-                     breaks = seq(0,300, by=50),
-                     labels = seq(-100,200,by=50),
-                     limits = c(0,200))+
-  geom_vline(xintercept = 100, color = "grey", size=1)
-```
-
-###  {.col-6}
-
-* If we change the slope, the intercept will change as well.
-* That is intercept and slope are correlated.
-* That is not good for numerical reasons.
-* Our models work better, if we move the 0 to the middle of our data.
-
-```{r}
-lexdec_4 %>% 
-  mutate(cTrial = scale(Trial)) -> lexdec_5
-```
-
-
-* Now, intercept and slope are independent.
+* Let's have a look how different people behave.
 
 ## Not all subjects behave the same {.middle}
 
 ### {.col-6}
 
 ```{r, echo=FALSE}
-ggplot(lexdec_5, aes(cTrial, RTlog#, col=NativeLanguage
+ggplot(lexdec_4, aes(Trial, RTlog#, col=NativeLanguage
                      ))+
-  geom_point(alpha=.5)+
-  geom_smooth(method="lm")+
+  geom_point(alpha=.2)+
+  geom_smooth(method="lm", col="black",se=F)+
   facet_wrap(~Subject)
 ```
 
@@ -1035,6 +1009,77 @@ $a$, $b$, $c$, $\sigma_{\epsilon}$, $\sigma_a$, $\sigma_b$, and $\varrho_{ab}$.
 %end%
 
 R, that is `lme4` adds it by default.
+
+## We should centralize our predictors | uncentralized
+
+### {.col-6}
+
+```{r, echo=F}
+(gg3+
+  scale_x_continuous(limits=c(0,200))+
+  geom_abline(data = fxd,
+              mapping = aes(intercept = intercept+.1,
+                            slope = 5*slope,
+                            col = PrevCorrect),
+              size=2,
+              linetype="dashed")->gg4) +
+    geom_vline(xintercept = 0, color="grey", size=1)
+```
+
+###  {.col-6}
+
+* Imagine two people:
+  - one keeps approximately the same pace.
+  - one responds quicker and quicker.
+* The accelerating person has a higher intercept.
+* That is intercept and slope are correlated.
+* This correlation is purely mathematic.
+* That is not good for numerical reasons.
+* Our models work better, if we move the y-axis to the middle of our data.
+
+## We should centralize our predictors | centralized {.column}
+
+### {.col-6}
+
+```{r, echo=F}
+gg4 +
+  scale_x_continuous("cTrial",
+                     breaks = seq(0,300, by=50),
+                     labels = seq(-100,200,by=50),
+                     limits = c(0,200))+
+  geom_vline(xintercept = 100, color = "grey", size=1)
+```
+
+###  {.col-6}
+
+* Imagine two people:
+  - one keeps approximately the same pace.
+  - one responds quicker and quicker.
+* The accelerating person has a higher intercept.
+* That is intercept and slope are correlated.
+* This correlation is purely mathematic.
+* That is not good for numerical reasons.
+* Our models work better, if we move the y-axis to the middle of our data.
+
+```{r, include=FALSE}
+## This was the actual code here. The way it is described
+## in the next chunk is closeer to the figure.
+lexdec_4 %>% 
+  mutate(cTrial = scale(Trial)) -> lexdec_5
+```
+
+```{r, eval=FALSE}
+lexdec_4 %>% 
+  mutate(cTrial = Trial - mean(Trial)) -> lexdec_5
+## Alternatively use function `scale()` to set
+## - mean to 0
+## - variance to 1
+```
+
+###  {.col-6}
+
+* Now, intercept and slope are independent.
+
 
 ## How to do that in R | lme4 [@lme4] {.middle}
 
