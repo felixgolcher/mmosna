@@ -1,0 +1,450 @@
+---
+title: "Exercise for Linear General Mixed Models"
+author: "Felix Golcher"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M')`"
+bibliography: [packages.bib]
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 6
+    number_sections: true
+    fig_caption: yes
+    table_caption: yes
+    df_print: "paged"
+---
+
+
+```{r setup, include=FALSE}
+## It's not necessary that you understand the code in this block.
+## It's just convenient stuff and maybe nice to see.
+
+## Some defaults how to render the output doc
+knitr::opts_chunk$set(cache = F, ## remember old computations, can _vastly_ reduce computation time.
+                      autodep = TRUE, ## recompute dependent chunks
+                      message = FALSE, ## do not write messages to the output document
+                      warning = FALSE, ## dito with warnings
+                      fig.width = (myfw <- 7), ## default width of figures
+                      fig.height = myfw/2) ## make figures half as high as they are wide.
+inputpath <- "data/" ## where to find the data
+outputpath <- inputpath ## where to write
+
+## you might want to change default contrasts
+# options(contrasts = c(unordered = "contr.sum",
+#                           ordered= "contr.poly"))
+
+```
+
+```{r packages, include=FALSE, cache=FALSE}
+## maybe you don't _need_ all those:
+library(readxl)
+library(gridExtra)
+# library(ggrepel)
+library(tidyverse)
+# library(ggplot2)
+# library(emmeans)
+library(Hmisc)
+library(scales)
+library(GGally)
+library(qqplotr)
+library(lme4)
+library(lmerTest)
+# library(optimx)
+# library(nloptr)
+library(effects)
+# library(papaja)
+library(sjPlot)
+library(sjlabelled)
+library(kableExtra)
+library(knitr)
+## if you don't want to render 0.001 as .001 remove this hook:
+knit_hooks$set(inline =
+  function (x) {
+      if (is.numeric(x)) {
+          x = round(x, getOption("digits"))
+          if (x < 1 & x > -1) {
+            x = sub("0\\.","\\.",as.character(x)) 
+          }
+
+      }
+      paste(as.character(x), collapse = ", ")
+      }
+  )
+## write a bib file for each loaded package:
+## now you can cite package lme4 as @R-lme4.
+## It's nice to cite packages: People get the cred they deserve and
+## readers know what you were using.
+write_bib(x = .packages(), file="packages.bib")
+## plots light and white:
+theme_set(theme_minimal())
+
+## set som defaults
+tab_model <- function(...){
+  sjPlot::tab_model(collapse.ci = T,
+                    linebreak = T,
+                    digits.p = 3, # not smaller, since bug https://github.com/strengejacke/sjPlot/issues/789
+                    show.intercept = F,
+                    p.style = "numeric", # numeric seems broken.
+                    show.icc = F,
+                    show.obs = F,
+                    show.ngroups = F,
+                    ci.hyphen = ",",
+                    ...)
+}
+
+# this semantics should exist, but what was it called again...
+some <- function(dtx, length = 10){
+    slice(dtx, as.integer(seq(1, n(), length = length)))
+}
+```
+
+The data are about texts students wrote in reply to 4 situations intending to elicit different registers (`situation`). There where 4 linguisic scenarios the students had to explain (`question`).
+
+We are interested in the question if the length of the texts is different in different `situations`.
+
+# Reading in the data
+
+We have two data files. We read them and combine them into one data frame (tibble).
+
+## Main data
+
+```{r}
+maindata <- read_excel("data/LengthInWords.xlsx")
+maindata %>% 
+  some() %>% 
+  kbl() %>% 
+  kable_styling()
+```
+
+* Subjects wrote texts. Each data point (line) represents one text written by one subjects.
+* `TN_ID` is the subject id.
+* `Situation` is one of 4 situations the subjects were confronted with. There were 2 more formal and 2 more informal ones. The design is not really $2\times 2$ since the two pairs cannot be matched.
+* `Words` is the number of words the subjects produced in this situation.
+* `Question` is the prompt the subjects were given.
+* `Correctness_score` is a manual assessment of the texts.
+
+## Meta data
+
+```{r}
+metadata <- read_excel("data/LengthInWords-meta.xlsx")
+metadata %>% 
+    some() %>% 
+  kbl() %>% 
+  kable_styling()
+```
+
+These variables are mostly selfexplaining. `GT_points` are points reached in some grammar test.
+
+## Join main und meta data
+
+```{r}
+fulldata <- full_join(maindata, metadata)
+stopifnot(nrow(fulldata) == nrow(maindata)) # We should have the same number of lines afterwards
+stopifnot(ncol(fulldata) == ncol(maindata) + ncol(metadata) -1) # exactly on column for joining
+```
+
+# Analysis
+
+## Research question
+
+> Does the number of words differ between situations?
+
+## Three variables describe something very similar
+
+We have three variables somehow describing the academic achievment of the students: 
+
+* `Abi` Abiturnote
+* `GT_points` score in some grammar test.
+* `Correctness_score` grading of the texts itself.
+
+If we put correlating variables in the model, we run into problems. First we try to assess that the variables are indeed correlated. In a way that is kind of a consistency test. If they are not correlated, something is seriously wrong.
+
+```{r, fig.cap="Funny situation: Two of the three pairs are clearly correlated, but the third pair much less."}
+grid.arrange(
+  ggplot(metadata, aes(GT_points, Abi))+
+    geom_point()+
+    geom_smooth(method="lm"),
+  ggplot(fulldata, aes(GT_points, Correctness_score))+
+    geom_jitter()+
+    geom_smooth(method="lm"),
+  ggplot(fulldata, aes(Abi, Correctness_score))+
+    geom_jitter()+
+    geom_smooth(method="lm"), nrow=1)
+```
+
+The result is quite funny: `Abi` and `Correctness_score` are highly correlated, and so are `Correctness_score` and `GT_points`. But `Abi` and `GT_points` are not.
+
+
+```{r, fig.cap="When we average over people we still have the same situation."}
+my_fn <- function(data, mapping, method="lm", ...){
+  p <- ggplot(data = data, mapping = mapping) + 
+    geom_point() + 
+    geom_smooth(method=method, ...)
+  p
+}
+fulldata %>% 
+  group_by(TN_ID) %>% 
+  summarise(GT_points = first(GT_points),
+            Abi = first(Abi),
+            Correctness_score = mean(Correctness_score)) %>% 
+  select(-TN_ID) %>% 
+  ggpairs(lower = list(continuous = my_fn))
+```
+
+We will use only one of those variables. Otherwise there could be problems with interpreting the model.
+
+## How do the data look like?
+
+### Plot 1: Is there an effect?
+
+**TASK** Produce a plot:
+
+* that has *situation* on the X-axis
+* and Words on the Y-axis
+* underlay it with boxplots.
+
+```{r, fig.cap="I prepared something for you..."}
+fulldata %>% 
+  ggplot(aes(Situation, Words, fill = Situation))+
+    geom_violin()+
+    geom_boxplot(width = 0.5, colour = "black")
+```
+
+### Plot 2: Distribution
+
+**TASK** Plot the distribution of *Words*.
+
+```{r, fig.cap="I prepared less for you..."}
+fulldata %>% 
+  ggplot(aes(Words))+
+  geom_histogram()
+```
+
+### Plot 3: Transformations
+
+QQ-plots show us how normally the data are distributed. Perfect data look like this:
+
+```{r, fig.cap="QQ-Plot for perfectly normal data. You don't see those in the wild."}
+tibble(x = rnorm(1e3)) %>% 
+  ggplot(aes(sample = x))+
+  geom_qq_band()+
+  geom_qq()+
+  geom_qq_line()
+```
+
+**TASK** Plot QQ-Plots for
+
+* the untransformed data
+* log-transformed data: $x^\prime = \log x$ (the standard)
+* $\sqrt{~~}$-transformed data: $x^\prime = \sqrt{x}$ (strangely it sometimes works)
+* inverse transformed data: $x^\prime = -1/x$ (good candidate for reaction time data)
+
+
+**Remark:** Actually, the residuals have to be normally distributed. But often the noise is so much larger than the effects that it's fine to check the data itself. You don't need a model for that...
+
+```{r, echo = T, fig.cap="QQ-Plot für *Words*, untransformiert"}
+fulldata %>% 
+  ggplot(aes(sample = Words))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+
+```{r echo = T, fig.cap="QQ-Plot für *Words*, log-transformiert"}
+fulldata %>% 
+  mutate(Words_log = log(Words)) %>%
+  ggplot(aes(sample = Words_log))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+```{r echo = T, fig.cap="QQ-Plot für *Words*, wurzel-transformiert"}
+fulldata %>% 
+  mutate(Words_sqrt = sqrt(Words)) %>%
+  ggplot(aes(sample = Words_sqrt))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+```{r echo = T, fig.cap="QQ-Plot für *Words*, invers log-transformiert"}
+fulldata %>% 
+  mutate(Words_log.inv = (-1)/log(Words)) %>%
+  ggplot(aes(sample = Words_log.inv))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+```{r echo = T, fig.cap="QQ-Plot für *Words*, invers wurzel-transformiert"}
+fulldata %>% 
+  mutate(Words_sqrt.inv = (-1)/sqrt(Words)) %>%
+  ggplot(aes(sample = Words_sqrt.inv))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+## The model
+
+Now we actually proceed with computing a mixed model. In reality we would do a lot more consistency checks on the data, more diagnostic plots and all that.
+
+### Setup
+
+**TASK** Set up a mixed model with `lmer` from package `lme4` [@R-lme4]. Use one of the three variables `Abi`, `GT_Points` and `Correctness_score` that somehow measure the knowledge of the subjects.
+```{r}
+fulldata <- fulldata %>%
+  mutate(Situation = factor(Situation)) %>%
+  mutate(Words.sqrt = sqrt(Words)) %>%
+  mutate(Question.f = factor(Question))
+w1 <- lmer(Words ~ (1|TN_ID) , data = fulldata)
+w2 <- lmer(Words ~ Abi + (1|TN_ID) , data = fulldata)
+w0 <- lmer(Words ~ Abi + Situation + (1|TN_ID) , data = fulldata)
+w4 <- lmer(Words ~ Abi + Situation + Question + (1|TN_ID) , data = fulldata) 
+texreg::screenreg(list(w1, w2, w0, w4))
+anova(w1, w2, w0, w4)
+```
+
+### Assessment
+
+#### Residual plot
+
+**TASK** Compile a QQ-Plot for the residuals. Is it OK?
+
+```{r, echo=FALSE, fig.cap="Do the residuals look nice?"}
+## you might want to call your model w0...
+fulldata %>%
+  ggplot(aes(sample = resid(w0)))+
+  geom_qq()+
+  geom_qq_line()
+```
+
+#### p-values
+
+* The function `update` can and should be used to change things in a model.
+* `anova` can be used to compare two nested models and to get a significance test.
+
+```{r}
+# you might want to adapt this to the model you built above...
+w0 <- lmer(Words ~ Situation + Abi + (1|TN_ID), data = fulldata)
+w0.noreml <- update(w0, REML = T) # but anova does this automatically...
+w0.noreml.nogroup <- update(w0.noreml, .~. - Situation)
+anova(w0.noreml.nogroup, w0.noreml)
+```
+
+The result is similar to what you saw in the model table, but not the same:
+
+```{r}
+coefficients(summary(w0))
+```
+
+We can use the `drop1` function to remove one predictor at a time and run a significance test on it.
+
+**TASK**  Do that with your model. Do also add the interaction between `Abi` and `situation` and check its significance. 
+
+```{r}
+drop1(w0)
+
+w0.interact <- update(w0, .~. + Abi*Situation)
+anova(w0, w0.interact)
+```
+
+
+```{r, fig.cap="Always look at what you did.", fig.width=8, fig.height=4}
+plot(allEffects(w0))
+```
+
+The function `tab_model` from `sjPlots` is the best tool I know so far for reporting models.
+
+```{r}
+tab_model(w0)
+```
+
+### Change contrasts
+
+This section could use a lot of explanation. I don't know if it makes any sense falling from heavens like this.
+
+How do default contrasts look like? The idea behind this section is to show by example how contrasts work and how you can (re)construct them. The task is then to redo it with the real data.
+
+The problem: If you don't know for sure what contrasts are, it is very doubtful you will know after reading the example and you will be kind of lost with the task.
+
+That's how treatment contrasts are built:
+
+```{r}
+(treat <- as.matrix(cbind(
+  # offset
+  c(1,0,0,0),
+  # A vs B
+  c(-1,1,0,0),
+  # A vs C
+  c(-1,0,1,0),
+  # A vd D
+  c(-1, 0, 0, 1))))
+(taert <- solve(t(treat)))
+aert <- taert[,-1]
+colnames(aert) <- c("A vs B","A vs C", "A vs D")
+aert == contr.treatment(4)
+aert == contrasts(factor(fulldata$Situation))
+```
+
+Or, the other way round:
+
+```{r}
+t(solve(cbind(1,aert)))
+```
+
+But now we do not want to compare a default level to all others. That is only useful for experiments where you have a clear control level.
+
+```{r}
+t(solve(cbind(1, contr.sum(4))))
+```
+
+This gives us the grand mean as an intercept and pitches the first three factors against the other three.
+
+This version of contrasts is quit readable. We can use it to easily construct contrasts that show whatever comparisons we want to see. Let's assume we want to compare 
+
+* the formal conditions with each other
+* the informal condition with each other
+* the formal pair against the informal pair
+
+**TASK** Set up those contrasts.
+
+```{r}
+cmn <- aert # This is _not_ the solution. We just assign something sensible to cmn.
+## Your task is to create the right matrix from scratch.
+colnames(cmn) <- c("Formal: A vs B","Informal: C vs D", "Formal vs Informal")
+
+cmat<-matrix(c(0,0,-1,1,-1,1,0,0,-0.5,-0.5,0.5,0.5), byrow = F, nrow = 4, ncol = 3)
+colnames(cmat) <- c("C-D","A-B","AB-CD")
+rownames(cmat) <- c("A","B","C","D")
+print(cmat)
+```
+
+**TASK** change the data so that the contrasts are taken to be the contrasts used for *situation*
+
+
+```{r}
+# you might call your updated model w1.
+w1 <- lmer(Words ~ Situation + Abi + (1|TN_ID), data = fulldata, contrasts=list(Situation=cmat))
+tab_model(w1)
+```
+
+**TASK** rerun your model with the new model. Use update.
+
+
+```{r}
+w1 <- update(w0) ## arguments are missing, but you can start here...
+```
+
+```{r}
+# tab_model(w1)
+```
+
+```{r, eval=FALSE}
+plot(allEffects(w1))
+```
+
+# Acknowledgement
+
+Thanks to Milena Kühnast for the nice data set.
+
+# packages we used
+
+`r paste0("@R-",setdiff(.packages(), c("datasets","grDevices", "graphics", "methods", "stats", "utils")), collapse = ", ")`
