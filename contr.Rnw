@@ -1,0 +1,411 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage[a4paper]{geometry} % showframe
+\usepackage{graphicx}
+\usepackage{icomma} % german kommas
+\usepackage{csquotes}
+\usepackage{parskip}
+\usepackage{filecontents}
+\usepackage{siunitx}
+\usepackage[english]{isodate}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}    %for going to the top of an image when a figure reference is clicked\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+\usepackage{Sweave}
+% \setsansfont{Latin Modern Sans}
+% \setmainfont{Latin Modern Sans}
+
+\title{Why does the contrast matrix look so weired?}
+%\subtitle{Explaining how the inverse creeps in}
+\author{Felix Golcher | @fgolcher | \url{hu.berlin/fg}}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<setup, include=FALSE, cache=F,echo=F>>=
+knitr::opts_chunk$set(cache=T,
+                      autodep = T,
+                      warning = F,
+                      message = F)
+@
+
+<<packages, include=FALSE, cache=FALSE, echo=F>>=
+library(tidyverse)
+@
+
+\maketitle
+
+\begin{abstract}
+This document wants examines and hopefully explains the relationship between the contrast matrix $C$ of a factor, the set of  comparisons it stands for and the more readable inverse of $C$, $C^{-1}$. This document assumes as little background in statistics and matrix algebra as I found feasable. A little experience might be very helpful, though. This document won't give you anything if either you have no idea what a contrast matrix might be or if the question in the first sentence is no question for you.
+\end{abstract}
+\section{Describing the Problem}
+
+If you come accross factors, that is nominal variables, in, for example, \texttt{R}, you will meet the \enquote{contrast matrix} as soon as you actually do something, anything, with factors, like, say, linear regression. You need it in order to translate the unordered levels (possible values) of the factor into numbers. In order to get something unordered again, you have to use somehow multiple dimensions, adding one per level. There you have your matrix.
+
+But it is not immediately clear how the contrast matrix relates to the comparisons it stands for. Let's look at \textit{sum contrasts} to have an example for that. Sum contrasts compare each level (except one) to all others, the intercept being the mean of all levels.
+
+But the Matrix you get if you ask for those contrasts looks a bit surprising:
+<<>>=
+contr.sum(4)
+@ 
+This seems to contrast everything in turn to the last level, if anything. No grand mean shows up transparently. If you add 1s as a first column and take the inverse of the resulting matrix, you get what you actually (might) expect:
+<<>>=
+solve(cbind(1, contr.sum(4)))
+@ 
+We can make that a bit better readable if we multiply by 4:
+<<>>=
+solve(cbind(1, contr.sum(4)))*4
+@ 
+Now we can easily interpret the first line as the grand mean, the 2nd line as pitching the first level against the other three and 3rd and 4th line doing the same in turn for levels 2 and 3.
+
+What is the relationship between these two representations of the matrix and why do we have to use the intransparent first version as the contrast matrix for the factor in order to get the comparisons we actually want? The rest of the document tries to explain that.
+\section{The continuous case}
+
+We start the deliberation with a basic example with a very easy coding scheme. It does not yet contain any factors, or contrasts for that matter, but just sets the foundations which we then generalize to the nominal case.
+
+Suppose we measure the influence of alcohol on reaction times. We collect data on $n=10$ people, give them $x$ gram of alcohol and measure their mean reaction time. We expect the reaction time to go up with $x$ and if the amounts given are not too large, the relationship will be well described as linear. We can assume that the mean reaction time $r$ is normally distributed around some expectation value $\mu$, which grows with $x$:
+$$
+\mu = \mu_0 + a x
+$$
+$a$ is some number that we expect to be positive. If we look at individual datapoints $r_i$, meaning the mean reaction time of the $i$th person, we get something normally distributed, $r_i\sim\mathcal{N}(\mu_i, \sigma)$ with some $\sigma$ and $\mu_i$ again as
+$$
+\mu_i = \mu_0 + a x_i
+$$
+If we have 10 experimental subjects, we get 10 equations here. We differentiate between the intercept term $\mu_0$ and the per person expectation values $\mu_i$ starting with $\mu_1$, followed by $\mu_2$, etc. Linear regression now would produce that $\mu_0$ and $a$ for which the sum $\sum (\mu_i-r_i)^2$ is the smallest. But we are not concerned with this now, we want to dig deeper into the notational stuff. That's why we make things more complicated than would be necessary here. That will help us big time later.
+
+Let's start by writing some of our 10 equations out. This uses up space, but makes everything more concrete.
+
+\begin{displaymath}
+  \begin{split}
+    \mu_1 &= \mu_0 + a\cdot x_1\\
+    \mu_2 &= \mu_0 + a\cdot x_2\\
+    &\dots\\
+    \mu_{10} &= \mu_0 + a\cdot x_{10}
+  \end{split}
+\end{displaymath}
+
+We can write the sequence of $\mu_i$ as a vector $\vec{\mu} = (\mu_1, \mu_2, \dots, \mu_n)$, doing the same for the $x_i$. 
+
+This allows us to write our 10 equations as one 
+
+\begin{equation}\label{eq1}
+  \begin{pmatrix}
+    \mu_1\\
+    \mu_2\\
+    \dots\\
+    \mu_{10}
+  \end{pmatrix} = 
+    \begin{pmatrix}
+    1&x_1\\
+    1&x_2\\
+    \dots\\
+    1&x_{10}
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+    \mu_0 \\
+    a
+  \end{pmatrix}
+\end{equation}
+or simply
+\begin{equation}\label{eq2}
+  \vec{\mu} = X \cdot \vec{\beta}
+\end{equation}
+
+Everything here is very transparent. $\vec{\beta}$ is what we want to estimate, the matrix $X$ represents the measurement for the predictor and the vector $\vec{\mu}$ is our prediction. The actual measurement $\vec{r}$ is not shown here, but used to estimate the two components of $\beta$.
+
+We could add further columns to $X$ and rows to $\vec{beta}$ in order to incorporate further predictors and their interactions.
+
+\section{A factor}
+
+Now we want to generalize from continuous variables to nominal ones, to factors. That's where the actual contrasts come in.
+
+Let's assume we have a 4 level factor:
+
+<<>>=
+f4.lev <- c("drugA","drugB","drugC","drugD")
+@
+
+This could be different drugs impacting some response. In order to get a maximally concrete and transparent example we assume 8 experimental subjects, grouped into 4 groups getting one of the four drugs.
+If we transport our system of equations~\ref{eq1} naively to this case we get something like this:
+
+\begin{displaymath}
+  \begin{pmatrix}
+    \mu_1\\
+    \mu_2\\
+    \mu_3\\
+    \mu_4\\
+    \mu_5\\
+    \mu_6\\
+    \mu_7\\
+    \mu_{8}
+  \end{pmatrix} = 
+    \begin{pmatrix}
+    1& \textnormal{drugA}\\
+    1& \textnormal{drugA}\\
+    1& \textnormal{drugB}\\
+    1& \textnormal{drugB}\\
+    1&\textnormal{drugC}\\
+    1&\textnormal{drugC}\\
+    1&\textnormal{drugD}\\
+    1&\textnormal{drugD}
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+    \mu_0 \\
+    a
+  \end{pmatrix}
+\end{displaymath}
+
+This, unfortunately, makes no sense whatsoever, since we cannot multiply a number by \enquote{drugC}.
+
+In the end a reasonable model could state that we assume a different mean for each factor level. We can stack those 4 assumend means into a vector $\beta$:
+
+\begin{displaymath}
+  \vec{\beta} =
+  \begin{pmatrix}
+    \beta_{_{drugA}}\\
+    \beta_{_{drugB}}\\
+    \beta_{_{drugC}}\\
+    \beta_{_{drugD}}
+  \end{pmatrix}
+\end{displaymath}
+
+The point is that we want to salvage the form of Equation~\ref{eq1}, or~\ref{eq2} for that matter, and each component $\mu_i$ of $\vec{\mu}$ shall be given by a component of $\vec{\beta}$. For example if experimental subject number 7 got \enquote{drugC} $\mu_7$ should be $\beta_{_{drugC}}$.
+
+We reach that by giving Matrix X a very simple form. We can call it an \enquote{indicator matrix}:
+
+\begin{displaymath}
+  \begin{pmatrix}
+    \mu_1\\
+    \mu_2\\
+    \mu_3\\
+    \mu_4\\
+    \mu_5\\
+    \mu_6\\
+    \mu_7\\
+    \mu_{8}
+  \end{pmatrix} = 
+    \begin{pmatrix}
+    1&0&0&0\\
+    1&0&0&0\\
+    0&1&0&0\\
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&1&0\\
+    0&0&0&1\\
+    0&0&0&1
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+    \beta_{_{drugA}}\\
+    \beta_{_{drugB}}\\
+    \beta_{_{drugC}}\\
+    \beta_{_{drugD}}
+  \end{pmatrix}=
+  \begin{pmatrix}
+    \beta_{_{drugA}}\\
+    \beta_{_{drugA}}\\
+    \beta_{_{drugB}}\\
+    \beta_{_{drugB}}\\
+    \beta_{_{drugC}}\\
+    \beta_{_{drugC}}\\
+    \beta_{_{drugD}}\\
+    \beta_{_{drugD}}
+  \end{pmatrix}
+\end{displaymath}
+Or, in the general form we already know:
+\begin{equation}\label{eq3}
+  \vec{\mu} = X \beta
+\end{equation}
+In this easy case, the estimate for the $\beta_i$ would simply be the group means. Tests on them would be $t$-tests for the $H_0$ hypothesis $\beta_i=0$. It's always the $t$-Test with linear regression, in this case we clearly see why.
+
+This is the most basic description of the problem I can imagine, but there is a reason why it is never mentioned: The tests are rarely useful. We usually do not want to know if all group means are different from 0, because we usually know that they are. Picture reaction times. 
+
+Let's move to something more practical. We do not start with treatment coding but with something more fancy because it makes the important things more clear here. Let's assume we want to test 3 consecutive contrasts, \textit{forward difference coding}. Thus we have three differences. One level we declare the reference level. This gives us yet another $\vec{\beta}$, let's call it $\vec{\beta^\prime}$:
+\begin{displaymath}
+  \vec{\beta^\prime} = 
+  \begin{pmatrix}
+    \beta_{_{drugA}}\\
+    \beta_{_{drugB}}-\beta_{_{drugA}}\\
+    \beta_{_{drugC}}-\beta_{_{drugB}}\\
+    \beta_{_{drugD}}-\beta_{_{drugC}}
+  \end{pmatrix} = 
+    \begin{pmatrix}
+    \beta^\prime_1\\
+    \beta^\prime_2\\
+    \beta^\prime_3\\
+    \beta^\prime_4\\
+  \end{pmatrix}
+\end{displaymath}
+Now the $t$-Test on the $H_0$ $\beta^\prime_2=0$ gives us something we actually might want to know: Is there a difference between drugA and drugB? We want to give those transformations a more general form for which we have a mathematical apparatus. That's why we again write it as a matrix operation:
+\begin{equation}\label{eq4}
+  \vec{\beta^\prime} = R\cdot\vec{\beta}
+\end{equation}
+This gives us a Matrix $R$ of the form
+\begin{displaymath}
+  R =
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    -1 & 1 & 0 & 0\\
+    0 & -1 & 1 & 0\\
+    0 & 0 & -1 & 1
+  \end{pmatrix}
+\end{displaymath}
+Now we want to move to actually using $\beta^\prime$ instad of $\beta$. Our next step is combining the very similar looking equations~\ref{eq3} and~\ref{eq4} and. In a term like the right side of equation~\ref{eq3} we can always introduce the unit or identity matrix:
+\begin{displaymath}
+  \vec{\mu} = X I \beta
+\end{displaymath}
+where $I$ is simply
+\begin{displaymath}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    0 & 1 & 0 & 0\\
+    0 & 0 & 1 & 0\\
+    0 & 0 & 0 & 1
+  \end{pmatrix}
+\end{displaymath}
+If we now find a matrix $C$ so that
+\begin{displaymath}
+  CR = I
+\end{displaymath}
+We can declare
+\begin{displaymath}
+  \vec{\mu} = X C\underbrace{R \beta}_{\beta^\prime}
+\end{displaymath}
+Under certain conditions such a matrix $C$ exists for a square matrix $R$ and it is called the inverse:
+\begin{displaymath}
+  C = R^{-1} \Leftrightarrow R^{-1}R = I
+\end{displaymath}
+The notation is an analogy to the usual $3^{-1} = \frac{1}{3}$ and thus $3^{-1}\cdot 3=1$. There are ways to compute $C$ out of $R$. In \texttt{R} (as in the statistics software) this is done by the function `solve`.
+
+<<include=F,echo=F>>=
+matrix(c(
+  1, 0, 0, 0,
+  -1,1,0,0,
+  0,-1,1,0,
+  0,0,-1,1), byrow = T, ncol = 4) -> R
+@ 
+
+<<>>=
+R
+(C <- solve(R))
+@
+
+Now we define a new modelmatrix
+\begin{displaymath}
+  X^\prime = X C
+\end{displaymath}
+With this definition we are back to our original form
+\begin{displaymath}\label{eq2}
+  \vec{\mu} = X^\prime \cdot \vec{\beta^\prime}
+\end{displaymath}
+
+In our concrete example our new model matrix would explicitely look like
+\begin{equation}\label{eq7}
+     X C=
+    \begin{pmatrix}
+    1&0&0&0\\
+    1&0&0&0\\
+    0&1&0&0\\
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&1&0\\
+    0&0&0&1\\
+    0&0&0&1
+  \end{pmatrix}\cdot
+  \begin{pmatrix}
+   1&    0&    0&    0\\
+   1&    1&    0&    0\\
+   1&    1&    1&    0\\
+   1&    1&    1&    1
+  \end{pmatrix} =
+    \begin{pmatrix}
+    1&0&0&0\\
+    1&0&0&0\\
+    1&1&0&0\\
+    1&1&0&0\\
+    1&1&1&0\\
+    1&1&1&0\\
+    1&1&1&1\\
+    1&1&1&1
+  \end{pmatrix} = X^\prime
+\end{equation}
+The last line of our $C$ Matrix, for example, tells us that if we sum
+up all $\beta_i^\prime$, we should get
+$\beta_{_{drugD}}$ again, and indeed
+  $ \beta_{_{drugA}}+ (\beta_{_{drugB}}-\beta_{_{drugA}})+
+  (\beta_{_{drugC}}-\beta_{_{drugB}})+
+  (\beta_{_{drugD}}-\beta_{_{drugC}}) = \beta_{_{drugD}}$. From those relations we could as well compute $C$ in the first place, but it all comes down to computing the inverse matrix of $R$.
+
+
+If you look at one \href{https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/#forward}{a well known reference page for contrasts}\footnote{\url{https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/}} the result for \enquote{forward difference coding} looks a bit different (pretty different), but that is just the result of a different intercept they are using. The corresponding matrix $R$ for the case described there is
+\begin{displaymath}
+  R =
+  \begin{pmatrix}
+    \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4}\\
+    -1 & 1 & 0 & 0\\
+    0 & -1 & 1 & 0\\
+    0 & 0 & -1 & 1
+  \end{pmatrix}
+\end{displaymath}
+The intercept term in this case is the mean of all groups, not the first group. If we invert this matrix we get the result cited on the referenced page.
+
+The matrix we $C$ is, without the first column, by convention called the \textit{contrast matrix} for our drug factor, if forward difference coding is what we want. 
+
+This gives us a reliable and now totally obvious recipe for constructing the right contrast matrix. We start with constructing the much more transparent matrix R transforming the naive groups wise parameter vector $\vec{\beta}$ into the comparisons we actually want to compute. We invert this matrix, chop of the first column and arrive at the correspondig contrast matrix.
+
+\section{Simulated data}
+
+We get ourselves the contrast matrix with nice column names:
+
+<<>>=
+ortc <- C[,-1]
+colnames(ortc) <- c("1-2","2-3","3-4")
+ortc
+@
+
+We create simulated data. We assume the following effects
+
+<<>>=
+(eff <- setNames(c(0,2,3,3.5),
+                f4.lev))
+@
+
+The forward differences will be something like
+
+<<>>=
+eff-lag(eff)
+@ 
+
+with the first place actually beeing \Sexpr{eff[1]}.
+
+We simulate exactly the example described above with only two data points per group. In order to actually be able to recognise the forward differences we just saw in the result, we assume a ridicilously low standard deviation.
+
+<<>>=
+expand.grid(id = 1:2,
+            group = f4.lev) %>% 
+  mutate(eff = eff[group],
+         value = rnorm(n(), mean = eff,sd=.01),
+         group = factor(group, levels = f4.lev)) %>% 
+  as_tibble()->dta
+contrasts(dta$group) <- ortc
+dta
+@
+
+we run the model
+
+<<>>=
+(m0 <- lm(value ~group, data = dta))
+@
+
+This is exactly the $\beta$ we expect.
+
+<<>>=
+model.matrix(m0)
+@ 
+
+This is exactly the matrix $X^\prime$ we created in Equation~\ref{eq7}.
+
+\end{document}
