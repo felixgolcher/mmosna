@@ -9,3 +9,9 @@ packages.bib
 *.log
 *.tex
 flybib.bib
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.xdv
+
