@@ -15,7 +15,6 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \renewcommand{\arraystretch}{1.2}
-\usepackage{Sweave}
 % \setsansfont{Latin Modern Sans}
 % \setmainfont{Latin Modern Sans}
 
@@ -24,7 +23,6 @@
 \author{Felix Golcher | @fgolcher | \url{hu.berlin/fg}}
 
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 
 <<setup, include=FALSE, cache=F,echo=F>>=
 knitr::opts_chunk$set(cache=T,
@@ -46,7 +44,7 @@ This document wants examines and hopefully explains the relationship between the
 
 If you come accross factors, that is nominal variables, in, for example, \texttt{R}, you will meet the \enquote{contrast matrix} as soon as you actually do something, anything, with factors, like, say, linear regression. You need it in order to translate the unordered levels (possible values) of the factor into numbers. In order to get something unordered again, you have to use somehow multiple dimensions, adding one per level. There you have your matrix.
 
-But it is not immediately clear how the contrast matrix relates to the comparisons it stands for. Let's look at \textit{sum contrasts} to have an example for that. Sum contrasts compare each level (except one) to all others, the intercept being the mean of all levels.
+But it is not immediately clear how the contrast matrix relates to the comparisons it stands for. Let's look at \textit{sum contrasts} to have an example for that. Sum contrasts compare each level (except one) to the grand mean, the intercept being the grand mean again.
 
 But the Matrix you get if you ask for those contrasts looks a bit surprising:
 <<>>=
@@ -407,5 +405,79 @@ model.matrix(m0)
 @ 
 
 This is exactly the matrix $X^\prime$ we created in Equation~\ref{eq7}.
+
+\section{What do sum contrasts (not)?}
+
+We stumbled upon the question what sum contrasts actually do. It was me (wrongly) saying, they compare each level to the mean of \textit{all others}, while Katja and all the books say (correctly) that they compare each level to the grand mean.
+
+Sum contrasts:
+
+<<>>=
+(C.sum <- contr.sum(4))
+@
+
+They represent the comparisons
+
+<<>>=
+t(solve(cbind(1/4, C.sum)))[,-1]
+@
+
+Here, the first column pitches the first level against the mean of all levels, because we can write it as
+<<>>=
+c(1,0,0,0) - c(1/4, 1/4, 1/4, 1/4)
+@
+And so on. What I called \enquote{sum contrasts} would be written as
+<<>>=
+c(1,0,0,0) - c(0, 1/3, 1/3, 1/3)
+@
+and so on. In full we would start with
+<<>>=
+(matrix(c(c(1,0,0,0) - c(0, 1/3, 1/3, 1/3),
+         c(0,1,0,0) - c(1/3, 0, 1/3, 1/3),
+         c(0,0,1,0) - c(1/3, 1/3, 0, 1/3)),
+       nrow=4) -> R.sum_fg)
+C.sum_fg <- t(solve(cbind(1/4,R.sum_fg)))[,-1]
+@
+
+Let's simulate some data. The group means are assumed to be
+
+<<>>=
+(ffct <- c(A=1, B=2, C=5, D=-8))
+@
+
+
+
+<<>>=
+(expand.grid(repetition = 1:(n1<-2),
+            drug.sum = LETTERS[1:(n2<-4)]) %>% 
+  mutate(theo = ffct[drug.sum],
+         response = rnorm(n1*n2, mean=theo, sd=.01),
+         drug.sum = factor(drug.sum),
+         drug.sum_fg = drug.sum) -> dta)
+contrasts(dta$drug.sum) <- C.sum
+contrasts(dta$drug.sum_fg) <- C.sum_fg
+@
+
+Linear models:
+<<>>=
+(m.sum <- lm(response ~ drug.sum, data=dta))
+(m.sum_fg <- lm(response ~ drug.sum_fg, data=dta))
+@
+
+The first one clearly is
+<<>>=
+c(mean(ffct),
+  (ffct-mean(ffct))[-4])
+@
+That is, the intercept is the grand mean and the other components compare each level, except the last, against this grand mean.
+
+The second model does what I thought sum contrasts were doing
+<<>>=
+c(mean(ffct),
+  ffct[1]-mean(ffct[-1]),
+  ffct[2]-mean(ffct[-2]),
+  ffct[3]-mean(ffct[-3]))
+@
+pitching each level (except the last) against the mean of the others.
 
 \end{document}
