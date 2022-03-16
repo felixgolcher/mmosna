@@ -210,6 +210,8 @@ fulldata %>%
     geom_boxplot(width = 0.5, colour = "black")
 ```
 
+> The plot is quite nice. I prefer to have the raw data in the plot, but your solution gives quite a good impression of that.
+
 ### Plot 2: Distribution
 
 **TASK** Plot the distribution of *Words*.
@@ -282,6 +284,8 @@ fulldata %>%
   geom_qq_line()
 ```
 
+> Ich meinte lediglich inverstransformiert, also tatsächlich $1/x$.
+
 ## The model
 
 Now we actually proceed with computing a mixed model. In reality we would do a lot more consistency checks on the data, more diagnostic plots and all that.
@@ -302,6 +306,8 @@ texreg::screenreg(list(w1, w2, w0, w4))
 anova(w1, w2, w0, w4)
 ```
 
+> I would argue that we actually need to use the squareroot-transformed data since only those are at least approximately normally distributed.
+
 ### Assessment
 
 #### Residual plot
@@ -315,6 +321,8 @@ fulldata %>%
   geom_qq()+
   geom_qq_line()
 ```
+
+> They do not. The transformation plots showed us that a square root transformation gives us the greatest chance of getting something normally distributed.
 
 #### p-values
 
@@ -426,6 +434,14 @@ w1 <- lmer(Words ~ Situation + Abi + (1|TN_ID), data = fulldata, contrasts=list(
 tab_model(w1)
 ```
 
+> I think it's necessary to invert the matrix. See `contr.Rnw/pdf` why this is. But in this case the matrices look very much alike:
+
+```{r}
+cmat
+solve(t(cbind(1,cmat)))[,-1]
+```
+
+
 **TASK** rerun your model with the new model. Use update.
 
 
@@ -440,6 +456,48 @@ w1 <- update(w0) ## arguments are missing, but you can start here...
 ```{r, eval=FALSE}
 plot(allEffects(w1))
 ```
+
+>  Wenn der Kontrast zwischen AB-CD 
+> betrachtet wird, was wird dann verglichen? Der Durchschnitt von A und B 
+> zusammen mit dem von C und D oder der Durchschnitt von A plus der 
+> Durchschnitt von B mit dem Durchschnitt von C plus dem Durchschnitt von D?
+
+Um das zu überprüfen brauchen wir unbalanzierte Daten. Wir nehmen welche die von der Sache her lächerlich sind, aber die Durchschnitte klar machen:
+
+```{r}
+data.frame(group = rep(LETTERS[1:4],1:4)) %>% 
+  mutate(response = 1:n(),
+         group=factor(group))->dta
+
+(cm <- as.matrix(cbind(
+  # offset
+  1/4,
+  # A vs B
+  c(1,-1,0,0),
+  # C vs D
+  c(0,0,1,-1),
+  # AB vd CD
+  c(1/2, 1/2, -1/2, -1/2))))
+cmm <- solve(t(cm))
+cmn <- cmm[,-1]
+colnames(cmn) <- c("A vs B",
+                   "C vs D",
+                   "AB vs CD")
+contrasts(dta$group)<-cmn
+lm(response~group, data = dta)
+dta %>% 
+  group_by(group) %>% 
+  summarise(mean = mean(response)) %>% pull(mean)->mn
+names(mn)<-LETTERS[1:4]
+
+mean(mn)
+mn["A"]-mn["B"]
+mn["C"]-mn["D"]
+mean(mn[c("A","B")])-mean(mn[c("C","D")])
+```
+
+Dh, es sind tatsächlich die Mittelwerte selbst, die verglichen werden. Der Intercept ist der Mittelwert der Mittelwerte, "A vs B" ist der Mittelwert von "A" minus den Mittelwet von "B" und so weiter.
+
 
 # Acknowledgement
 
